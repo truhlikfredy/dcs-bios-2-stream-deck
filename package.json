@@ -1,0 +1,20 @@
+{
+  "name": "experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@julusian/jpeg-turbo": "^0.5.1",
+    "canvas": "^2.6.1",
+    "dcs-bios-api": "0.0.10",
+    "elgato-stream-deck": "^3.2.0",
+    "enum": "^2.5.0",
+    "fs": "0.0.1-security",
+    "sharp": "^0.23.4"
+  }
+}
