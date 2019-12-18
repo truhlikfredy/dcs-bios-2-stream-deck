@@ -224,7 +224,8 @@ buttons = [
 
 ]
 
-var currentNamespace = "autopilot-"
+var currentModule = "ka-50"
+var currentNamespace = "autopilot"
 
 const DcsBiosApi = require('dcs-bios-api');
  
@@ -261,12 +262,12 @@ api.on('AP_ALT_HOLD_LED:1', () => {
 //   console.log('Master arm switch turned on');
 // });
 
-function buttonName(namespace, buttonId) {
-    return "img/" + namespace + "-" + buttons[buttonId].nameId + "-" + buttons[buttonId].state + ".png";
+function buttonName(dcs_module, namespace, buttonId) {
+    return "img/" + dcs_module + "-" + namespace + "-" + buttons[buttonId].nameId + "-" + buttons[buttonId].state + ".png";
 }
 
 function generateImageFile(buttonId) {
-    const fileName = buttonName("default", buttonId)
+    const fileName = buttonName( currentModule, currentNamespace , buttonId)
 
     const canvas = createCanvas(deckImageSize, deckImageSize)
     const ctx = canvas.getContext('2d')
@@ -283,7 +284,7 @@ function generateImageFile(buttonId) {
 
 
 function updateButton(buttonId) {
-    const fileName = buttonName("default", buttonId)
+    const fileName = buttonName(currentModule, currentNamespace , buttonId)
 
     if (buttons[buttonId].type == buttonTypes.none) {
         return
@@ -293,34 +294,19 @@ function updateButton(buttonId) {
         generateImageFile(buttonId)
     // }
        
-       sharp(path.resolve(fileName))
-           .flatten() // Eliminate alpha channel, if any.
-           .raw() // Give us uncompressed RGB.
-           .toBuffer()
-           .then(buffer => {
-               console.log("updating image");
-               myStreamDeck.fillImage(buttonId, buffer)
-           })
-           .catch(err => {
-               console.error(err)
-           })
-   
-   
-    //    sharp(new Buffer(canvas.toBuffer('raw')), {rawWidth: deckImageSize, rawHeight: deckImageSize, rawChannels: 1})
-    //        .flatten()
-    //        .raw()
-    //        .toBuffer()
-    //        .then(buffer => {myStreamDeck.fillImage(0, buffer)})
-    //        .catch(err => console.log(err))
-       
+    sharp(path.resolve(fileName))
+        .flatten() // Eliminate alpha channel, if any.
+        .raw() // Give us uncompressed RGB.
+        .toBuffer()
+        .then(buffer => {
+            console.log("updating image");
+            myStreamDeck.fillImage(buttonId, buffer)
+        })
+        .catch(err => {
+            console.error(err)
+        })        
 }
 
-// Automatically discovers connected Stream Decks, and attaches to the first one.
-// Throws if there are no connected stream decks.
-// You also have the option of providing the devicePath yourself as the first argument to the constructor.
-// For example: const myStreamDeck = new StreamDeck('\\\\?\\hid#vid_05f3&pid_0405&mi_00#7&56cf813&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}')
-// On linux the equivalent would be: const myStreamDeck = new StreamDeck('0001:0021:00')
-// Available devices can be found with listStreamDecks()
 
 myStreamDeck.on('down', keyIndex => {
     console.log('key %d down', keyIndex)
@@ -366,8 +352,7 @@ myStreamDeck.on('up', keyIndex => {
     }
 })
 
-// Fired whenever an error is detected by the `node-hid` library.
-// Always add a listener for this event! If you don't, errors will be silently dropped.
+
 myStreamDeck.on('error', error => {
 	console.error(error)
 })
