@@ -3,7 +3,13 @@ const buttonLogic = require('./buttonLogic.js')
 buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'weapons',
+        text: 'Weap',
+        goTo: 'weapons',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'arbis',
         text: 'ARBIS',
@@ -11,7 +17,6 @@ buttonsDefault = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'ap',
         text: 'AP',
@@ -20,17 +25,110 @@ buttonsDefault = [
 ]
 
 
-buttonsArbis = [
+buttonWeapons = [
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'masterArm',
+        inversed: true,
+        text: ['Moff', 'MArm'],
+        apiSend: 'WEAPONS_MASTER_ARM',
     },
     {   
         type: buttonLogic.types.none,
+    },
+    {   
+        type: buttonLogic.types.none,
+    },
+    {   
+        type: buttonLogic.types.none,
+    },
+    {   
+        type: buttonLogic.types.none,
+    },
+    {   
+        type: buttonLogic.types.none,
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'jetExt',
+        text: 'Jet\nExt',
+        apiSend: 'WEAPONS_JETTISON_EXT',
+        sendState: false,
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'jetArm',
+        inversed: true,
+        text: ['Joff', 'JArm'],
+        apiSend: 'WEAPONS_JETTISON_ARM_MODE',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'jetAtgm',
+        text: 'Jet\nATGM',
+        apiSend: 'WEAPONS_EXPEDITE_ATGM_JETTISON',
+        sendState: false,
+    },
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'cAutoMan',
+        inversed: true,
+        text: ['Auto', 'Manual'],
+        apiSend: 'WEAPONS_MANUAL_AUTO',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'cBurst',
+        fontIndex: 5,
+        maxStatus: 2,
+        inversed: true,
+        text: ['low', 'med', 'long'],
+        apiSend: 'WEAPONS_CANNON_BURST',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'cHe',
+        inversed: true,
+        text: ['AP', 'HE'],
+        apiSend: 'WEAPONS_CANNON_ROUND',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'cRate',
+        inversed: true,
+        text: ['High', 'Low'],
+        apiSend: 'WEAPONS_CANNON_RATE',
+    },
+
+]
+
+buttonsArbis = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -40,6 +138,9 @@ buttonsArbis = [
         inversed: true,
         text: ['Off', 'On'],
         apiSend: 'ABRIS_POWER',
+    },
+    {   
+        type: buttonLogic.types.none,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -54,7 +155,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         nameId: 'bright+',
         increment: +4095,
@@ -65,7 +165,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
         nameId: '1',
@@ -75,7 +174,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
         nameId: '2',
@@ -85,7 +183,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
         nameId: '3',
@@ -95,7 +192,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
         nameId: '4',
@@ -105,7 +201,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
         nameId: '5',
@@ -122,7 +217,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         nameId: 'cur-',
         increment: -4095,
@@ -134,7 +228,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         nameId: 'curBtn',
         text: 'Cur\nBTN',
@@ -143,7 +236,6 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         nameId: 'cur+',
         increment: +4095,
@@ -160,7 +252,6 @@ buttonsArbis = [
 buttonsAp = [
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'back',
         text: '<- Back',
@@ -180,7 +271,6 @@ buttonsAp = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
         nameId: 'bank',
@@ -190,7 +280,6 @@ buttonsAp = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
         nameId: 'pitch',
@@ -203,7 +292,6 @@ buttonsAp = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
         nameId: 'fd',
@@ -216,7 +304,6 @@ buttonsAp = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
         nameId: 'hdg',
@@ -226,7 +313,6 @@ buttonsAp = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
         nameId: 'alt',
@@ -236,7 +322,6 @@ buttonsAp = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         maxStatus: 2,
         scheme: buttonLogic.colorScheme.switch,
         nameId: 'altMode',
@@ -246,7 +331,6 @@ buttonsAp = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        defaultStatus: 0,
         maxStatus: 2,
         scheme: buttonLogic.colorScheme.switch,
         nameId: 'hdgMode',
@@ -261,6 +345,7 @@ module.exports = {
     name: "ka-50",
     namespaces: [
         { name:'default', buttons: buttonsDefault},
+        { name:'weapons', buttons: buttonWeapons},
         { name:'arbis',   buttons: buttonsArbis},
         { name:'ap',      buttons: buttonsAp},
     ]

@@ -87,6 +87,10 @@ function updateNamespace(namespace) {
             button.sendJustTheIncrement = false
         }
 
+        if (button.defaultStatus === undefined) {
+            button.defaultStatus = 0
+        }
+
         if (button.apiGet === undefined) {
             if (button.apiSend !== undefined) {
                 button.apiGet = button.apiSend
