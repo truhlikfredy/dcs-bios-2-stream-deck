@@ -88,6 +88,14 @@ function updateNamespace(namespace) {
             }
         }
 
+        if (button.increment == undefined) {
+            button.increment = 1
+        }
+
+        if (button.overflow == undefined) {
+            button.overflow = true
+        }
+
         if (button.inversed == undefined) {
             button.inversed = false
         }
@@ -135,7 +143,14 @@ globals.deck.on('down', keyIndex => {
         return
     }
 
-    button.state = (button.state + 1) % (button.maxStatus + 1)
+    if (button.overflow) {
+        button.state = (button.state + button.increment) % (button.maxStatus + 1)
+    }
+    else {
+        button.state = button.state + button.increment
+        if (button.state > button.maxStatus) button.state = button.maxStatus
+    }
+    if (button.state < 0) button.state = 0
     // console.log('state', button.state)
    
     if (button.sendState) {
