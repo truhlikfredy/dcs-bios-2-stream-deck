@@ -15,60 +15,69 @@ var api = new DcsBiosApi({ logLevel: 'INFO' });
 api.startListening()
 
 function updateButton(buttonId) {
-
     if (globals.currentNamespace.buttons[buttonId].type == buttonLogic.types.none) {
         return
     }
-    
+         
     const button = globals.currentNamespace.buttons[buttonId]
     const fileName = helper.buttonName(globals.currentModule, globals.currentNamespace , button)
-    console.log(fileName)
-    console.log(button)
+    // console.log(fileName)
+    // console.log(button)  
 
     if (config.forceImageRecreation || !fs.existsSync(fileName)) {
         graphics.generateImageFile(button)
     }
        
-    sharp(path.resolve(fileName))
-        .flatten() // Eliminate alpha channel, if any.
-        .raw() // Give us uncompressed RGB.
-        .toBuffer()
-        .then(buffer => {
-            console.log("updating image");
-            globals.deck.fillImage(buttonId, buffer)
-        })
-        .catch(err => {
-            console.error(err)
-        })        
+    if (globals.displayOnSteamDeck) {
+        sharp(path.resolve(fileName))
+            .flatten() // Eliminate alpha channel, if any.
+            .raw() // Give us uncompressed RGB.
+            .toBuffer()
+            .then(buffer => {
+                globals.deck.fillImage(buttonId, buffer)
+            })
+            .catch(err => {
+                console.error(err)
+            })        
+    }
 }
 
 
-function mapButtons(button, i) {
+function mapButtons(namespaceName, button, i) {
     button.bindDone = true
-    
+
     if (button.apiGet !== undefined) {
         console.log('mapped', i, 'to', button.apiGet)
         api.on(button.apiGet, (value) => {
             console.log('got api button', button.apiGet, i, value)
             button.state = value
-            updateButton(i)
+
+            if (globals.currentNamespaceName == namespaceName) {
+                updateButton(i)
+            }
         });
     }    
 }
 
-function setNamespace(name) {
-    globals.currentModule = modules.find( v => v.name == globals.currentModuleName)
 
+function setModuleName(name) {
+    globals.currentModuleName = name
+    globals.currentModule = modules.find( v => v.name == globals.currentModuleName)    
+}
+
+
+function setNamespaceName(name) {
     globals.currentNamespaceName = name
     globals.currentNamespace = globals.currentModule.namespaces.find( v => v.name == globals.currentNamespaceName)    
 }
+
 
 function updateNamespace(namespace) {
     for (var i = 0; i < namespace.buttons.length; i++) {
         var button = namespace.buttons[i]
 
         if (button === undefined) {
-            globals.deck.fillColor(keyIndex, 0, 0, 0)
+            if (globals.displayOnSteamDeck) globals.deck.fillColor(keyIndex, 0, 0, 0)
             break;
         }
 
@@ -82,14 +91,14 @@ function updateNamespace(namespace) {
         }
 
         if (button.bindDone === undefined) {
-            mapButtons(button, i)
+            mapButtons(namespace.name, button, i)
         }
 
         updateButton(i)
     }    
 
     for (var i = namespace.buttons.length; i < 15; i++) {
-        globals.deck.fillColor(i, 0, 0, 0)
+        if (globals.displayOnSteamDeck) globals.deck.fillColor(i, 0, 0, 0)
     }
 
 }
@@ -107,7 +116,7 @@ globals.deck.on('down', keyIndex => {
     var button = globals.currentNamespace.buttons[keyIndex]
 
     if (button.goTo !== undefined) {
-        setNamespace(button.goTo)
+        setNamespaceName(button.goTo)
         updateNamespace(globals.currentNamespace)
         return
     }
@@ -134,7 +143,6 @@ globals.deck.on('up', keyIndex => {
     
 
     // if (!(keyIndex in buttons) || buttons[keyIndex].type === buttonTypes.none) {
-    //     myStreamDeck.fillColor(keyIndex, 0, 0, 0)
     //     return
     // }    
 
@@ -153,7 +161,18 @@ globals.deck.on('error', error => {
 })
 
 
-setNamespace(config.firstNamespaceName)
+setModuleName(config.firstModuleName)
+
+// Bind all events in namespaces in this module
+globals.displayOnSteamDeck = false
+globals.currentModule.namespaces.forEach(namespace => {
+    setNamespaceName(namespace.name)
+    updateNamespace(globals.currentNamespace)    
+});
+
+// But in the end display the default namespace
+globals.displayOnSteamDeck = true
+setNamespaceName(config.firstNamespaceName)
 updateNamespace(globals.currentNamespace)
 
 
