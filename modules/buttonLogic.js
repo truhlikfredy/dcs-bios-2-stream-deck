@@ -1,9 +1,9 @@
 
-const sharp = require('sharp') // Order of these includes is sensitive
+const sharp                       = require('sharp') // Order of these includes is sensitive
 const { createCanvas, loadImage } = require('canvas')
-const Enum = require('enum')
-const graphics = require('../graphics.js')
-const globals = require('../globals.js')
+const Enum                        = require('enum')
+const graphics                    = require('../graphics.js')
+const globals                     = require('../globals.js')
 
 module.exports = {
     types: new Enum(['none', 'textToggle', 'icon', 'textIcon']),
@@ -79,7 +79,7 @@ module.exports = {
                     if (button.state != i) highligted[i] = " "
                 }                
             }
-            console.log(highligted)
+            // console.log(highligted)
             ctx.fillText(highligted.join("\n"), centerX, centerY)
         }
         

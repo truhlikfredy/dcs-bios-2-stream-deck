@@ -1,11 +1,11 @@
-const sharp = require('sharp') // Order of these includes is sensitive
+const sharp                       = require('sharp') // Order of these includes is sensitive
 const { createCanvas, loadImage } = require('canvas')
-const Enum = require('enum')
-const fs = require("fs");
+const Enum                        = require('enum')
+const fs                          = require("fs");
 
-const helper = require('./helper.js')
+const helper      = require('./helper.js')
 const buttonLogic = require('./modules/buttonLogic.js')
-const globals = require('./globals.js')
+const globals     = require('./globals.js')
 
 
 fonts = [ 

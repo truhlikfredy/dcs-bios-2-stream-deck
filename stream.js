@@ -1,15 +1,15 @@
 
-const path = require('path')
-const sharp = require('sharp')
-const fs = require("fs");
+const path       = require('path')
+const sharp      = require('sharp')
+const fs         = require("fs");
 const DcsBiosApi = require('dcs-bios-api')
 
-const globals = require('./globals.js')
-const modules = require('./modules/allModules.js')
+const globals     = require('./globals.js')
+const modules     = require('./modules/allModules.js')
 const buttonLogic = require('./modules/buttonLogic.js')
-const config = require('./config.js')
-const helper = require('./helper.js')
-const graphics = require('./graphics.js')
+const config      = require('./config.js')
+const helper      = require('./helper.js')
+const graphics    = require('./graphics.js')
 
 var api = new DcsBiosApi({ logLevel: 'INFO' });
 api.startListening()
@@ -48,9 +48,9 @@ function mapButtons(namespaceName, button, i) {
     button.bindDone = true
 
     if (button.apiGet !== undefined) {
-        console.log('mapped', i, 'to', button.apiGet)
+        // console.log('mapped', i, 'to', button.apiGet)
         api.on(button.apiGet, (value) => {
-            console.log('got api button', button.apiGet, i, value)
+            console.log('got api ', button.apiGet, 'button', i, 'value', value)
             button.state = value
 
             if (globals.currentNamespaceName == namespaceName) {
@@ -128,7 +128,7 @@ function updateNamespace(namespace) {
 
 globals.deck.on('down', keyIndex => {
     console.log('key %d down', keyIndex)
-    console.log('namespace',  globals.currentNamespace)
+    // console.log('namespace',  globals.currentNamespace.name)
 
     if (!(keyIndex in globals.currentNamespace.buttons) || 
         globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
@@ -166,6 +166,7 @@ globals.deck.on('down', keyIndex => {
 
     updateButton(keyIndex);
 })
+
 
 globals.deck.on('up', keyIndex => {
     console.log('key %d up', keyIndex)
