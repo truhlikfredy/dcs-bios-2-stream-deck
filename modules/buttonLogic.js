@@ -10,6 +10,19 @@ module.exports = {
     colorScheme: new Enum({
         'none': () => {},
     
+        'green7seg': (button, ctx) => {
+            const fontId = graphics.detectFontSize(button, button.state.toString())
+    
+            ctx.fillStyle = '#000000'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+            
+            ctx.fillStyle = '#22ff22'
+            ctx.font = fonts[fontId].face
+    
+            const {centerX, centerY} = graphics.centerImage(button.state.toString(), fontId)
+            ctx.fillText(button.state.toString(), centerX, centerY)        
+        },
+        
         'blackButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     

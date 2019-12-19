@@ -42,13 +42,28 @@ buttonWeapons = [
         apiSend: 'WEAPONS_MASTER_ARM',
     },
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.green7seg,
+        sendState: false,
+        nameId: 'wepType',
+        apiGet: 'WEAPONS_DISPLAY_STORE_TYPE',
+        dynamicState: true,
     },
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.green7seg,
+        sendState: false,
+        nameId: 'wepRem',
+        apiGet: 'WEAPONS_DISPLAY_WEAPON_REMAIN',
+        dynamicState: true,
     },
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.green7seg,
+        sendState: false,
+        nameId: 'ammoRem',
+        apiGet: 'WEAPONS_DISPLAY_CANNON_REMAIN',
+        dynamicState: true,
     },
     {   
         type: buttonLogic.types.none,
@@ -63,7 +78,6 @@ buttonWeapons = [
         nameId: 'jetExt',
         text: 'Jet\nExt',
         apiSend: 'WEAPONS_JETTISON_EXT',
-        sendState: false,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -80,7 +94,6 @@ buttonWeapons = [
         nameId: 'jetAtgm',
         text: 'Jet\nATGM',
         apiSend: 'WEAPONS_EXPEDITE_ATGM_JETTISON',
-        sendState: false,
     },
     {   
         type: buttonLogic.types.none,
@@ -152,6 +165,7 @@ buttonsArbis = [
         overflow: false,
         text: 'BR\n-',
         apiSend: 'ABRIS_BRIGHTNESS',
+        dynamicState: true,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -162,6 +176,7 @@ buttonsArbis = [
         overflow: false,
         text: 'BR\n+',
         apiSend: 'ABRIS_BRIGHTNESS',
+        dynamicState: true,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -225,6 +240,7 @@ buttonsArbis = [
         overflow: true,
         text: 'Cur\n-',
         apiSend: 'ABRIS_CURSOR_ROT',
+        dynamicState: true,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -244,6 +260,7 @@ buttonsArbis = [
         maxStatus: 65535,
         text: 'Cur\n+',
         apiSend: 'ABRIS_CURSOR_ROT',
+        dynamicState: true,
     },
     
 ]

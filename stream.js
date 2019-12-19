@@ -25,11 +25,13 @@ function updateButton(buttonId) {
     // console.log(fileName)
     // console.log(button)  
 
-    if (config.forceImageRecreation || !fs.existsSync(fileName)) {
+    if (config.forceImageRecreation || button.dynamicState || !fs.existsSync(fileName)) {
+        // console.log('state', button.state, 'filename', fileName)
         graphics.generateImageFile(button)
     }
        
     if (globals.displayOnSteamDeck) {
+        sharp.cache(false) // Have disable cache or the dynamicState buttons images wouldn't update from the initial content
         sharp(path.resolve(fileName))
             .flatten() // Eliminate alpha channel, if any.
             .raw() // Give us uncompressed RGB.
@@ -85,6 +87,14 @@ function updateNamespace(namespace) {
 
         if (button.sendJustTheIncrement === undefined) {
             button.sendJustTheIncrement = false
+        }
+
+        if (button.text === undefined) {
+            button.text = ' '
+        }
+
+        if (button.dynamicState === undefined) {
+            button.dynamicState = false
         }
 
         if (button.defaultStatus === undefined) {
@@ -152,6 +162,10 @@ globals.deck.on('down', keyIndex => {
         return
     }
 
+    if (button.apiSend === undefined) {
+        return        
+    }
+
     if (button.overflow) {
         button.state = (button.state + button.increment) % (button.maxStatus + 1)
     }
@@ -187,6 +201,10 @@ globals.deck.on('up', keyIndex => {
     }    
 
     var button = globals.currentNamespace.buttons[keyIndex]
+    
+    if (button.apiSend === undefined) {
+        return        
+    }
     
     if (!button.sendState) {
         api.sendMessage(button.apiSend + " 0").then( error => {
