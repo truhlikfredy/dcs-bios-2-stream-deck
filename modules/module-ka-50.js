@@ -40,22 +40,24 @@ buttonsArbis = [
         inversed: true,
         text: ['Off', 'On'],
         apiSend: 'ABRIS_POWER',
-        apiGet: 'ABRIS_POWER',
-        
     },
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'pwr',
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'bright-',
         inversed: true,
-        text: ['Off', 'On'],
+        text: 'BR\n-',
         apiSend: 'ABRIS_BRIGHTNESS',
-        apiGet: 'ABRIS_BRIGHTNESS',
-        
     },
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'bright+',
+        inversed: true,
+        text: 'BR\n+',
+        apiSend: 'ABRIS_BRIGHTNESS',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -65,7 +67,6 @@ buttonsArbis = [
         nameId: '1',
         text: '1',
         apiSend: 'ABRIS_BTN_1',
-        apiGet: 'ABRIS_BTN_1',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -75,7 +76,6 @@ buttonsArbis = [
         nameId: '2',
         text: '2',
         apiSend: 'ABRIS_BTN_2',
-        apiGet: 'ABRIS_BTN_2',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -85,7 +85,6 @@ buttonsArbis = [
         nameId: '3',
         text: '3',
         apiSend: 'ABRIS_BTN_3',
-        apiGet: 'ABRIS_BTN_3',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -95,7 +94,6 @@ buttonsArbis = [
         nameId: '4',
         text: '4',
         apiSend: 'ABRIS_BTN_4',
-        apiGet: 'ABRIS_BTN_4',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -105,7 +103,6 @@ buttonsArbis = [
         nameId: '5',
         text: '5',
         apiSend: 'ABRIS_BTN_5',
-        apiGet: 'ABRIS_BTN_5',
     },
 ]
 
@@ -196,7 +193,6 @@ buttonsAp = [
         fontIndex: 4, 
         text: ['BR', '--', 'RD'],
         apiSend: 'AP_BARO_RALT',
-        apiGet: 'AP_BARO_RALT',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -207,7 +203,6 @@ buttonsAp = [
         fontIndex: 4, 
         text: ['DH', '--', 'DT'],
         apiSend: 'AP_DH_DT',
-        apiGet: 'AP_DH_DT',
     },
 ]
 

@@ -82,6 +82,12 @@ function updateNamespace(namespace) {
             break;
         }
 
+        if (button.apiGet === undefined) {
+            if (button.apiSend !== undefined) {
+                button.apiGet = button.apiSend
+            }
+        }
+
         if (button.inversed == undefined) {
             button.inversed = false
         }
