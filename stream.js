@@ -11,10 +11,6 @@ const config = require('./config.js')
 const helper = require('./helper.js')
 const graphics = require('./graphics.js')
 
-var currentNamespaceName = 'default'
-globals.currentModule = modules.find( v => v.name == config.currentModuleName)
-globals.currentNamespace = globals.currentModule.namespaces.find( v => v.name == currentNamespaceName)
-
 var api = new DcsBiosApi({ logLevel: 'INFO' });
 api.startListening()
 
@@ -47,11 +43,34 @@ function updateButton(buttonId) {
 }
 
 
+function mapButtons(button, i) {
+    button.bindDone = true
+    
+    if (button.apiGet !== undefined) {
+        console.log('mapped', i, 'to', button.apiGet)
+        api.on(button.apiGet, (value) => {
+            console.log('got api button', button.apiGet, i, value)
+            button.state = value
+            updateButton(i)
+        });
+    }    
+}
+
+function setNamespace(name) {
+    globals.currentModule = modules.find( v => v.name == globals.currentModuleName)
+
+    globals.currentNamespaceName = name
+    globals.currentNamespace = globals.currentModule.namespaces.find( v => v.name == globals.currentNamespaceName)    
+}
+
 function updateNamespace(namespace) {
     for (var i = 0; i < namespace.buttons.length; i++) {
         var button = namespace.buttons[i]
 
-        if (button === undefined) break;
+        if (button === undefined) {
+            globals.deck.fillColor(keyIndex, 0, 0, 0)
+            break;
+        }
 
         button.state = button.defaultStatus
         if (button.maxStatus == undefined) {
@@ -62,21 +81,36 @@ function updateNamespace(namespace) {
             button.sendState = true
         }
 
-        mapButtons(button, i)
-        
+        if (button.bindDone === undefined) {
+            mapButtons(button, i)
+        }
+
         updateButton(i)
     }    
+
+    for (var i = namespace.buttons.length; i < 15; i++) {
+        globals.deck.fillColor(i, 0, 0, 0)
+    }
+
 }
+
 
 globals.deck.on('down', keyIndex => {
     console.log('key %d down', keyIndex)
+    console.log('namespace',  globals.currentNamespace)
 
-    // if (!(keyIndex in buttons) || buttons[keyIndex].type === buttonTypes.none) {
-    //     myStreamDeck.fillColor(keyIndex, 0, 0, 0)
-    //     return
-    // }
+    if (!(keyIndex in globals.currentNamespace.buttons) || 
+        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
+        return
+    }
 
-    // var button = buttons[keyIndex]
+    var button = globals.currentNamespace.buttons[keyIndex]
+
+    if (button.goTo !== undefined) {
+        setNamespace(button.goTo)
+        updateNamespace(globals.currentNamespace)
+        return
+    }
 
     // // button.state = (button.state + 1) % (button.maxStatus + 1)
     // // console.log('state', button.state)
@@ -119,20 +153,7 @@ globals.deck.on('error', error => {
 })
 
 
-function mapButtons(button, i) {
-    if (button.apiGet !== undefined) {
-        console.log('mapped', i, 'to', button.apiGet)
-        api.on(button.apiGet, (value) => {
-            console.log('got api button', button.apiGet, i, value)
-            button.state = value
-            updateButton(i)
-        });
-    }    
-}
-
-
-
-
+setNamespace(config.firstNamespaceName)
 updateNamespace(globals.currentNamespace)
 
 
