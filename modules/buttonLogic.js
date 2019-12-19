@@ -12,7 +12,6 @@ module.exports = {
     
         'blackButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
-            // console.log('fontid', fontId)
     
             ctx.fillStyle = '#000000'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
@@ -26,7 +25,6 @@ module.exports = {
 
         'grayButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
-            // console.log('fontid', fontId)
     
             ctx.fillStyle = button.state ? '#888888' : '#444444'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
@@ -40,7 +38,6 @@ module.exports = {
         
         'blueButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
-            // console.log('fontid', fontId)
     
             ctx.fillStyle = button.state ? '#20C2EE' : '#086375'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
@@ -51,12 +48,37 @@ module.exports = {
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
             ctx.fillText(button.text, centerX, centerY)        
         },
+
+        'yellowButton': (button, ctx) => {
+            const fontId = graphics.detectFontSize(button, button.text)
     
+            ctx.fillStyle = button.state ? '#ffff88' : '#dddd00'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+            
+            ctx.fillStyle = button.state ? '#444444' : '#000000'
+            ctx.font = fonts[fontId].face
+    
+            const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.fillText(button.text, centerX, centerY)        
+        },
+
+        'redButton': (button, ctx) => {
+            const fontId = graphics.detectFontSize(button, button.text)
+    
+            ctx.fillStyle = button.state ? '#ff8888' : '#dd0000'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+            
+            ctx.fillStyle = button.state ? '#ffffff' : '#dddddd'
+            ctx.font = fonts[fontId].face
+    
+            const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.fillText(button.text, centerX, centerY)        
+        },
+
         'switch': (button, ctx) => {
             const textArray = button.inversed ? button.text.slice(0).reverse() : button.text.slice(0)
             const textJoined = textArray.join('\n')
             const fontId = graphics.detectFontSize(button, textJoined)
-            // console.log('fontid', fontId)
     
             ctx.fillStyle = '#000000'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
