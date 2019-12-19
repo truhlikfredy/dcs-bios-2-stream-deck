@@ -82,9 +82,14 @@ function updateNamespace(namespace) {
             break;
         }
 
+        if (button.inversed == undefined) {
+            button.inversed = false
+        }
+
         if (button.state === undefined) {
             button.state = button.defaultStatus
         }
+
         if (button.maxStatus == undefined) {
             button.maxStatus = 1
         }
