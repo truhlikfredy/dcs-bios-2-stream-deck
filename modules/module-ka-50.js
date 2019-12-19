@@ -71,6 +71,7 @@ buttonsArbis = [
         nameId: '1',
         text: '1',
         apiSend: 'ABRIS_BTN_1',
+        sendState: false,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -80,6 +81,7 @@ buttonsArbis = [
         nameId: '2',
         text: '2',
         apiSend: 'ABRIS_BTN_2',
+        sendState: false,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -89,6 +91,7 @@ buttonsArbis = [
         nameId: '3',
         text: '3',
         apiSend: 'ABRIS_BTN_3',
+        sendState: false,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -98,6 +101,7 @@ buttonsArbis = [
         nameId: '4',
         text: '4',
         apiSend: 'ABRIS_BTN_4',
+        sendState: false,
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -107,7 +111,49 @@ buttonsArbis = [
         nameId: '5',
         text: '5',
         apiSend: 'ABRIS_BTN_5',
+        sendState: false,
     },
+
+    {   
+        type: buttonLogic.types.none,
+    },
+    {   
+        type: buttonLogic.types.none,
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'cur-',
+        increment: -4095,
+        sendState: false,
+        maxStatus: 65535,
+        overflow: true,
+        text: 'Cur\n-',
+        apiSend: 'ABRIS_CURSOR_ROT',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'curBtn',
+        text: 'Cur\nBTN',
+        apiSend: 'ABRIS_CURSOR_BTN',
+        sendState: false,
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'cur+',
+        increment: +4095,
+        sendState: false,
+        overflow: true,
+        maxStatus: 65535,
+        text: 'Cur\n+',
+        apiSend: 'ABRIS_CURSOR_ROT',
+    },
+    
 ]
 
 

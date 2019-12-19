@@ -82,6 +82,11 @@ function updateNamespace(namespace) {
             break;
         }
 
+
+        if (button.sendJustTheIncrement === undefined) {
+            button.sendJustTheIncrement = false
+        }
+
         if (button.apiGet === undefined) {
             if (button.apiSend !== undefined) {
                 button.apiGet = button.apiSend
@@ -159,7 +164,7 @@ globals.deck.on('down', keyIndex => {
         });
     }
     else {
-        api.sendMessage(button.apiSend + " 1").then( error => {
+        api.sendMessage(button.apiSend + " " + button.increment).then( error => {
             if (error) console.log(error);
         });        
     }
