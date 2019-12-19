@@ -16,9 +16,10 @@ api.startListening()
 
 function updateButton(buttonId) {
     if (globals.currentNamespace.buttons[buttonId].type == buttonLogic.types.none) {
+        if (globals.displayOnSteamDeck) globals.deck.fillColor(buttonId, 0, 0, 0)
         return
     }
-         
+
     const button = globals.currentNamespace.buttons[buttonId]
     const fileName = helper.buttonName(globals.currentModule, globals.currentNamespace , button)
     // console.log(fileName)
@@ -81,7 +82,9 @@ function updateNamespace(namespace) {
             break;
         }
 
-        button.state = button.defaultStatus
+        if (button.state === undefined) {
+            button.state = button.defaultStatus
+        }
         if (button.maxStatus == undefined) {
             button.maxStatus = 1
         }
@@ -121,38 +124,39 @@ globals.deck.on('down', keyIndex => {
         return
     }
 
-    // // button.state = (button.state + 1) % (button.maxStatus + 1)
-    // // console.log('state', button.state)
+    button.state = (button.state + 1) % (button.maxStatus + 1)
+    // console.log('state', button.state)
    
-    // if (button.sendState) {
-    //     api.sendMessage(button.apiSend + " " + (button.state)).then( error => {
-    //         if (error) console.log(error);
-    //     });
-    // }
-    // else {
-    //     api.sendMessage(button.apiSend + " 1").then( error => {
-    //         if (error) console.log(error);
-    //     });        
-    // }
+    if (button.sendState) {
+        api.sendMessage(button.apiSend + " " + (button.state)).then( error => {
+            if (error) console.log(error);
+        });
+    }
+    else {
+        api.sendMessage(button.apiSend + " 1").then( error => {
+            if (error) console.log(error);
+        });        
+    }
 
-    // updateButton(keyIndex);
+    updateButton(keyIndex);
 })
 
 globals.deck.on('up', keyIndex => {
     console.log('key %d up', keyIndex)
     
 
-    // if (!(keyIndex in buttons) || buttons[keyIndex].type === buttonTypes.none) {
-    //     return
-    // }    
+    if (!(keyIndex in globals.currentNamespace.buttons) || 
+        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
+        return
+    }    
 
-    // var button = buttons[keyIndex]
+    var button = globals.currentNamespace.buttons[keyIndex]
     
-    // if (!button.sendState) {
-    //     api.sendMessage(button.apiSend + " 0").then( error => {
-    //         if (error) console.log(error);
-    //     });
-    // }
+    if (!button.sendState) {
+        api.sendMessage(button.apiSend + " 0").then( error => {
+            if (error) console.log(error);
+        });
+    }
 })
 
 
