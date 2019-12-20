@@ -25,22 +25,8 @@ buttonsDefault = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'pvi800-1',
-        text: 'PVI800\n#',
+        text: 'PVI800',
         goTo: 'pvi800-1',
-    },
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'pvi800-2',
-        text: 'PVI800\nfunc',
-        goTo: 'pvi800-2',
-    },
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'pvi800-3',
-        text: 'PVI800\nctrl',
-        goTo: 'pvi800-3',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -200,7 +186,8 @@ buttonsPvio800_3 = [
         inversed: true,
         text: ['UPDATE', 'INU'],
         apiSend: 'PVI_INU_FIX',
-    },    {   
+    },    
+    {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
         nameId: 'power',
@@ -232,7 +219,24 @@ buttonsPvio800_3 = [
         apiSend: 'PVI_BRIGHTNESS',
         dynamicState: true,
     },    
-        
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'id',
+        maxStatus: 3,
+        fontIndex: 7,
+        text: ['1', '2', '3', '4'],
+        apiSend: 'DLNK_SELF_ID',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'masterMode',
+        maxStatus: 3,
+        text: ['OFF', 'Rx-Only', 'Wingman', 'CMDR'],
+        apiSend: 'DLNK_MASTER_MODE',
+    },
     
 ]
 
@@ -475,7 +479,7 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'pvi800-3',
-        text: 'PVI800\nctrl',
+        text: 'PVI800\nPVTz-800',
         goTo: 'pvi800-3',
     },
     {   
