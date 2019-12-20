@@ -52,7 +52,7 @@ module.exports = {
         'blueButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
-            ctx.fillStyle = button.state ? '#20C2EE' : '#086375'
+            ctx.fillStyle = button.state ? '#20C2EE' : '#006070'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
             ctx.fillStyle = button.state ? '#ffffff' : '#10B2DE'
