@@ -53,15 +53,8 @@ buttonsDefault = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'aux1',
-        text: 'AUX1',
+        text: 'AUX',
         goTo: 'aux1',
-    },
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'aux2',
-        text: 'AUX2',
-        goTo: 'aux2',
     },
 ]
 
@@ -1114,6 +1107,13 @@ buttonsAux1 = [
     },     
     {   
         type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'aux2',
+        text: 'LWS\nCounter',
+        goTo: 'aux2',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         nameId: 'eject_test',
         sendState: false,
@@ -1127,7 +1127,7 @@ buttonsAux1 = [
         overflow: false,
         increment: -1,
         maxStatus: 6,
-        text: 'Eject+',
+        text: 'Eject-',
         apiSend: 'EJECT_SYS_SELECTOR',
     },          
     {   
@@ -1197,7 +1197,7 @@ buttonsAux2 = [
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'back',
         text: '<- Back',
-        goTo: 'default',
+        goTo: 'aux1',
     },
     {   
         type: buttonLogic.types.textToggle,
