@@ -201,7 +201,7 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'mag-',
         increment: -4095,
         sendState: false,
@@ -212,7 +212,7 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'mag+',
         increment: +4095,
         sendState: false,
@@ -251,7 +251,7 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'bright-',
         increment: -4095,
         maxStatus: 65535,
@@ -263,7 +263,7 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'bright+',
         increment: +4095,
         maxStatus: 65535,
@@ -293,7 +293,7 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'scan-',
         increment: -1,
         maxStatus: 7,
@@ -305,7 +305,7 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'scan+',
         increment: 1,
         maxStatus: 7,
@@ -626,7 +626,7 @@ buttonsArbis = [
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'bright-',
         increment: -4095,
         maxStatus: 65535,
@@ -637,7 +637,7 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'bright+',
         increment: +4095,
         maxStatus: 65535,
@@ -648,42 +648,42 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
         nameId: '1',
-        text: '1',
+        text: '^\n1',
         apiSend: 'ABRIS_BTN_1',
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
         nameId: '2',
-        text: '2',
+        text: '^\n2',
         apiSend: 'ABRIS_BTN_2',
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
         nameId: '3',
-        text: '3',
+        text: '^\n3',
         apiSend: 'ABRIS_BTN_3',
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
         nameId: '4',
-        text: '4',
+        text: '^\n4',
         apiSend: 'ABRIS_BTN_4',
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
         nameId: '5',
-        text: '5',
+        text: '^\n5',
         apiSend: 'ABRIS_BTN_5',
     },
 
@@ -695,7 +695,7 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'cur-',
         increment: -4095,
         sendState: false,
@@ -707,7 +707,7 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'curBtn',
         text: 'Cur\nBTN',
         apiSend: 'ABRIS_CURSOR_BTN',
@@ -715,7 +715,7 @@ buttonsArbis = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'cur+',
         increment: +4095,
         sendState: false,
@@ -862,7 +862,7 @@ buttonsFlare = [
     },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'ch-',
         increment: -1,
         maxStatus: 9,
@@ -872,7 +872,7 @@ buttonsFlare = [
     },      
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'ch+',
         maxStatus: 9,
         overflow: false,
@@ -882,7 +882,7 @@ buttonsFlare = [
     },      
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'vol-',
         increment: -4095,
         // sendState: false,
@@ -894,7 +894,7 @@ buttonsFlare = [
     },    
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'vol+',
         increment: +4095,
         // sendState: false,
