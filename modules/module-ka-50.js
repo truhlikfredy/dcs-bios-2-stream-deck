@@ -49,6 +49,13 @@ buttonsDefault = [
         text: 'VHF1\nR828',
         goTo: 'vhf1',
     },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'aux1',
+        text: 'AUX1',
+        goTo: 'aux1',
+    },
 ]
 
 
@@ -1045,7 +1052,8 @@ buttonsVhf1 = [
         text: 'Vol\n-',
         apiSend: 'R828_VOLUME',
         dynamicState: true,
-    },         {   
+    },         
+    {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'vol+',
@@ -1061,6 +1069,44 @@ buttonsVhf1 = [
     },
 ]
 
+
+buttonsAux1 = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'leftGov',
+        sendState: false,
+        text: 'Left\nGov',
+        apiSend: 'ENG_L_EGT_GOVERNOR',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'rightGov',
+        sendState: false,
+        text: 'Right\nGov',
+        apiSend: 'ENG_R_EGT_GOVERNOR',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'vibr',
+        sendState: false,
+        text: 'Vibra',
+        apiSend: 'ENG_VIBR_MONITOR',
+    },     
+    {   
+        type: buttonLogic.types.none,
+    },       
+]
+
 module.exports = {
     name: "ka-50",
     namespaces: [
@@ -1073,6 +1119,7 @@ module.exports = {
         { name: 'ap',       buttons: buttonsAp},
         { name: 'flare',    buttons: buttonsFlare},
         { name: 'vhf1',     buttons: buttonsVhf1},
+        { name: 'aux1',     buttons: buttonsAux1},
     ]
 }
 

@@ -39,7 +39,7 @@ module.exports = {
         'grayButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
-            ctx.fillStyle = button.state ? '#888888' : '#444444'
+            ctx.fillStyle = button.state ? '#999999' : '#222222'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
             ctx.fillStyle = button.state ? '#ffffff' : '#dddddd'
