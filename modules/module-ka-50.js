@@ -1104,8 +1104,46 @@ buttonsAux1 = [
     },     
     {   
         type: buttonLogic.types.none,
-    },       
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'eject_test',
+        sendState: false,
+        text: 'Eject\ntest',
+        apiSend: 'EJECT_SYS_TEST_BTN',
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'eject_sel',
+        overflow: false,
+        increment: -1,
+        maxStatus: 6,
+        text: 'Eject+',
+        apiSend: 'EJECT_SYS_SELECTOR',
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'eject_sel',
+        overflow: false,
+        maxStatus: 6,
+        text: 'Eject+',
+        apiSend: 'EJECT_SYS_SELECTOR',
+    }, 
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'voiceTest',
+        maxStatus: 0,
+        sendState: false,
+        text: 'Voice\ntest',
+        apiSend: 'VOICE_MSG_SYS_TEST',
+    },     
 ]
+
+
 
 module.exports = {
     name: "ka-50",
