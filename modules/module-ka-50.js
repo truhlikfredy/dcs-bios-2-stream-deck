@@ -35,6 +35,13 @@ buttonsDefault = [
         text: 'AP',
         goTo: 'ap',
     },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'flare',
+        text: 'Flare',
+        goTo: 'flare',
+    },
 ]
 
 
@@ -755,6 +762,62 @@ buttonsAp = [
 ]
 
 
+buttonsFlare = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        maxStatus: 1,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'power',
+        inversed: true,
+        text: ['Off', 'On'],
+        apiSend: 'FLARES_POWER',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        maxStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'red',
+        text: 'Red',
+        sendState: false,
+        apiSend: 'FLARES_RED',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        maxStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'green',
+        text: 'Green',
+        sendState: false,
+        apiSend: 'FLARES_GREEN',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        maxStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'white',
+        text: 'White',
+        sendState: false,
+        apiSend: 'FLARES_WHITE',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        maxStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'yellow',
+        text: 'Yellow',
+        sendState: false,
+        apiSend: 'FLARES_YELLOW',
+    },
+    
+]
+
 module.exports = {
     name: "ka-50",
     namespaces: [
@@ -765,6 +828,7 @@ module.exports = {
         { name: 'pvi800-2', buttons: buttonsPvio800_2},
         { name: 'pvi800-3', buttons: buttonsPvio800_3},
         { name: 'ap',       buttons: buttonsAp},
+        { name: 'flare',    buttons: buttonsFlare},
     ]
 }
 
