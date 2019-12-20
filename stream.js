@@ -53,7 +53,12 @@ function mapButtons(namespaceName, button, i) {
         // console.log('mapped', i, 'to', button.apiGet)
         api.on(button.apiGet, (value) => {
             console.log('got api ', button.apiGet, 'button', i, 'value', value)
+
             button.state = value
+
+            if (button.stateToText !== undefined) {
+                button.text = button.stateToText(button.state).toString()
+            }
 
             if (globals.currentNamespaceName == namespaceName) {
                 updateButton(i)
