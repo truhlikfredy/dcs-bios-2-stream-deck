@@ -56,6 +56,13 @@ buttonsDefault = [
         text: 'AUX1',
         goTo: 'aux1',
     },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'aux2',
+        text: 'AUX2',
+        goTo: 'aux2',
+    },
 ]
 
 
@@ -1183,6 +1190,44 @@ buttonsAux1 = [
     },      
 ]
 
+
+buttonsAux2 = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowButton,
+        nameId: 'lwsOper',
+        text: 'LWS\nOper',
+        maxStatus: 0,
+        apiGet: 'LWS_OPER',
+        sendState: false,
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'lwsPower',
+        inversed: true,
+        text: ['OFF', 'LWS'],
+        apiSend: 'LWS_POWER',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'lwsTest',
+        maxStatus: 0,
+        sendState: false,
+        text: 'LWS\ntest',
+        apiSend: 'LWS_TEST',
+    },   
+             
+]
+
 module.exports = {
     name: "ka-50",
     namespaces: [
@@ -1196,6 +1241,7 @@ module.exports = {
         { name: 'flare',    buttons: buttonsFlare},
         { name: 'vhf1',     buttons: buttonsVhf1},
         { name: 'aux1',     buttons: buttonsAux1},
+        { name: 'aux2',     buttons: buttonsAux2},
     ]
 }
 
