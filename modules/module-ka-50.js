@@ -42,6 +42,13 @@ buttonsDefault = [
         text: 'ADF\nFlare',
         goTo: 'flare',
     },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'vhf1',
+        text: 'VHF1\nR828',
+        goTo: 'vhf1',
+    },
 ]
 
 
@@ -964,6 +971,96 @@ buttonsFlare = [
     
 ]
 
+
+buttonsVhf1 = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        stateToText: (state) => state+1,
+        nameId: 'channel',
+        text: 'n/a',
+        apiGet: 'R828_CHANNEL',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'ch+',
+        increment: -1,
+        overflow: true,
+        maxStatus: 9,
+        text: 'Ch\n-',
+        apiSend: 'R828_CHANNEL',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'ch+',
+        overflow: true,
+        maxStatus: 9,
+        text: 'Ch\n+',
+        apiSend: 'R828_CHANNEL',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'autoTune',
+        sendState: false,
+        text: 'Auto\ntune',
+        apiSend: 'R828_TUNER',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowButton,
+        nameId: 'autoTuneLamp',
+        sendState: false,
+        text: 'Tuning',
+        apiGet: 'R828_TUNER_LAMP',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'noiseReduction',
+        inversed: true,
+        text: ['Off', 'NRedu'],
+        apiSend: 'R828_SQUELCH',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'vol-',
+        overflow: false,
+        increment: -4095,
+        maxStatus: 655535,
+        text: 'Vol\n-',
+        apiSend: 'R828_VOLUME',
+        dynamicState: true,
+    },         {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'vol+',
+        overflow: false,
+        increment: 4095,
+        maxStatus: 655535,
+        text: 'Vol\n+',
+        apiSend: 'R828_VOLUME',
+        dynamicState: true,
+    },                      
+    {   
+        type: buttonLogic.types.none,
+    },
+]
+
 module.exports = {
     name: "ka-50",
     namespaces: [
@@ -975,6 +1072,7 @@ module.exports = {
         { name: 'pvi800-3', buttons: buttonsPvio800_3},
         { name: 'ap',       buttons: buttonsAp},
         { name: 'flare',    buttons: buttonsFlare},
+        { name: 'vhf1',     buttons: buttonsVhf1},
     ]
 }
 

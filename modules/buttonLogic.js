@@ -91,7 +91,7 @@ module.exports = {
         'yellowButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
-            ctx.fillStyle = button.state ? '#ffff88' : '#dddd00'
+            ctx.fillStyle = button.state ? '#ffff88' : '#aaaa00'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
             ctx.fillStyle = button.state ? '#444444' : '#000000'
