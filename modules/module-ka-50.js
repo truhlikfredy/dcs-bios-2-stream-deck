@@ -25,7 +25,7 @@ buttonsDefault = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'pvi800-1',
-        text: 'PVI800\nnumpad',
+        text: 'PVI800\n#',
         goTo: 'pvi800-1',
     },
     {   
@@ -34,6 +34,13 @@ buttonsDefault = [
         nameId: 'pvi800-2',
         text: 'PVI800\nfunc',
         goTo: 'pvi800-2',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'pvi800-3',
+        text: 'PVI800\nctrl',
+        goTo: 'pvi800-3',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -153,6 +160,80 @@ buttonWeapons = [
         apiSend: 'WEAPONS_CANNON_RATE',
     },
 
+]
+
+
+buttonsPvio800_3 = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'pvi800-1',
+    },
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'mode',
+        fontIndex: 7,
+        maxStatus: 4,
+        inversed: true,
+        text: ['OFF', 'CHECK', 'EDIT', 'OPER', 'SIM'],
+        apiSend: 'PVI_MODES',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'inu',
+        inversed: true,
+        text: ['UPDATE', 'INU'],
+        apiSend: 'PVI_INU_FIX',
+    },    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'power',
+        inversed: true,
+        text: ['OFF', 'ON'],
+        apiSend: 'PVI_POWER',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'bright-',
+        increment: -4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'BR\n-',
+        apiSend: 'PVI_BRIGHTNESS',
+        dynamicState: true,
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'bright+',
+        increment: +4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'BR\n+',
+        apiSend: 'PVI_BRIGHTNESS',
+        dynamicState: true,
+    },    
+        
+    
 ]
 
 
@@ -391,7 +472,11 @@ buttonsPvio800_1 = [
         apiSend: 'PVI_0',
     },
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'pvi800-3',
+        text: 'PVI800\nctrl',
+        goTo: 'pvi800-3',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -674,6 +759,7 @@ module.exports = {
         { name: 'arbis',    buttons: buttonsArbis},
         { name: 'pvi800-1', buttons: buttonsPvio800_1},
         { name: 'pvi800-2', buttons: buttonsPvio800_2},
+        { name: 'pvi800-3', buttons: buttonsPvio800_3},
         { name: 'ap',       buttons: buttonsAp},
     ]
 }
