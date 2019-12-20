@@ -244,6 +244,37 @@ buttonsPvio800_3 = [
         text: ['OFF', 'Rx-Only', 'Wingman', 'CMDR'],
         apiSend: 'DLNK_MASTER_MODE',
     },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'scan-',
+        increment: -1,
+        maxStatus: 7,
+        overflow: false,
+        text: 'Scan\n-',
+        apiSend: 'SHKVAL_OPTICS_SCAN_RATE',
+        dynamicState: true,
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'scan+',
+        increment: 1,
+        maxStatus: 7,
+        overflow: false,
+        text: 'Scan\n+',
+        apiSend: 'SHKVAL_OPTICS_SCAN_RATE',
+        dynamicState: true,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'northSouth',
+        text: ['North', 'South'],
+        apiSend: 'PSHK7_NORTH_SOUTH',
+    },           
     
 ]
 
