@@ -1116,7 +1116,7 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'eject_sel',
+        nameId: 'eject-',
         overflow: false,
         increment: -1,
         maxStatus: 6,
@@ -1126,7 +1126,7 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'eject_sel',
+        nameId: 'eject+',
         overflow: false,
         maxStatus: 6,
         text: 'Eject+',
@@ -1141,9 +1141,47 @@ buttonsAux1 = [
         text: 'Voice\ntest',
         apiSend: 'VOICE_MSG_SYS_TEST',
     },     
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        stateToText: (state) => { 
+            var texts = [ 'S-8KOM', 'S-8TsM', 'S-13', 'S-24', 'S-8M HE', 'UPK-23', 'n/i', 'n/i', 'n/i', 'n/i', 'n/i', 'n/i' ] 
+            return texts[state]},
+        text: 'n/a',
+        nameId: 'balVal',
+        apiGet: 'PPK800_BAL_DATA',
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'bal-',
+        overflow: false,
+        increment: -1,
+        maxStatus: 10,
+        text: 'Bal-',
+        apiSend: 'PPK800_BAL_DATA',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'bal+',
+        overflow: false,
+        maxStatus: 10,
+        text: 'Bal+',
+        apiSend: 'PPK800_BAL_DATA',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'inuPower',
+        inversed: true,
+        text: ['off', 'INU'],
+        apiSend: 'PPK800_INU_POWER',
+    },      
 ]
-
-
 
 module.exports = {
     name: "ka-50",
