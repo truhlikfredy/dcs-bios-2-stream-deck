@@ -1225,8 +1225,54 @@ buttonsAux2 = [
         text: 'LWS\ntest',
         apiSend: 'LWS_TEST',
     },   
-             
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },                    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'u26pwr_cover',
+        text: 'Cover',
+        apiSend: 'UV26_POWER_COVER',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'u26test_cover',
+        text: 'Cover',
+        apiSend: 'UV26_TEST_COVER',
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'u26Power',
+        inversed: true,
+        text: ['OFF', 'U26-PWR'],
+        apiSend: 'UV26_POWER',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'u26test',
+        inversed: true,
+        text: ['OFF', 'TEST'],
+        apiSend: 'UV26_TEST',
+    },     
+    
 ]
+// UV26_TEST
 
 module.exports = {
     name: "ka-50",
