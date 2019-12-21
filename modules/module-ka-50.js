@@ -267,6 +267,80 @@ buttonsWallEl1 = [
 ]
 
 
+buttonsWallRadio = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'wall',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elec1',
+        text: 'Elect',
+        goTo: 'wall-electrical1',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'pumps',
+        text: 'Pumps',
+        goTo: 'wall-pumps',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'fuel',
+        text: 'Fuel',
+        goTo: 'wall-fuel',
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'spu9',
+        inversed: true,
+        text: ['OFF', 'IntCom'],
+        apiSend: 'COMM_INTERCOM_POWER',
+    },           
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'r828',
+        inversed: true,
+        text: ['OFF', 'VHI-1'],
+        apiSend: 'COMM_VHF1_POWER',
+    },           
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'r828',
+        inversed: true,
+        text: ['OFF', 'VHI-2'],
+        apiSend: 'COMM_VHF2_POWER',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'r828',
+        inversed: true,
+        text: ['OFF', 'TLK'],
+        apiSend: 'COMM_DATALINK_TLK_POWER',
+    },              
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'r828',
+        inversed: true,
+        text: ['OFF', 'Jam-TLK'],
+        apiSend: 'COMM_DATALINK_SA_TLF_POWER',
+    },              
+]
+
 buttonsWallPumps = [
     {   
         type: buttonLogic.types.textToggle,
@@ -1984,6 +2058,7 @@ module.exports = {
         { name: 'wall-electrical1', buttons: buttonsWallEl1},   
         { name: 'wall-pumps',       buttons: buttonsWallPumps},
         { name: 'wall-fuel',        buttons: buttonsWallFuel},        
+        { name: 'wall-radio',       buttons: buttonsWallRadio},
         { name: 'aux1',             buttons: buttonsAux1},
         { name: 'aux2',             buttons: buttonsAux2},
     ]
