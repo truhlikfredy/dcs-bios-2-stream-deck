@@ -59,14 +59,470 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'wall',
+        text: 'Wall\nfront',
+        goTo: 'wall',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'wallaft',
+        text: 'Wall\naft',
+        goTo: 'wall-aft',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'aux1',
         text: 'AUX',
         goTo: 'aux1',
     },
 ]
 
+buttonsWall = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'fire',
+        text: 'Fire',
+        goTo: 'wall-fire',
+    },
+    {   
+        type: buttonLogic.types.none,
+    },       
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'wallaft',
+        text: 'Wall\naft',
+        goTo: 'wall-aft',
+    },         
+    
 
-buttonHud = [
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elec1',
+        text: 'Elect',
+        goTo: 'wall-electrical1',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elPumps',
+        text: 'Pumps',
+        goTo: 'wall-pumps',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elFuel',
+        text: 'Fuel',
+        goTo: 'wall-fuel',
+    },
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },            
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elRadio',
+        text: 'Radio',
+        goTo: 'wall-radio',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elEject',
+        text: 'Eject',
+        goTo: 'wall-eject',
+    },    
+]
+
+
+buttonsWallEl1 = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'wall',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'grndcover',
+        text: 'Cover',
+        apiSend: 'ELEC_DC_GROUND_POWER_COVER',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'bat2cover',
+        text: 'Cover',
+        apiSend: 'ELEC_BATTERY_2_COVER',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'bat1cover',
+        text: 'Cover',
+        apiSend: 'ELEC_BATTERY_1_COVER',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'wall-pumps',
+        text: 'Pumps',
+        goTo: 'wall-pumps',
+    },
+ 
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'grndDCPowr',
+        inversed: true,
+        text: ['OFF', 'GND-DC'],
+        apiSend: 'ELEC_DC_GROUND_POWER',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'bat2',
+        inversed: true,
+        text: ['OFF', 'BAT2'],
+        apiSend: 'ELEC_BATTERY_2',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'bat1',
+        inversed: true,
+        text: ['OFF', 'BAT1'],
+        apiSend: 'ELEC_BATTERY_1',
+    },      
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elRadio',
+        text: 'Radio',
+        goTo: 'wall-radio',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'grndACPowr',
+        inversed: true,
+        text: ['OFF', 'GND-AC'],
+        apiSend: 'ELEC_AC_GROUND_POWER',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'leftAc',
+        inversed: true,
+        text: ['OFF', 'LEFT-AC'],
+        apiSend: 'ELEC_AC_L_GEN',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'rightAc',
+        inversed: true,
+        text: ['OFF', 'RIGHT-AC'],
+        apiSend: 'ELEC_AC_R_GEN',
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'inverter',
+        inversed: true,
+        maxStatus: 2,
+        text: ['Manual', 'OFF', 'Inverter'],
+        apiSend: 'ELEC_DC_AC',
+    },   
+    
+]
+
+
+buttonsWallPumps = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'wall',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elec1',
+        text: 'Elect',
+        goTo: 'wall-electrical1',
+    },     
+    {   
+        type: buttonLogic.types.none,
+    },        
+    {   
+        type: buttonLogic.types.none,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elFuel',
+        text: 'Fuel',
+        goTo: 'wall-fuel',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'pumpFwd',
+        inversed: true,
+        text: ['OFF', 'PUMP-FWD'],
+        apiSend: 'FUEL_FORWARD_PUMP_POWER',
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'pumpAft',
+        inversed: true,
+        text: ['OFF', 'PUMP-AFT'],
+        apiSend: 'FUEL_AFT_PUMP_POWER',
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'pumpInner',
+        inversed: true,
+        text: ['OFF', 'PUMP-INN'],
+        apiSend: 'FUEL_INNER_PUMP_POWER',
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'pumpOuter',
+        inversed: true,
+        text: ['OFF', 'PUMP-OUT'],
+        apiSend: 'FUEL_OUTER_PUMP_POWER',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'fuelMeter',
+        inversed: true,
+        text: ['OFF', 'Meter'],
+        apiSend: 'FUEL_METER_POWER',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elRadio',
+        text: 'Radio',
+        goTo: 'wall-radio',
+    },   
+    {   
+        type: buttonLogic.types.none,
+    }, 
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elEject',
+        text: 'Eject',
+        goTo: 'wall-eject',
+    },                            
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },     
+]
+
+buttonsWallFuel = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'wall',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elPumps',
+        text: 'Pumps',
+        goTo: 'wall-pumps',
+    },
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'wallaft',
+        text: 'Wall\naft',
+        goTo: 'wall-aft',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'leftCover',
+        text: 'Cover',
+        apiSend: 'FUEL_L_ENG_VLV_COVER',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'rightCover',
+        text: 'Cover',
+        apiSend: 'FUEL_R_ENG_VLV_COVER',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'apuCover',
+        text: 'Cover',
+        apiSend: 'FUEL_APU_VLV_COVER',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'xfeedCover',
+        text: 'Cover',
+        apiSend: 'FUEL_XFEED_VLV_COVER',
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'left',
+        inversed: true,
+        text: ['OFF', 'PUMP-LEFT'],
+        apiSend: 'FUEL_L_ENG_VLV',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'right',
+        inversed: true,
+        text: ['OFF', 'PUMP-RIGHT'],
+        apiSend: 'FUEL_R_ENG_VLV',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'right',
+        inversed: true,
+        text: ['OFF', 'PUMP-APU'],
+        apiSend: 'FUEL_APU_VLV',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'right',
+        inversed: true,
+        text: ['OFF', 'X-FEED'],
+        apiSend: 'FUEL_XFEED_VLV',
+    },   
+    
+]
+
+
+buttonsWallAft = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'wallaft',
+        text: 'Wall\nfront',
+        goTo: 'wall',
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'equip1',
+        text: 'Equip1',
+        goTo: 'wall-equip1',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'govenors',
+        text: 'Govern',
+        goTo: 'wall-governors',
+    },
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },   
+
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'equip2',
+        text: 'Equip2',
+        goTo: 'wall-equip2',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'lighting',
+        text: 'Lighting',
+        goTo: 'wall-lighting',
+    },    
+]
+
+buttonsHud = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
@@ -224,7 +680,7 @@ buttonHud = [
 ]
 
 
-buttonLand = [
+buttonsLand = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
@@ -1512,19 +1968,24 @@ buttonsAux2 = [
 module.exports = {
     name: "ka-50",
     namespaces: [
-        { name: 'default',  buttons: buttonsDefault},
-        { name: 'hud',      buttons: buttonHud},
-        { name: 'land',     buttons: buttonLand},
-        { name: 'weapons',  buttons: buttonWeapons},
-        { name: 'arbis',    buttons: buttonsArbis},
-        { name: 'pvi800-1', buttons: buttonsPvio800_1},
-        { name: 'pvi800-2', buttons: buttonsPvio800_2},
-        { name: 'pvi800-3', buttons: buttonsPvio800_3},
-        { name: 'ap',       buttons: buttonsAp},
-        { name: 'flare',    buttons: buttonsFlare},
-        { name: 'vhf1',     buttons: buttonsVhf1},
-        { name: 'aux1',     buttons: buttonsAux1},
-        { name: 'aux2',     buttons: buttonsAux2},
+        { name: 'default',          buttons: buttonsDefault},
+        { name: 'hud',              buttons: buttonsHud},
+        { name: 'land',             buttons: buttonsLand},
+        { name: 'weapons',          buttons: buttonWeapons},
+        { name: 'arbis',            buttons: buttonsArbis},
+        { name: 'pvi800-1',         buttons: buttonsPvio800_1},
+        { name: 'pvi800-2',         buttons: buttonsPvio800_2},
+        { name: 'pvi800-3',         buttons: buttonsPvio800_3},
+        { name: 'ap',               buttons: buttonsAp},
+        { name: 'flare',            buttons: buttonsFlare},
+        { name: 'vhf1',             buttons: buttonsVhf1},
+        { name: 'wall',             buttons: buttonsWall},
+        { name: 'wall-aft',         buttons: buttonsWallAft},   
+        { name: 'wall-electrical1', buttons: buttonsWallEl1},   
+        { name: 'wall-pumps',       buttons: buttonsWallPumps},
+        { name: 'wall-fuel',        buttons: buttonsWallFuel},        
+        { name: 'aux1',             buttons: buttonsAux1},
+        { name: 'aux2',             buttons: buttonsAux2},
     ]
 }
 
