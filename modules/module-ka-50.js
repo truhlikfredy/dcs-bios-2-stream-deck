@@ -338,7 +338,132 @@ buttonsWallRadio = [
         inversed: true,
         text: ['OFF', 'Jam-TLK'],
         apiSend: 'COMM_DATALINK_SA_TLF_POWER',
-    },              
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },           
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'eject',
+        text: 'Eject',
+        goTo: 'wall-eject',
+    },                 
+]
+
+
+buttonsWallEject = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'wall',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'radio',
+        text: 'Radio',
+        goTo: 'wall-radio',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elec1',
+        text: 'Elect',
+        goTo: 'wall-electrical1',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'pumps',
+        text: 'Pumps',
+        goTo: 'wall-pumps',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'fuel',
+        text: 'Fuel',
+        goTo: 'wall-fuel',
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'ejectCover',
+        text: 'Cover',
+        apiSend: 'EJECT_POWER_COVER',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'ejectCover',
+        text: 'Cover',
+        apiSend: 'EJECT_POWER_COVER',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'ejectCover',
+        text: 'Cover',
+        apiSend: 'EJECT_POWER_COVER',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'weaponCover',
+        text: 'Cover',
+        apiSend: 'WEAPONS_POWER_COVER',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'radio',
+        text: 'Radio',
+        goTo: 'wall-radio',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'eject1',
+        text: ['Eject1', 'OFF'],
+        apiSend: 'EJECT_POWER_1',
+    },           
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'eject2',
+        text: ['Eject2', 'OFF'],
+        apiSend: 'EJECT_POWER_2',
+    },           
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'eject3',
+        text: ['Eject3', 'OFF'],
+        apiSend: 'EJECT_POWER_3',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'wepPwr',
+        inversed: true,
+        text: ['OFF', 'Wep-PWR'],
+        apiSend: 'WEAPONS_POWER',
+    },               
 ]
 
 buttonsWallPumps = [
@@ -2059,6 +2184,7 @@ module.exports = {
         { name: 'wall-pumps',       buttons: buttonsWallPumps},
         { name: 'wall-fuel',        buttons: buttonsWallFuel},        
         { name: 'wall-radio',       buttons: buttonsWallRadio},
+        { name: 'wall-eject',       buttons: buttonsWallEject},
         { name: 'aux1',             buttons: buttonsAux1},
         { name: 'aux2',             buttons: buttonsAux2},
     ]
