@@ -336,8 +336,8 @@ buttonsWallRadio = [
         scheme: buttonLogic.colorScheme.switch,
         nameId: 'r828',
         inversed: true,
-        text: ['OFF', 'Jam-TLK'],
-        apiSend: 'COMM_DATALINK_SA_TLF_POWER',
+        text: ['OFF', 'VHF-TLK'],
+        apiSend: 'COMM_DATALINK_VHF_TLK_POWER',
     },  
     {   
         type: buttonLogic.types.none,
