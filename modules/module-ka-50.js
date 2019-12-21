@@ -10,6 +10,13 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'hud',
+        text: 'HUD',
+        goTo: 'hud',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'weapons',
         text: 'Weap',
         goTo: 'weapons',
@@ -58,6 +65,66 @@ buttonsDefault = [
     },
 ]
 
+
+buttonHud = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: true,
+        nameId: 'handle',
+        text: 'Filter',
+        apiSend: 'HUD_FILTER_HANDLE',
+        dynamicState: true,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'bright-',
+        increment: -4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'BR\n-',
+        apiSend: 'HUD_BRIGHTNESS',
+        dynamicState: true,
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'bright+',
+        increment: +4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'BR\n+',
+        apiSend: 'HUD_BRIGHTNESS',
+        dynamicState: true,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'mode',
+        maxStatus: 2,
+        inversed: true,
+        text: ['Night', 'Day', 'StandBy'],
+        apiSend: 'HUD_MODE',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        nameId: 'test',
+        text: 'Test',
+        apiSend: 'HUD_TEST',
+    },      
+]
 
 buttonWeapons = [
     {   
@@ -1278,6 +1345,7 @@ module.exports = {
     name: "ka-50",
     namespaces: [
         { name: 'default',  buttons: buttonsDefault},
+        { name: 'hud',      buttons: buttonHud},
         { name: 'weapons',  buttons: buttonWeapons},
         { name: 'arbis',    buttons: buttonsArbis},
         { name: 'pvi800-1', buttons: buttonsPvio800_1},
