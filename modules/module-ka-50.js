@@ -11,7 +11,7 @@ buttonsDefault = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'hud',
-        text: 'HUD\nTV',
+        text: 'HUD\nTV\nLandLight',
         goTo: 'hud',
     },
     {   
@@ -217,12 +217,82 @@ buttonHud = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        sendState: false,
-        nameId: 'test',
-        text: 'Test',
-        apiSend: 'HUD_TEST',
-    },      
+        nameId: 'land',
+        text: 'Landing\nlights',
+        goTo: 'land',
+    },    
 ]
+
+
+buttonLand = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'hud',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'landingLight',
+        inversed: true,
+        maxStatus: 2,
+        text: ['Retract', 'On', 'Extend'],
+        apiSend: 'LIGHT_LANDING_ON_RETR_OFF',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'mainBackup',
+        maxStatus: 1,
+        text: ['Main', 'Back'],
+        apiSend: 'LIGHT_LANDING_MAIN_BACKUP',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'declutter',
+        fontIndex: 4,
+        inversed: true,
+        maxStatus: 2,
+        text: ['Outer', 'Auto*', 'Inner'],
+        apiSend: 'ADF_NDB_MODE',
+    },      
+    {   
+        type: buttonLogic.types.none,
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'msgOff',
+        text: 'VMU\ncease',
+        apiSend: 'VOICE_MSG_OFF',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'msgRepeat',
+        text: 'VMU\nrepeat',
+        apiSend: 'VOICE_MSG_REPEAT',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'declutter',
+        fontIndex: 4,
+        inversed: true,
+        maxStatus: 1,
+        text: ['Emerg', 'Norm'],
+        apiSend: 'VOICE_MSG_EMER',
+    },      
+    
+     
+        
+]
+
 
 buttonWeapons = [
     {   
@@ -1437,13 +1507,14 @@ buttonsAux2 = [
     },     
     
 ]
-// UV26_TEST
+
 
 module.exports = {
     name: "ka-50",
     namespaces: [
         { name: 'default',  buttons: buttonsDefault},
         { name: 'hud',      buttons: buttonHud},
+        { name: 'land',     buttons: buttonLand},
         { name: 'weapons',  buttons: buttonWeapons},
         { name: 'arbis',    buttons: buttonsArbis},
         { name: 'pvi800-1', buttons: buttonsPvio800_1},
