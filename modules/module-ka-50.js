@@ -10,6 +10,13 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'overhead',
+        text: 'Overhead',
+        goTo: 'overhead',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'hud',
         text: 'HUD\nTV\nLandLight',
         goTo: 'hud',
@@ -70,6 +77,76 @@ buttonsDefault = [
         text: 'AUX',
         goTo: 'aux1',
     },
+]
+
+
+buttonsOverhead = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'wingTipLight',
+        inversed: true,
+        maxStatus: 3,
+        text: ['Wing-0%', 'Wing-10%', 'Wing-30%', 'Wing-100%'],
+        apiSend: 'OP_NAV_LIGHTS',
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'wiper',
+        inversed: true,
+        maxStatus: 3,
+        text: ['WiperOff', 'Wiper3', 'Wiper2', 'Wiper1'],
+        apiSend: 'OP_WINDSHIELD_WIPER',
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'sensorHeat',
+        inversed: true,
+        text: ['Off', 'SensHt'],
+        apiSend: 'OP_PITOT_PORT_HEAT',
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'sensorHeat',
+        inversed: true,
+        text: ['Off', 'PilotHt'],
+        apiSend: 'OP_PITOT_RAM_HEAT',
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'rotorDeice',
+        inversed: true,
+        text: ['Off', '!RotIce'],
+        apiSend: 'OP_ROTOR_DEICE',
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'engineDeIceDeDust',
+        inversed: true,
+        text: ['Off', 'EngIceDust'],
+        apiSend: 'OP_ENG_DEICE',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'pilotHeatTest',
+        text: 'PilotHt\nTest',
+        apiSend: 'OP_PITOT_HEAT_TEST',
+    },   
+ 
 ]
 
 buttonsWall = [
@@ -2440,6 +2517,7 @@ module.exports = {
     name: "ka-50",
     namespaces: [
         { name: 'default',               buttons: buttonsDefault},
+        { name: 'overhead',              buttons: buttonsOverhead},
         { name: 'hud',                   buttons: buttonsHud},
         { name: 'land',                  buttons: buttonsLand},
         { name: 'weapons',               buttons: buttonWeapons},
