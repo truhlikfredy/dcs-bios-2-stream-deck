@@ -56,6 +56,9 @@ module.exports = {
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
             ctx.fillStyle = button.state ? '#ffffff' : '#dddddd'
+            if (button.customFontColor !== undefined) {
+                ctx.fillStyle = button.customFontColor
+            }
             ctx.font = fonts[fontId].face
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
