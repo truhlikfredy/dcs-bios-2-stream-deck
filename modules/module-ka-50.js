@@ -2662,7 +2662,7 @@ module.exports = {
     name: "ka-50",
     namespaces: [
         { name: 'default',               buttons: buttonsDefault},
-        { name: 'overhead',              buttons: buttonsOverhead},
+        { name: 'hud',                   buttons: buttonsHud},
         { name: 'overhead',              buttons: buttonsOverhead},
         { name: 'datalink',              buttons: buttonsDatalink},
         { name: 'land',                  buttons: buttonsLand},
