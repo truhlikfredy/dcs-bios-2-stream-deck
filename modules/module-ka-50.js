@@ -10,16 +10,16 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
-        nameId: 'overhead',
-        text: 'Overhead',
-        goTo: 'overhead',
+        nameId: 'front',
+        text: 'Front\nLeft',
+        goTo: 'front',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
-        nameId: 'front',
-        text: 'Front',
-        goTo: 'front',
+        nameId: 'overhead',
+        text: 'Overhead\nFront ->',
+        goTo: 'overhead',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -409,7 +409,45 @@ buttonsOverhead = [
         nameId: 'pilotHeatTest',
         text: 'PilotHt\nTest',
         apiSend: 'OP_PITOT_HEAT_TEST',
-    },          
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },       
+    {   
+        type: buttonLogic.types.none,
+    },       
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'runningGasTemp',
+        text: 'Running\nGas\nTemp',
+        apiSend: 'ENG_RUNNING_EGT_TEST',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'stoppedGasTemp',
+        text: 'Stopped\nGas\nTemp',
+        apiSend: 'ENG_STOPPED_EGT_TEST',
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },       
+    {   
+        type: buttonLogic.types.none,
+    },       
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'fuelTest',
+        text: 'Fuel\nTest',
+        apiSend: 'FUEL_TEST',
+    },       
 ]
 
 
@@ -421,6 +459,19 @@ buttonsFront = [
         text: '<- Back',
         goTo: 'default',
     },   
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowButton,
+        sendState: false,
+        nameId: 'rotorRpm',
+        maxStatus: 0,
+        text: 'R RPM',
+        apiSend: 'SC_ROTOR_RPM_BTN',
+        apiGet: 'SC_ROTOR_RPM_LED',
+    },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -440,20 +491,10 @@ buttonsFront = [
     }, 
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.yellowButton,
-        sendState: false,
-        nameId: 'rotorRpm',
-        maxStatus: 0,
-        text: 'R RPM',
-        apiSend: 'SC_ROTOR_RPM_BTN',
-        apiGet: 'SC_ROTOR_RPM_LED',
-    },
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'gear',
-        text: ['Gear ^', 'Gear v'],
-        apiSend: 'GEAR_LEVER',
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'emergencyCover',
+        text: 'Cover\nv',
+        apiSend: 'GEAR_EMER_HYD_COVER',
     },  
     {   
         type: buttonLogic.types.textToggle,
@@ -481,20 +522,27 @@ buttonsFront = [
     },  
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
+        scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'runningGasTemp',
-        text: 'Running\nGas\nTemp',
-        apiSend: 'ENG_RUNNING_EGT_TEST',
-    },    
+        nameId: 'lwrReset',
+        text: 'LWR\nRESET',
+        apiSend: 'LWR_RESET',
+        apiGet: 'LWR_RESET',
+    },
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
-        sendState: false,
-        nameId: 'stoppedGasTemp',
-        text: 'Stopped\nGas\nTemp',
-        apiSend: 'ENG_STOPPED_EGT_TEST',
-    },                      
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'emergGearSelect',
+        text: ['MainG', 'EmerG' ],
+        apiSend: 'GEAR_EMER_HYD',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'gear',
+        text: ['Gear ^', 'Gear v'],
+        apiSend: 'GEAR_LEVER',
+    },      
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -518,17 +566,7 @@ buttonsFront = [
         text: ['LRange', 'LDesig'],
         apiSend: 'LASER_MODE',
     },  
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
-        sendState: false,
-        nameId: 'fuelTest',
-        text: 'Fuel\nTest',
-        apiSend: 'FUEL_TEST',
-    },                
+             
 ]
 
 
