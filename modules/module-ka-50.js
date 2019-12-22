@@ -148,7 +148,7 @@ buttonsCounter = [
         inversed: true,
         fontIndex: 4,
         maxStatus: 2,
-        text: ['Left', 'Both', 'Right'],
+        text: ['<-', 'Both', '->'],
         apiSend: 'UV26_DISPENSERS_SELECTOR',
     }, 
     {   
@@ -647,9 +647,6 @@ buttonsWall = [
     },  
  
     {   
-        type: buttonLogic.types.none,
-    },  
-    {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
@@ -663,6 +660,13 @@ buttonsWall = [
         text: 'LWS\nCounter',
         goTo: 'aux2',
     },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'lightBright',
+        text: 'Lights\nBrightness',
+        goTo: 'lights-bright',
+    },    
     
 ]
 
@@ -1684,6 +1688,121 @@ buttonsHud = [
 ]
 
 
+buttonsLightsBrightness = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'wall',
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },           
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },   
+
+
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'bbright+',
+        increment: +4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'Blue\nBright\n+',
+        apiSend: 'LIGHT_AUX_BRIGHTNESS',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'saibright+',
+        increment: +4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'SAI/ADI\nBright\n+',
+        apiSend: 'LIGHT_HSI_ADI_BRIGHTNESS',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'panelbright+',
+        increment: +4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'Panels\nBright\n+',
+        apiSend: 'LIGHT_COCKPIT_BRIGHTNESS',
+        dynamicState: true,
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },   
+    
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'govenorsLights',
+        text: 'Govern\nLights',
+        goTo: 'wall-governors-lights',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'bbright-',
+        increment: -4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'Blue\nBright\n-',
+        apiSend: 'LIGHT_AUX_BRIGHTNESS',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'saibright-',
+        increment: -4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'SAI/ADI\nBright\n-',
+        apiSend: 'LIGHT_HSI_ADI_BRIGHTNESS',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'panelbright-',
+        increment: -4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'Panels\nBright\n-',
+        apiSend: 'LIGHT_COCKPIT_BRIGHTNESS',
+        dynamicState: true,
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },       
+    
+]
+
 buttonsLand = [
     {   
         type: buttonLogic.types.textToggle,
@@ -1698,7 +1817,7 @@ buttonsLand = [
         nameId: 'landingLight',
         inversed: true,
         maxStatus: 2,
-        text: ['Retract', 'On', 'Extend'],
+        text: ['Retract', '---', 'Extend'],
         apiSend: 'LIGHT_LANDING_ON_RETR_OFF',
     },      
     {   
@@ -3019,6 +3138,7 @@ module.exports = {
         { name: 'wall-governors-lights', buttons: buttonsWallGovLights},        
         { name: 'aux1',                  buttons: buttonsAux1},
         { name: 'aux2',                  buttons: buttonsAux2},
+        { name: 'lights-bright',         buttons: buttonsLightsBrightness},
     ]
 }
 

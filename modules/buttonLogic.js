@@ -94,10 +94,10 @@ module.exports = {
         'greenStripeButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text) + 1
     
-            ctx.fillStyle = button.state ? '#004433' : '#99ffee'
+            ctx.fillStyle = button.state ? '#99ffee' : '#004433'
             ctx.fillRect(0, globals.deck.ICON_SIZE * 0.80, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
-            ctx.fillStyle = button.state ? '#777777' : '#eeeeee'
+            ctx.fillStyle = button.state ? '#eeeeee' : '#777777'
             ctx.font = fonts[fontId].face
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
@@ -107,10 +107,10 @@ module.exports = {
         'yellowStripeButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
-            ctx.fillStyle = button.state ? '#ffff88' : '#dddd00'
+            ctx.fillStyle = button.state ? '#ffff88' : '#444400'
             ctx.fillRect(0, globals.deck.ICON_SIZE * 0.75, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
-            ctx.fillStyle = button.state ? '#ffffff' : '#eeeeee'
+            ctx.fillStyle = button.state ? '#ffffff' : '#777777'
             ctx.font = fonts[fontId].face
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
