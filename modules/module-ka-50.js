@@ -60,15 +60,8 @@ buttonsDefault = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         nameId: 'wall',
-        text: 'Wall\nfront',
+        text: 'Wall',
         goTo: 'wall',
-    },    
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'wallaft',
-        text: 'Wall\naft',
-        goTo: 'wall-aft',
     },    
     {   
         type: buttonLogic.types.textToggle,
@@ -101,17 +94,10 @@ buttonsWall = [
         type: buttonLogic.types.none,
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'wallaft',
-        text: 'Wall\naft',
-        goTo: 'wall-aft',
-    },         
-    
-
-    {   
         type: buttonLogic.types.none,
     },  
+    
+
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
@@ -134,11 +120,19 @@ buttonsWall = [
         goTo: 'wall-fuel',
     },
     {   
-        type: buttonLogic.types.none,
-    },    
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'equip',
+        text: 'Equip',
+        goTo: 'wall-equip',
+    },
     {   
-        type: buttonLogic.types.none,
-    },            
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'govenorsLights',
+        text: 'Govern\nLights',
+        goTo: 'wall-governors-lights',
+    },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
@@ -155,6 +149,105 @@ buttonsWall = [
     },    
 ]
 
+
+buttonsWallEquip = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'wall',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'elFuel',
+        text: 'Fuel',
+        goTo: 'wall-fuel',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'hydrcover',
+        text: 'Cover',
+        apiSend: 'HYD_POWER_COVER',
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'govenorsLights',
+        text: 'Govern\nLights',
+        goTo: 'wall-governors-lights',
+    },
+        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'weaponCover',
+        text: 'Cover',
+        apiSend: 'WEAPONS_POWER_COVER',
+    },            
+    {   
+        type: buttonLogic.types.none,
+    },  
+    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'hydrPwr',
+        inversed: true,
+        text: ['HydPwr', 'OFF'],
+        apiSend: 'HYD_POWER',
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'hydrPwr',
+        inversed: true,
+        text: ['OFF', 'TgrNav'],
+        apiSend: 'NAV_POWER',
+    },        
+    {   
+        type: buttonLogic.types.none,
+    },   
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'wepPwr',
+        inversed: true,
+        text: ['OFF', 'Wep-PWR'],
+        apiSend: 'WEAPONS_POWER',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'antiColBeacon',
+        inversed: true,
+        text: ['OFF', '!ColBeac'],
+        apiSend: 'LIGHT_BEACON',
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'inuAlignment',
+        maxStatus: 2,
+        inversed: false,
+        text: ['Mag', 'Gyro', 'Manual'],
+        apiSend: 'NAV_GYRO_MAG_MAN_HDG',
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'standBy',
+        inversed: true,
+        text: ['OFF', 'SAI'],
+        apiSend: 'SAI_POWER',
+    },        
+]
 
 buttonsWallEl1 = [
     {   
@@ -550,11 +643,7 @@ buttonsWallEject = [
         apiSend: 'EJECT_POWER_COVER',
     },      
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'weaponCover',
-        text: 'Cover',
-        apiSend: 'WEAPONS_POWER_COVER',
+        type: buttonLogic.types.none,
     },      
     {   
         type: buttonLogic.types.textToggle,
@@ -585,12 +674,7 @@ buttonsWallEject = [
         apiSend: 'EJECT_POWER_3',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'wepPwr',
-        inversed: true,
-        text: ['OFF', 'Wep-PWR'],
-        apiSend: 'WEAPONS_POWER',
+        type: buttonLogic.types.none,
     },               
 ]
 
@@ -711,10 +795,10 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'wallaft',
-        text: 'Wall\naft',
-        goTo: 'wall-aft',
-    },    
+        nameId: 'equip',
+        text: 'Equip',
+        goTo: 'wall-equip',
+    },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -781,73 +865,6 @@ buttonsWallFuel = [
     
 ]
 
-
-buttonsWallAft = [
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'back',
-        text: '<- Back',
-        goTo: 'default',
-    },   
-    {   
-        type: buttonLogic.types.none,
-    },    
-    {   
-        type: buttonLogic.types.none,
-    },    
-    {   
-        type: buttonLogic.types.none,
-    },    
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'wallaft',
-        text: 'Wall\nfront',
-        goTo: 'wall',
-    },       
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'equip1',
-        text: 'Equip1',
-        goTo: 'wall-equip1',
-    },
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'govenors',
-        text: 'Govern',
-        goTo: 'wall-governors',
-    },
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.none,
-    },   
-
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'equip2',
-        text: 'Equip2',
-        goTo: 'wall-equip2',
-    },
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'lighting',
-        text: 'Lighting',
-        goTo: 'wall-lighting',
-    },    
-]
 
 buttonsHud = [
     {   
@@ -2307,13 +2324,13 @@ module.exports = {
         { name: 'flare',            buttons: buttonsFlare},
         { name: 'vhf1',             buttons: buttonsVhf1},
         { name: 'wall',             buttons: buttonsWall},
-        { name: 'wall-aft',         buttons: buttonsWallAft},   
         { name: 'wall-electrical1', buttons: buttonsWallEl1},   
         { name: 'wall-pumps',       buttons: buttonsWallPumps},
         { name: 'wall-fuel',        buttons: buttonsWallFuel},        
         { name: 'wall-radio',       buttons: buttonsWallRadio},
         { name: 'wall-eject',       buttons: buttonsWallEject},
         { name: 'wall-fire',        buttons: buttonsWallFire},
+        { name: 'wall-equip',       buttons: buttonsWallEquip},
         { name: 'aux1',             buttons: buttonsAux1},
         { name: 'aux2',             buttons: buttonsAux2},
     ]
