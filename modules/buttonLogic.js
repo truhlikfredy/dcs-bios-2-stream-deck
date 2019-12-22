@@ -78,6 +78,19 @@ module.exports = {
             ctx.fillText(button.text, centerX, centerY)        
         },
 
+        'greenButton': (button, ctx) => {
+            const fontId = graphics.detectFontSize(button, button.text)
+    
+            ctx.fillStyle = button.state ? '#20eec0' : '#009040'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+            
+            ctx.fillStyle = button.state ? '#ffffff' : '#10DEB2'
+            ctx.font = fonts[fontId].face
+    
+            const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.fillText(button.text, centerX, centerY)        
+        },
+        
         'greenStripeButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text) + 1
     
