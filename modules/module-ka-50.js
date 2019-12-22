@@ -10,6 +10,13 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'overhead',
+        text: 'Overhead',
+        goTo: 'overhead',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'datalink',
         text: 'Datalink',
         goTo: 'datalink',
@@ -17,10 +24,10 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
-        nameId: 'overhead',
-        text: 'Overhead',
-        goTo: 'overhead',
-    },
+        nameId: 'counter',
+        text: 'Counter\nmeasures',
+        goTo: 'counter',
+    },        
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -77,15 +84,17 @@ buttonsDefault = [
         text: 'Wall',
         goTo: 'wall',
     },    
+]
+
+buttonsCounter = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
-        nameId: 'aux1',
-        text: 'AUX',
-        goTo: 'aux1',
-    },
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },     
 ]
-
 
 buttonsDatalink = [
     {   
@@ -368,7 +377,26 @@ buttonsWall = [
         nameId: 'elEject',
         text: 'Eject',
         goTo: 'wall-eject',
-    },    
+    },  
+ 
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux1',
+        text: 'AUX',
+        goTo: 'aux1',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux2',
+        text: 'LWS\nCounter',
+        goTo: 'aux2',
+    },
+    
 ]
 
 
@@ -2482,7 +2510,7 @@ buttonsAux1 = [
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
-        goTo: 'default',
+        goTo: 'wall',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -2603,7 +2631,7 @@ buttonsAux2 = [
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
-        goTo: 'aux1',
+        goTo: 'wall',
     },
     {   
         type: buttonLogic.types.textToggle,
@@ -2635,8 +2663,12 @@ buttonsAux2 = [
         type: buttonLogic.types.none,
     },   
     {   
-        type: buttonLogic.types.none,
-    },                    
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux1',
+        text: 'AUX',
+        goTo: 'aux1',
+    },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -2687,6 +2719,7 @@ module.exports = {
         { name: 'hud',                   buttons: buttonsHud},
         { name: 'overhead',              buttons: buttonsOverhead},
         { name: 'datalink',              buttons: buttonsDatalink},
+        { name: 'counter',               buttons: buttonsCounter},
         { name: 'land',                  buttons: buttonsLand},
         { name: 'weapons',               buttons: buttonsWeapons},
         { name: 'arbis',                 buttons: buttonsArbis},
