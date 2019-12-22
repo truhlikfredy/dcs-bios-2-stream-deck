@@ -22,7 +22,20 @@ module.exports = {
             const {centerX, centerY} = graphics.centerImage(button.state.toString(), fontId)
             ctx.fillText(button.state.toString(), centerX, centerY)        
         },
-        
+
+        'gotoButton': (button, ctx) => {
+            const fontId = graphics.detectFontSize(button, button.text)
+    
+            ctx.fillStyle = '#300550'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+            
+            ctx.fillStyle = '#dddddd'
+            ctx.font = fonts[fontId].face
+    
+            const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.fillText(button.text, centerX, centerY)        
+        },
+
         'blackButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
