@@ -811,13 +811,6 @@ buttonsWallFire = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
-        nameId: 'radio',
-        text: 'Radio',
-        goTo: 'wall-radio',
-    },     
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
@@ -836,6 +829,13 @@ buttonsWallFire = [
         text: 'Fuel',
         goTo: 'wall-fuel',
     },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'equip',
+        text: 'Equip',
+        goTo: 'wall-equip',
+    },     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
@@ -970,21 +970,21 @@ buttonsWallEject = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'ejectCover',
+        nameId: 'ejectCover1',
         text: 'Cover',
         apiSend: 'EJECT_POWER_COVER',
     },      
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'ejectCover',
+        nameId: 'ejectCover2',
         text: 'Cover',
         apiSend: 'EJECT_POWER_COVER',
     },      
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'ejectCover',
+        nameId: 'ejectCover3',
         text: 'Cover',
         apiSend: 'EJECT_POWER_COVER',
     },      
@@ -1040,17 +1040,25 @@ buttonsWallPumps = [
         goTo: 'wall-electrical1',
     },     
     {   
-        type: buttonLogic.types.none,
-    },        
-    {   
-        type: buttonLogic.types.none,
-    },        
-    {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elFuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'equip',
+        text: 'Equip',
+        goTo: 'wall-equip',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'gov-lights',
+        text: 'Govern\nLights',
+        goTo: 'wall-governors-lights',
     },    
     {   
         type: buttonLogic.types.textToggle,
@@ -1128,16 +1136,17 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'elec1',
+        text: 'Elect',
+        goTo: 'wall-electrical1',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elPumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },
-    {   
-        type: buttonLogic.types.none,
-    },    
-    {   
-        type: buttonLogic.types.none,
-    },    
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -1145,6 +1154,13 @@ buttonsWallFuel = [
         text: 'Equip',
         goTo: 'wall-equip',
     },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'gov-lights',
+        text: 'Govern\nLights',
+        goTo: 'wall-governors-lights',
+    },    
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -1440,7 +1456,7 @@ buttonsLand = [
 ]
 
 
-buttonWeapons = [
+buttonsWeapons = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -2666,7 +2682,7 @@ module.exports = {
         { name: 'overhead',              buttons: buttonsOverhead},
         { name: 'datalink',              buttons: buttonsDatalink},
         { name: 'land',                  buttons: buttonsLand},
-        { name: 'weapons',               buttons: buttonWeapons},
+        { name: 'weapons',               buttons: buttonsWeapons},
         { name: 'arbis',                 buttons: buttonsArbis},
         { name: 'pvi800-1',              buttons: buttonsPvio800_1},
         { name: 'pvi800-2',              buttons: buttonsPvio800_2},
