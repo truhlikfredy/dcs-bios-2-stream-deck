@@ -10,6 +10,13 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'datalink',
+        text: 'Datalink',
+        goTo: 'datalink',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'overhead',
         text: 'Overhead',
         goTo: 'overhead',
@@ -79,6 +86,144 @@ buttonsDefault = [
     },
 ]
 
+
+buttonsDatalink = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'vehicle',
+        text: '1\nVehi',
+        maxStatus: 0,
+        apiSend: 'DLNK_TARGET_VEHICLE_BTN',
+        apiGet: 'DLNK_TARGET_VEHICLE_LED',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'aaa',
+        text: '2\nAAA',
+        maxStatus: 0,
+        apiSend: 'DLNK_TARGET_SAM_BTN',
+        apiGet: 'DLNK_TARGET_SAM_LED',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'other',
+        text: '3\nOther',
+        maxStatus: 0,
+        apiSend: 'DLNK_TARGET_OTHER_BTN',
+        apiGet: 'DLNK_TARGET_OTHER_LED',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'initIngress',
+        text: 'Ingress',
+        maxStatus: 0,
+        apiSend: 'DLNK_TARGET_POINT_LED',
+        apiGet: 'DLNK_TARGET_POINT_BTN',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: '1',
+        text: 'Wing\n1',
+        maxStatus: 0,
+        apiSend: 'DLNK_WINGMAN_1_BTN',
+        apiGet: 'DLNK_WINGMAN_1_LED'
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: '2',
+        text: 'Wing\n2',
+        maxStatus: 0,
+        apiSend: 'DLNK_WINGMAN_2_BTN',
+        apiGet: 'DLNK_WINGMAN_2_LED'
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: '3',
+        text: 'Wing\n3',
+        maxStatus: 0,
+        apiSend: 'DLNK_WINGMAN_3_BTN',
+        apiGet: 'DLNK_WINGMAN_3_LED'
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: '4',
+        text: 'Wing\n4',
+        maxStatus: 0,
+        apiSend: 'DLNK_WINGMAN_4_BTN',
+        apiGet: 'DLNK_WINGMAN_4_LED'
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'all',
+        text: 'Wing\nAll',
+        maxStatus: 0,
+        apiSend: 'DLNK_WINGMAN_ALL_BTN',
+        apiGet: 'DLNK_WINGMAN_ALL_LED'
+    },      
+    {   
+        type: buttonLogic.types.none,
+    },         
+    {   
+        type: buttonLogic.types.none,
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowStripeButton,
+        sendState: false,
+        nameId: 'erase',
+        text: 'Erase',
+        maxStatus: 0,
+        apiSend: 'DLNK_ERASE_BTN',
+        apiGet: 'DLNK_ERASE_LED'
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowStripeButton,
+        sendState: false,
+        nameId: 'ingressToTrg',
+        text: 'Ingress\nTo',
+        maxStatus: 0,
+        apiSend: 'DLNK_ESCAPE_BTN',
+        apiGet: 'DLNK_ESCAPE_LED'
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowStripeButton,
+        sendState: false,
+        nameId: 'sendMem',
+        text: 'Send\nMemory',
+        maxStatus: 0,
+        apiSend: 'DLNK_SEND_BTN',
+        apiGet: 'DLNK_SEND_LED'
+    },  
+    
+    
+]
 
 buttonsOverhead = [
     {   
@@ -2518,7 +2663,8 @@ module.exports = {
     namespaces: [
         { name: 'default',               buttons: buttonsDefault},
         { name: 'overhead',              buttons: buttonsOverhead},
-        { name: 'hud',                   buttons: buttonsHud},
+        { name: 'overhead',              buttons: buttonsOverhead},
+        { name: 'datalink',              buttons: buttonsDatalink},
         { name: 'land',                  buttons: buttonsLand},
         { name: 'weapons',               buttons: buttonWeapons},
         { name: 'arbis',                 buttons: buttonsArbis},
