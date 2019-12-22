@@ -17,6 +17,13 @@ buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'front',
+        text: 'Front',
+        goTo: 'front',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'datalink',
         text: 'Datalink',
         goTo: 'datalink',
@@ -402,9 +409,128 @@ buttonsOverhead = [
         nameId: 'pilotHeatTest',
         text: 'PilotHt\nTest',
         apiSend: 'OP_PITOT_HEAT_TEST',
-    },   
- 
+    },          
 ]
+
+
+buttonsFront = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'lampTest',
+        text: 'Lamp\nTest',
+        apiSend: 'SC_LAMPS_TEST',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.redButton,
+        sendState: false,
+        nameId: 'master',
+        text: 'MASTER\nCAUTION',
+        apiSend: 'SC_MASTER_CAUTION_BTN',
+        apiGet: 'SC_MASTER_CAUTION_LED',
+    }, 
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowButton,
+        sendState: false,
+        nameId: 'rotorRpm',
+        maxStatus: 0,
+        text: 'R RPM',
+        apiSend: 'SC_ROTOR_RPM_BTN',
+        apiGet: 'SC_ROTOR_RPM_LED',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'gear',
+        text: ['Gear ^', 'Gear v'],
+        apiSend: 'GEAR_LEVER',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenButton,
+        sendState: false,
+        nameId: 'leftDown',
+        text: 'Left\nDown',
+        apiGet: 'GEAR_L_MAIN_DOWN',
+    },         
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenButton,
+        sendState: false,
+        nameId: 'noseDown',
+        text: 'Nose\nDown',
+        apiGet: 'GEAR_NOSE_DOWN',
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenButton,
+        sendState: false,
+        nameId: 'rightDown',
+        text: 'Right\nDown',
+        apiGet: 'GEAR_R_MAIN_DOWN',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'runningGasTemp',
+        text: 'Running\nGas\nTemp',
+        apiSend: 'ENG_RUNNING_EGT_TEST',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'stoppedGasTemp',
+        text: 'Stopped\nGas\nTemp',
+        apiSend: 'ENG_STOPPED_EGT_TEST',
+    },                      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'laserReset',
+        text: 'Laser\nReset',
+        apiSend: 'LASER_RESET',
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'laserCover',
+        text: 'Cover\n->',
+        apiSend: 'LASER_MODE_COVER',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'laserMode',
+        inversed: true,
+        text: ['LRange', 'LDesig'],
+        apiSend: 'LASER_MODE',
+    },  
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        sendState: false,
+        nameId: 'fuelTest',
+        text: 'Fuel\nTest',
+        apiSend: 'FUEL_TEST',
+    },                
+]
+
 
 buttonsWall = [
     {   
@@ -601,6 +727,7 @@ buttonsWallEquip = [
         apiSend: 'SAI_POWER',
     },        
 ]
+
 
 buttonsWallEl1 = [
     {   
@@ -832,6 +959,7 @@ buttonsWallGovLights = [
     },      
 ]
 
+
 buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
@@ -1058,6 +1186,7 @@ buttonsWallFire = [
     },         
          
 ]
+
 
 buttonsWallEject = [
     {   
@@ -2829,6 +2958,7 @@ module.exports = {
         { name: 'default',               buttons: buttonsDefault},
         { name: 'hud',                   buttons: buttonsHud},
         { name: 'overhead',              buttons: buttonsOverhead},
+        { name: 'front',                 buttons: buttonsFront},
         { name: 'datalink',              buttons: buttonsDatalink},
         { name: 'counter',               buttons: buttonsCounter},
         { name: 'land',                  buttons: buttonsLand},
