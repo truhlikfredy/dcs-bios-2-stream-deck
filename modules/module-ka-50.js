@@ -3,12 +3,6 @@ const buttonLogic = require('./buttonLogic.js')
 buttonsDefault = [
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'ka-50',
-        text: 'DCS\nKA-50',
-    },       
-    {   
-        type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'front',
         text: 'Front\nLeft',
@@ -105,8 +99,122 @@ buttonsDefault = [
         text: 'Targeting',
         goTo: 'targeting',
     },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'engine',
+        text: 'Engine\nAPU',
+        goTo: 'engine',
+    },        
 ]
 
+
+buttonsEngineApu = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    }, 
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'startApuEngine',
+        sendState: false,
+        maxStatus: 0,
+        text: 'Start',
+        apiSend: 'ENG_START',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'startIrq',
+        sendState: false,
+        maxStatus: 0,
+        text: 'Start\nAbort',
+        apiSend: 'ENG_STOP',
+    },            
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'apuShutdown',
+        sendState: false,
+        maxStatus: 0,
+        text: 'APU\nSTOP',
+        apiSend: 'ENG_APU_STOP',
+    },   
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenButton,
+        nameId: 'fuelOpen',
+        sendState: false,
+        text: 'Fuel\nOpen',
+        apiGet: 'APU_FUEL_VLV_OPEN',
+    }, 
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenButton,
+        nameId: 'oilPresure',
+        sendState: false,
+        text: 'Oil\nPresure',
+        apiGet: 'APU_OIL_PRESS',
+    }, 
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowButton,
+        nameId: 'valveOpen',
+        sendState: false,
+        text: 'Valve\nOpen',
+        apiGet: 'ENG_START_VLV_OPEN',
+    }, 
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'startMode',
+        text: ['Startup', 'Crank', 'FalseS'],
+        apiSend: 'ENG_STARTUP_MODE',
+    },                
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'tgApuLeftRight',
+        maxStatus: 3,
+        inversed: true,
+        text: ['APU', 'Left ENG', 'Right ENG', 'Turbo Gear'],
+        apiSend: 'ENG_SELECTOR',
+    },                
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenButton,
+        nameId: 'rpmAbort',
+        sendState: false,
+        text: 'RPM\nAbort',
+        apiGet: 'APU_STOP_RPM',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenButton,
+        nameId: 'Started',
+        sendState: false,
+        text: 'Started',
+        apiGet: 'APU_OPER',
+    },     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        nameId: 'apuTemp',
+        stateToText: (state) => Math.round(state / 72.81667),
+        text: 'n/a',
+        apiGet: 'APU_TEMP',
+        dynamicState: true,
+    },       
+]
 
 buttonsTargeting = [
     {   
@@ -769,7 +877,7 @@ buttonsOverhead = [
         scheme: buttonLogic.colorScheme.switch,
         nameId: 'engineDeIceDeDust',
         inversed: true,
-        text: ['Off', 'EngIceDust'],
+        text: ['!Dusting', '!Icing'],
         apiSend: 'OP_ENG_DEICE',
     },    
     {   
@@ -1889,7 +1997,7 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'right',
+        nameId: 'apu',
         inversed: true,
         text: ['OFF', 'PUMP-APU'],
         apiSend: 'FUEL_APU_VLV',
@@ -1897,7 +2005,7 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'right',
+        nameId: 'xfeed',
         inversed: true,
         text: ['OFF', 'X-FEED'],
         apiSend: 'FUEL_XFEED_VLV',
@@ -3567,6 +3675,7 @@ module.exports = {
         { name: 'vhf2',                  buttons: buttonsVhf2},
         { name: 'vhf2freq',              buttons: buttonsVhf2freq},
         { name: 'targeting',             buttons: buttonsTargeting},
+        { name: 'engine',                buttons: buttonsEngineApu},
         
     ]
 }
