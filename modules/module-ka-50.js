@@ -97,9 +97,134 @@ buttonsDefault = [
         nameId: 'vhf2',
         text: 'VHF2\nR800L1',
         goTo: 'vhf2',
-    },
-    
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'targeting',
+        text: 'Targeting',
+        goTo: 'targeting',
+    },    
 ]
+
+
+buttonsTargeting = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'train',
+        inversed: true,
+        text: ['OFF', 'Train'],
+        apiSend: 'WEAPONS_TRAINING_MODE',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'autoturn',
+        text: 'Auto\nTurn',
+        maxStatus: 0,
+        apiSend: 'WEAPONS_AUTO_TURN_BTN',
+        apiGet: 'WEAPONS_AUTO_TURN_LED',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'airho',
+        text: 'Air\nH/O',
+        maxStatus: 0,
+        apiSend: 'WEAPONS_FORWARD_HEMI_TARGET_BTN',
+        apiGet: 'WEAPONS_FORWARD_HEMI_TARGET_LED',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'train',
+        maxStatus: 4,
+        text: ['Movable', 'Fixed', 'ManBackup', 'Navigation', 'Failure'],
+        apiSend: 'WEAPONS_MODE',
+    },          
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'air',
+        text: 'Air',
+        maxStatus: 0,
+        apiSend: 'WEAPONS_AIRBORNE_TARGET_BTN',
+        apiGet: 'WEAPONS_AIRBORNE_TARGET_LED',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'gndMovable',
+        text: 'Mov\nGND',
+        maxStatus: 0,
+        apiSend: 'WEAPONS_GROUND_TARGET_BTN',
+        apiGet: 'WEAPONS_GROUND_TARGET_LED',
+    },    
+    {   
+        type: buttonLogic.types.none,
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'train',
+        inversed: true,
+        text: ['OFF', 'K041 ON'],
+        apiSend: 'K041_POWER',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'hms',
+        inversed: true,
+        text: ['OFF', 'HMS'],
+        apiSend: 'HMS_POWER',
+    },                     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'autoGunSight',
+        inversed: true,
+        text: ['GunSight', 'AutoTrack'],
+        apiSend: 'WEAPONS_AUTOTRACK_GUNSIGHT',
+    },                     
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'laser',
+        inversed: true,
+        text: ['OFF', 'Laser'],
+        apiSend: 'LASER_STANDBY',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.greenStripeButton,
+        sendState: false,
+        nameId: 'reset',
+        text: 'Reset',
+        maxStatus: 0,
+        apiSend: 'WEAPONS_TARGET_RESET_BTN',
+        apiGet: 'WEAPONS_TARGET_RESET_LED',
+    },                           
+]
+
 
 buttonsVhf2 = [
     {   
@@ -3428,6 +3553,7 @@ module.exports = {
         { name: 'lights-bright',         buttons: buttonsLightsBrightness},
         { name: 'vhf2',                  buttons: buttonsVhf2},
         { name: 'vhf2freq',              buttons: buttonsVhf2freq},
+        { name: 'targeting',             buttons: buttonsTargeting},
         
     ]
 }
