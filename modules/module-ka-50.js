@@ -1530,7 +1530,7 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'r828',
+        nameId: 'vhi1',
         inversed: true,
         text: ['OFF', 'VHI-1'],
         apiSend: 'COMM_VHF1_POWER',
@@ -1538,7 +1538,7 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'r828',
+        nameId: 'vhi2',
         inversed: true,
         text: ['OFF', 'VHI-2'],
         apiSend: 'COMM_VHF2_POWER',
@@ -1546,7 +1546,7 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'r828',
+        nameId: 'tlk',
         inversed: true,
         text: ['OFF', 'TLK'],
         apiSend: 'COMM_DATALINK_TLK_POWER',
@@ -1554,7 +1554,7 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'r828',
+        nameId: 'vhftlk',
         inversed: true,
         text: ['OFF', 'VHF-TLK'],
         apiSend: 'COMM_DATALINK_VHF_TLK_POWER',
