@@ -283,8 +283,14 @@ buttonsVhf2 = [
         type: buttonLogic.types.none,
     },   
     {   
-        type: buttonLogic.types.none,
-    }, 
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'radioSource',
+        inversed: true,
+        maxStatus: 3,
+        text: ['VHF-2', 'VHF-1', 'SW', 'G-Intercom'],
+        apiSend: 'RADIO_SELECTOR',
+    },     
     
     {   
         type: buttonLogic.types.textToggle,
