@@ -52,7 +52,7 @@ function mapButtons(namespaceName, button, i) {
     if (button.apiGet !== undefined) {
         // console.log('mapped', i, 'to', button.apiGet)
         api.on(button.apiGet, (value) => {
-            console.log('got api ', button.apiGet, 'button', i, 'value', value)
+            // console.log('got api', button.apiGet, 'button', i, 'value', value)
 
             button.state = value
 
