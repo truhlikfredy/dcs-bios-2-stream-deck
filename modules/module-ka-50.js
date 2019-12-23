@@ -176,6 +176,7 @@ buttonsEngineApu = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
         nameId: 'startMode',
+        maxStatus: 2,
         text: ['Startup', 'Crank', 'FalseS'],
         apiSend: 'ENG_STARTUP_MODE',
     },                
@@ -3124,7 +3125,14 @@ buttonsAp = [
         apiGet: 'AP_PITCH_HOLD_LED',
     },
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowButton,
+        sendState: false,
+        nameId: 'rotorRpm',
+        maxStatus: 0,
+        text: 'R RPM',
+        apiSend: 'SC_ROTOR_RPM_BTN',
+        apiGet: 'SC_ROTOR_RPM_LED',
     },
     {   
         type: buttonLogic.types.textToggle,
