@@ -652,7 +652,7 @@ buttonsCounter = [
         nameId: 'progCount',
         inversed: true,
         fontIndex: 4,
-        text: ['Prog', 'Count'],
+        text: ['Count', 'Prog'],
         apiSend: 'UV26_MODE',
     },       
     {   
