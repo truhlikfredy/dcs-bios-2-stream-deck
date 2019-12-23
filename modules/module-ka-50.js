@@ -628,7 +628,7 @@ buttonsWall = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'govenorsLights',
-        text: 'Govern\nLights',
+        text: 'Govern',
         goTo: 'wall-governors-lights',
     },
     {   
@@ -664,7 +664,7 @@ buttonsWall = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
-        text: 'Lights\nBrightness',
+        text: 'Lights',
         goTo: 'lights-bright',
     },    
     
@@ -700,7 +700,7 @@ buttonsWallEquip = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'govenorsLights',
-        text: 'Govern\nLights',
+        text: 'Govern',
         goTo: 'wall-governors-lights',
     },
 
@@ -732,8 +732,12 @@ buttonsWallEquip = [
         apiSend: 'NAV_POWER',
     },        
     {   
-        type: buttonLogic.types.none,
-    },   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'lightBright',
+        text: 'Lights',
+        goTo: 'lights-bright',
+    },  
 
     {   
         type: buttonLogic.types.textToggle,
@@ -768,6 +772,14 @@ buttonsWallEquip = [
         text: ['OFF', 'SAI'],
         apiSend: 'SAI_POWER',
     },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux',
+        text: 'Aux',
+        goTo: 'aux1',
+    },  
+    
 ]
 
 
@@ -882,7 +894,7 @@ buttonsWallEl1 = [
 ]
 
 
-buttonsWallGovLights = [
+buttonsWallGovernors = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -958,47 +970,36 @@ buttonsWallGovLights = [
         text: ['PT-1 Test', 'Operatio', 'PT-2 Test'],
         apiSend: 'ENG_EEG_PT1_OPER_PT2',
     },  
+
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'rotor',
-        inversed: true,
-        text: ['OFF', 'Rotor' ],
-        apiSend: 'LIGHT_ROTOR_TIP',
-    },       
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'formation',
-        inversed: true,
-        maxStatus: 3,
-        text: ['Frm0%', 'Frm10%', 'Frm30%', 'Frm100%'],
-        apiSend: 'LIGHT_FORMATION',
+        type: buttonLogic.types.none,
     },   
+
+    {   
+        type: buttonLogic.types.none,
+    },           
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'saiAdi',
-        inversed: true,
-        text: ['OFF', 'SAI+ADI' ],
-        apiSend: 'LIGHT_ADI_SAI',
-    },          
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'nightVission',
-        inversed: true,
-        text: ['OFF', 'NVG' ],
-        apiSend: 'LIGHT_COCKPIT_NVG',
-    },          
-    {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.switch,
-        nameId: 'cockpit',
-        inversed: true,
-        text: ['OFF', 'Cockpit' ],
-        apiSend: 'LIGHT_COCKPIT',
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'lightBright',
+        text: 'Lights',
+        goTo: 'lights-bright',
     },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux1',
+        text: 'AUX',
+        goTo: 'aux1',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux2',
+        text: 'LWS\nCounter',
+        goTo: 'aux2',
+    },     
+    
 ]
 
 
@@ -1359,7 +1360,7 @@ buttonsWallPumps = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'gov-lights',
-        text: 'Govern\nLights',
+        text: 'Govern',
         goTo: 'wall-governors-lights',
     },    
     {   
@@ -1460,7 +1461,7 @@ buttonsWallFuel = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'gov-lights',
-        text: 'Govern\nLights',
+        text: 'Govern',
         goTo: 'wall-governors-lights',
     },    
     {   
@@ -1492,8 +1493,13 @@ buttonsWallFuel = [
         apiSend: 'FUEL_XFEED_VLV_COVER',
     },  
     {   
-        type: buttonLogic.types.none,
-    },    
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'lightBright',
+        text: 'Lights',
+        goTo: 'lights-bright',
+    },  
+ 
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
@@ -1696,23 +1702,7 @@ buttonsLightsBrightness = [
         text: '<- Back',
         goTo: 'wall',
     },   
-    {   
-        type: buttonLogic.types.none,
-    },  
-    {   
-        type: buttonLogic.types.none,
-    },           
-    {   
-        type: buttonLogic.types.none,
-    },  
-    {   
-        type: buttonLogic.types.none,
-    },   
-
-
-    {   
-        type: buttonLogic.types.none,
-    },   
+ 
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
@@ -1750,15 +1740,17 @@ buttonsLightsBrightness = [
         dynamicState: true,
     },  
     {   
-        type: buttonLogic.types.none,
-    },   
-    
-
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux1',
+        text: 'AUX',
+        goTo: 'aux1',
+    },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'govenorsLights',
-        text: 'Govern\nLights',
+        text: 'Govern',
         goTo: 'wall-governors-lights',
     },
     {   
@@ -1798,8 +1790,56 @@ buttonsLightsBrightness = [
         dynamicState: true,
     },  
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'aux2',
+        text: 'LWS\nCounter',
+        goTo: 'aux2',
     },       
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'rotor',
+        inversed: true,
+        text: ['OFF', 'Rotor' ],
+        apiSend: 'LIGHT_ROTOR_TIP',
+    },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'formation',
+        inversed: true,
+        maxStatus: 3,
+        text: ['Frm0%', 'Frm10%', 'Frm30%', 'Frm100%'],
+        apiSend: 'LIGHT_FORMATION',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'saiAdi',
+        inversed: true,
+        text: ['OFF', 'SAI+ADI' ],
+        apiSend: 'LIGHT_ADI_SAI',
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'nightVission',
+        inversed: true,
+        text: ['OFF', 'NVG' ],
+        apiSend: 'LIGHT_COCKPIT_NVG',
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'cockpit',
+        inversed: true,
+        text: ['OFF', 'Cockpit' ],
+        apiSend: 'LIGHT_COCKPIT',
+    },      
+
+         
     
 ]
 
@@ -2980,7 +3020,11 @@ buttonsAux1 = [
         apiSend: 'VOICE_MSG_SYS_TEST',
     },     
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'lightBright',
+        text: 'Lights',
+        goTo: 'lights-bright',
     },  
     {   
         type: buttonLogic.types.textToggle,
@@ -3087,8 +3131,12 @@ buttonsAux2 = [
         type: buttonLogic.types.none,
     },   
     {   
-        type: buttonLogic.types.none,
-    },   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'lightBright',
+        text: 'Lights',
+        goTo: 'lights-bright',
+    },  
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
@@ -3135,7 +3183,7 @@ module.exports = {
         { name: 'wall-eject',            buttons: buttonsWallEject},
         { name: 'wall-fire',             buttons: buttonsWallFire},
         { name: 'wall-equip',            buttons: buttonsWallEquip},
-        { name: 'wall-governors-lights', buttons: buttonsWallGovLights},        
+        { name: 'wall-governors-lights', buttons: buttonsWallGovernors},        
         { name: 'aux1',                  buttons: buttonsAux1},
         { name: 'aux2',                  buttons: buttonsAux2},
         { name: 'lights-bright',         buttons: buttonsLightsBrightness},
