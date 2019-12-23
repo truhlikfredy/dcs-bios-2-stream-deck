@@ -91,7 +91,246 @@ buttonsDefault = [
         text: 'Wall',
         goTo: 'wall',
     },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'vhf2',
+        text: 'VHF2\nR800L1',
+        goTo: 'vhf2',
+    },
+    
 ]
+
+buttonsVhf2 = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'amFm',
+        inversed: true,
+        text: ['FM', 'AM'],
+        apiSend: 'R800_AM_FM',
+    },
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.yellowButton,
+        nameId: 'bitPass',
+        text: 'BIT\nPASS',
+        maxStatus: 0,
+        apiGet: 'R800_TEST_LAMP',
+        sendState: false,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: '50-100',
+        inversed: true,
+        text: ['50', '100'],
+        apiSend: 'R800_DATA_TRANSFER_RATE',
+    },       
+    {   
+        type: buttonLogic.types.none,
+    },       
+    
+
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    }, 
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'bit',
+        text: 'BIT',
+        maxStatus: 0,
+        apiSend: 'R800_TEST_BTN',
+        sendState: false,
+    },                  
+    {   
+        type: buttonLogic.types.none,
+    },   
+    {   
+        type: buttonLogic.types.none,
+    }, 
+    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'vhf2Freq',
+        text: 'VHF2\nFreq',
+        goTo: 'vhf2freq',
+    },  
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'emergencyRx',
+        inversed: true,
+        text: ['Norm', 'E121.5'],
+        apiSend: 'R800_EMER_RCVR',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'adf',
+        inversed: true,
+        text: ['Off', 'ADF'],
+        apiSend: 'R800_ADF',
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'noiseReduction',
+        inversed: true,
+        text: ['Off', 'NRedu'],
+        apiSend: 'R800_SQUELCH',
+    },       
+]
+
+
+buttonsVhf2freq = [
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'back',
+        text: '<- Back',
+        goTo: 'default',
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        nameId: 'freq1',
+        stateToText: (state) => {
+            const ret = Math.floor(state / 10.5653)
+            return ret < 5 ? ret + 10 : ret + 17
+        },
+        apiGet: 'R800_FREQ1_ROT',
+        dynamicState: true,
+    },   
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        nameId: 'freq2',
+        stateToText: (state) => state,
+        apiGet: 'R800_FREQ2',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        nameId: 'freq3',
+        stateToText: (state) => state,        
+        apiGet: 'R800_FREQ3',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        stateToText: (state) => Math.ceil(state / 2.5466667),
+        nameId: 'freq4',
+        apiGet: 'R800_FREQ4_ROT',
+        dynamicState: true,
+    },        
+
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.gotoButton,
+        nameId: 'lightBright',
+        text: 'VHF2',
+        goTo: 'vhf2',
+    },      
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: '10+',
+        text: '10s\n+',
+        sendLiterarly: 'INC',
+        maxStatus: 0,
+        apiSend: 'R800_FREQ1',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: '1+',
+        text: '1s\n+',
+        sendLiterarly: 'INC',
+        maxStatus: 0,
+        apiSend: 'R800_FREQ2',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'dot1+',
+        text: '0.1s\n+',
+        sendLiterarly: 'INC',
+        apiSend: 'R800_FREQ3',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'dot01+',
+        text: '0.01s\n+',
+        sendLiterarly: 'INC',
+        apiSend: 'R800_FREQ4',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.none,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: '10-',
+        text: '10s\n-',
+        sendLiterarly: 'DEC',
+        maxStatus: 0,
+        apiSend: 'R800_FREQ1',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: '1-',
+        text: '1s\n-',
+        sendLiterarly: 'DEC',
+        maxStatus: 0,
+        apiSend: 'R800_FREQ2',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'dot1-',
+        text: '0.1s\n-',
+        sendLiterarly: 'DEC',
+        apiSend: 'R800_FREQ3',
+        dynamicState: true,
+    },        
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'dot01-',
+        text: '0.01s\n-',
+        sendLiterarly: 'DEC',
+        apiSend: 'R800_FREQ4',
+        dynamicState: true,
+    },            
+]
+
 
 buttonsCounter = [
     {   
@@ -3187,6 +3426,9 @@ module.exports = {
         { name: 'aux1',                  buttons: buttonsAux1},
         { name: 'aux2',                  buttons: buttonsAux2},
         { name: 'lights-bright',         buttons: buttonsLightsBrightness},
+        { name: 'vhf2',                  buttons: buttonsVhf2},
+        { name: 'vhf2freq',              buttons: buttonsVhf2freq},
+        
     ]
 }
 

@@ -181,15 +181,22 @@ globals.deck.on('down', keyIndex => {
     if (button.state < 0) button.state = 0
     // console.log('state', button.state)
    
-    if (button.sendState) {
-        api.sendMessage(button.apiSend + " " + (button.state)).then( error => {
+    if (button.sendLiterarly !== undefined)  {
+        api.sendMessage(button.apiSend + " " + button.sendLiterarly).then( error => {
             if (error) console.log(error);
-        });
+        });                
     }
     else {
-        api.sendMessage(button.apiSend + " " + button.increment).then( error => {
-            if (error) console.log(error);
-        });        
+        if (button.sendState) {
+            api.sendMessage(button.apiSend + " " + (button.state)).then( error => {
+                if (error) console.log(error);
+            });
+        }
+        else {
+            api.sendMessage(button.apiSend + " " + button.increment).then( error => {
+                if (error) console.log(error);
+            });        
+        }    
     }
 
     updateButton(keyIndex);
