@@ -14,6 +14,8 @@ const graphics    = require('./graphics.js')
 var api = new DcsBiosApi({ logLevel: 'INFO' });
 api.startListening()
 
+var buttonsUpdated = 0;
+
 function updateButton(buttonId) {
     if (globals.currentNamespace.buttons[buttonId].type == buttonLogic.types.none) {
         if (globals.displayOnSteamDeck) globals.deck.fillColor(buttonId, 0, 0, 0)
@@ -89,6 +91,9 @@ function updateNamespace(namespace) {
             break;
         }
 
+        if (button.scheme != buttonLogic.colorScheme.gotoButton) {
+            buttonsUpdated++
+        }
 
         if (button.sendJustTheIncrement === undefined) {
             button.sendJustTheIncrement = false
@@ -239,6 +244,8 @@ globals.currentModule.namespaces.forEach(namespace => {
     setNamespaceName(namespace.name)
     updateNamespace(globals.currentNamespace)    
 });
+
+console.log('Buttons generated', buttonsUpdated)
 
 // But in the end display the default namespace
 globals.displayOnSteamDeck = true
