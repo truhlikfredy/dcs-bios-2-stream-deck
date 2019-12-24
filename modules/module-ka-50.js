@@ -2070,7 +2070,7 @@ buttonsHud = [
         nameId: 'polarity',
         inversed: true,
         maxStatus: 1,
-        text: ['Black', 'White'],
+        text: ['White', 'Black'],
         apiSend: 'SHKVAL_POLARITY',
     },                
     {   
@@ -2336,7 +2336,7 @@ buttonsLand = [
         nameId: 'landingLight',
         inversed: true,
         maxStatus: 2,
-        text: ['Retract', '---', 'Extend'],
+        text: ['Retract', 'Off', 'Extend'],
         apiSend: 'LIGHT_LANDING_ON_RETR_OFF',
     },      
     {   
@@ -3523,7 +3523,7 @@ buttonsAux1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         stateToText: (state) => { 
-            var texts = [ 'S-8KOM', 'S-8TsM', 'S-13', 'S-24', 'S-8M HE', 'UPK-23', 'n/i', 'n/i', 'n/i', 'n/i', 'n/i', 'n/i' ] 
+            var texts = [ 'S-8\nKOM', 'S-8\nTsM', 'S-13', 'S-24', 'S-8M\nHE', 'UPK-23', '---', 'FAB\n250', 'FAB\n500', 'KMGU\nAO', 'KMGU\nAT' ] 
             return texts[state]},
         text: 'n/a',
         nameId: 'balVal',
