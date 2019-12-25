@@ -1,3 +1,9 @@
+# Demo
+
+[![KA-50 experiment video](https://img.youtube.com/vi/BMvsz8bfFvA/0.jpg)](https://www.youtube.com/watch?v=BMvsz8bfFvA)
+
+Apologies for the bad demo, I was not rehearsing what I wanted to do (as I want to do the first release over the holidays so people can enjoy it asap). I couldn't see the Stream deck as the camera was in my way and I kept looking at my keyboard/Stream-deck instead to the cockpit where the buttons are. But the gist is that the KA-50 example files have 32 pages and 300+ buttons, so if people want a profile for their module, they have decent starting example to use.
+
 # Description
 
 The original Stream deck software runs only on Windows 10, this project is built on top of the NodeJS reverse engineered package which can communicate directly to the stream deck and therefore it works on Windows 7 just fine. This acts as glue logic between DCS-BIOS protocol and Stream Deck protocol. Because this is 2way communication it is possible to achieve better experience, it allows to see states of lamps, displays and allows more accurate button press feedback. It is possible to hardcode button presses and activate the given button straight away, but in practice, the button's lamp, or state might have different behavior under certain conditions (that subsystem is not powered or damaged) and thank's to the 2-way communication more true representation is shown on the Stream deck.
