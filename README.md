@@ -2,7 +2,9 @@
 
 [![KA-50 experiment video](https://img.youtube.com/vi/BMvsz8bfFvA/0.jpg)](https://www.youtube.com/watch?v=BMvsz8bfFvA)
 
-Apologies for the bad demo, I was not rehearsing what I wanted to do (as I want to do the first release over the holidays so people can enjoy it asap). I couldn't see the Stream deck as the camera was in my way and I kept looking at my keyboard/Stream-deck instead to the cockpit where the buttons are. But the gist is that the KA-50 example files have 32 pages and 300+ buttons, so if people want a profile for their module, they have decent starting example to use.
+Apologies for the bad demo, I was not rehearsing what I wanted to do (as I want to do the first release over the holidays so people can enjoy it asap). I couldn't see the Stream deck as the camera was in my way and kept pressing wrong buttons. And often I kept looking at my keyboard/Stream-deck instead to the cockpit where the buttons are so it's not as obvious that majority of the actions were done from the Stream deck. But the gist is that the KA-50 example files have 32 pages and 300+ buttons, so if people want a profile for their module, they have decent starting example to use.
+
+It's not obvious from the video, but I enabled ADF tracking and the direction of the radio signal with music was showing on the HSI, it was comming from the KA-25 as it was passing by. I might have to redo do this video in more organize manner.
 
 # Description
 
