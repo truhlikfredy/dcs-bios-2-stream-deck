@@ -228,6 +228,11 @@ globals.deck.on('error', error => {
 })
 
 
+// Make 'img' folder if it doesn't exist already
+if (!fs.existsSync('img')){
+    fs.mkdirSync('img');
+}
+
 setModuleName(config.firstModuleName)
 
 // Bind all events in namespaces in this module
