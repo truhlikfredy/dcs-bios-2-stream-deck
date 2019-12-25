@@ -40,7 +40,6 @@ function updateButton(buttonId) {
             })
             .catch(err => {
                 throw err
-                console.error(err)
             })        
     }
 }
@@ -226,7 +225,6 @@ globals.deck.on('up', keyIndex => {
 
 globals.deck.on('error', error => {
     throw error
-	console.error(error)
 })
 
 
