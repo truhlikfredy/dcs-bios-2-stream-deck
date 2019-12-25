@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint test/.",
     "test": "mocha",
-    "start": "node stream.js"
+    "start": "node src/stream.js"
   },
   "author": "",
   "license": "ISC",
