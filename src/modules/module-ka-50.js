@@ -3308,7 +3308,7 @@ buttonsFlare = [
         scheme: buttonLogic.colorScheme.switch,
         nameId: 'compasAnt',
         // inversed: true,
-        text: ['ANT', 'CMPS'],
+        text: ['CMPS', 'ANT' ],
         apiSend: 'ADF_CMPS_ANT',
     },   
     {   
