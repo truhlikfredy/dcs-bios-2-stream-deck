@@ -24,11 +24,8 @@ function updateButton(buttonId) {
 
     const button = globals.currentNamespace.buttons[buttonId]
     const fileName = helper.buttonName(globals.currentModule, globals.currentNamespace , button)
-    // console.log(fileName)
-    // console.log(button)  
 
     if (config.forceImageRecreation || button.dynamicState || !fs.existsSync(fileName)) {
-        // console.log('state', button.state, 'filename', fileName)
         graphics.generateImageFile(button)
     }
        
@@ -36,12 +33,13 @@ function updateButton(buttonId) {
         sharp.cache(false) // Have disable cache or the dynamicState buttons images wouldn't update from the initial content
         sharp(path.resolve(fileName))
             .flatten() // Eliminate alpha channel, if any.
-            .raw() // Give us uncompressed RGB.
+            .raw()     // Give us uncompressed RGB.
             .toBuffer()
             .then(buffer => {
                 globals.deck.fillImage(buttonId, buffer)
             })
             .catch(err => {
+                throw err
                 console.error(err)
             })        
     }
@@ -52,9 +50,7 @@ function mapButtons(namespaceName, button, i) {
     button.bindDone = true
 
     if (button.apiGet !== undefined) {
-        // console.log('mapped', i, 'to', button.apiGet)
         api.on(button.apiGet, (value) => {
-            // console.log('got api', button.apiGet, 'button', i, 'value', value)
 
             button.state = value
 
@@ -156,15 +152,15 @@ function updateNamespace(namespace) {
 
 
 globals.deck.on('down', keyIndex => {
-    console.log('key %d down', keyIndex)
-    // console.log('namespace',  globals.currentNamespace.name)
-
+    
     if (!(keyIndex in globals.currentNamespace.buttons) || 
-        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
+    globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
         return
     }
-
+    
     var button = globals.currentNamespace.buttons[keyIndex]
+    var buttonText = (Array.isArray(button.text)) ? button.text.join(' ') : button.text.split('\n').join(' ')
+    console.log('Key #%d "%s"  pressed', keyIndex, buttonText)
 
     if (button.goTo !== undefined) {
         setNamespaceName(button.goTo)
@@ -184,22 +180,21 @@ globals.deck.on('down', keyIndex => {
         if (button.state > button.maxStatus) button.state = button.maxStatus
     }
     if (button.state < 0) button.state = 0
-    // console.log('state', button.state)
    
     if (button.sendLiterarly !== undefined)  {
         api.sendMessage(button.apiSend + " " + button.sendLiterarly).then( error => {
-            if (error) console.log(error);
+            if (error) console.error(error);
         });                
     }
     else {
         if (button.sendState) {
             api.sendMessage(button.apiSend + " " + (button.state)).then( error => {
-                if (error) console.log(error);
+                if (error) console.error(error);
             });
         }
         else {
             api.sendMessage(button.apiSend + " " + button.increment).then( error => {
-                if (error) console.log(error);
+                if (error) console.error(error);
             });        
         }    
     }
@@ -209,14 +204,12 @@ globals.deck.on('down', keyIndex => {
 
 
 globals.deck.on('up', keyIndex => {
-    console.log('key %d up', keyIndex)
     
-
     if (!(keyIndex in globals.currentNamespace.buttons) || 
-        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
+    globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
         return
     }    
-
+    
     var button = globals.currentNamespace.buttons[keyIndex]
     
     if (button.apiSend === undefined) {
@@ -225,13 +218,14 @@ globals.deck.on('up', keyIndex => {
     
     if (!button.sendState) {
         api.sendMessage(button.apiSend + " 0").then( error => {
-            if (error) console.log(error);
+            if (error) console.error(error);
         });
     }
 })
 
 
 globals.deck.on('error', error => {
+    throw error
 	console.error(error)
 })
 
@@ -245,7 +239,7 @@ globals.currentModule.namespaces.forEach(namespace => {
     updateNamespace(globals.currentNamespace)    
 });
 
-console.log('Buttons generated', buttonsUpdated)
+console.log('Opened all namespaces and generated %d buttons (excluding the goTo buttons)', buttonsUpdated)
 
 // But in the end display the default namespace
 globals.displayOnSteamDeck = true

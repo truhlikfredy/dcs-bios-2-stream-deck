@@ -179,7 +179,6 @@ module.exports = {
                     if (button.state != i) highligted[i] = " "
                 }                
             }
-            // console.log(highligted)
             ctx.fillText(highligted.join("\n"), centerX, centerY)
         }
         

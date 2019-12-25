@@ -48,7 +48,6 @@ module.exports = {
         const ctx = canvas.getContext('2d')
         
         const lines = text.split("\n").length
-        // console.log('lines', lines)
         ctx.font = fonts[fontId].face
     
         var text = ctx.measureText(text)
@@ -65,9 +64,6 @@ module.exports = {
         const canvas = createCanvas(globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
         const ctx = canvas.getContext('2d')
     
-        // console.log("generating " + fileName)
-              
-        // console.log(button)
         button.scheme.value(button, ctx)
            
         var buf = canvas.toBuffer()
