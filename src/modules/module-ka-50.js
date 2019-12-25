@@ -1150,14 +1150,14 @@ buttonsWall = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
-        text: 'AUX',
+        text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux2',
-        text: 'LWS\nCounter',
+        text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
     },
     {   
@@ -1276,7 +1276,7 @@ buttonsWallEquip = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux',
-        text: 'Aux',
+        text: 'AUX\ntop',
         goTo: 'aux1',
     },  
     
@@ -1489,14 +1489,14 @@ buttonsWallGovernors = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
-        text: 'AUX',
+        text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux2',
-        text: 'LWS\nCounter',
+        text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
     },     
     
@@ -2243,7 +2243,7 @@ buttonsLightsBrightness = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
-        text: 'AUX',
+        text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
@@ -2291,11 +2291,12 @@ buttonsLightsBrightness = [
     },  
     {   
         type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
-        nameId: 'aux2',
-        text: 'LWS\nCounter',
-        goTo: 'aux2',
-    },       
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'interiorLight',
+        inversed: true,
+        text: ['OFF', 'Interior' ],
+        apiSend: 'LIGHT_CPT_INT',
+    },         
 
     {   
         type: buttonLogic.types.textToggle,
@@ -3494,7 +3495,7 @@ buttonsAux1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux2',
-        text: 'LWS\nCounter',
+        text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
     },
     {   
@@ -3615,8 +3616,13 @@ buttonsAux2 = [
         apiSend: 'LWS_TEST',
     },   
     {   
-        type: buttonLogic.types.none,
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.grayButton,
+        nameId: 'ekranCover',
+        text: 'Cover\nv',
+        apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER_COVER',
     },   
+
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -3639,11 +3645,25 @@ buttonsAux2 = [
         apiSend: 'UV26_TEST_COVER',
     },   
     {   
-        type: buttonLogic.types.none,
-    },   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'auxLight+',
+        increment: +4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'Rear AUX\nLight\n+',
+        apiSend: 'ELEC_AUX_BRIGHTNESS',
+        dynamicState: true,
+    },    
     {   
-        type: buttonLogic.types.none,
-    },   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'ekranPower',
+        inversed: true,
+        text: ['OFF', 'EkrHydTrns'],
+        apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER',
+    },  
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -3667,7 +3687,26 @@ buttonsAux2 = [
         text: ['OFF', 'TEST'],
         apiSend: 'UV26_TEST',
     },     
-    
+    {   
+        type: buttonLogic.types.textToggle,
+        defaultStatus: 0,
+        scheme: buttonLogic.colorScheme.blackButton,
+        nameId: 'auxLight-',
+        increment: -4095,
+        maxStatus: 65535,
+        overflow: false,
+        text: 'Rear AUX\nLight\n-',
+        apiSend: 'ELEC_AUX_BRIGHTNESS',
+        dynamicState: true,
+    },    
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.switch,
+        nameId: 'rearLights',
+        inversed: true,
+        text: ['OFF', 'RearLight'],
+        apiSend: 'ELEC_AUX_LIGHTS',
+    },      
 ]
 
 
