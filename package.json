@@ -4,17 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "mocha",
+    "start": "node stream.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@julusian/jpeg-turbo": "^0.5.1",
-    "canvas": "^2.6.1",
+    "@julusian/jpeg-turbo": "0.5.1",
+    "canvas": "2.6.1",
     "dcs-bios-api": "0.0.10",
-    "elgato-stream-deck": "^3.2.0",
-    "enum": "^2.5.0",
+    "elgato-stream-deck": "3.2.0",
+    "enum": "2.5.0",
     "fs": "0.0.1-security",
-    "sharp": "^0.23.4"
+    "sharp": "0.23.4"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "eslint": "6.8.0",
+    "mocha": "6.2.2"
   }
 }
