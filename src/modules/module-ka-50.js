@@ -210,11 +210,32 @@ buttonsEngineApu = [
         scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
         nameId: 'apuTemp',
-        stateToText: (state) => Math.round(state / 72.81667),
+        stateToText: (state) => Math.round(state / 72.81667) + 'C',
         text: 'n/a',
         apiGet: 'APU_TEMP',
         dynamicState: true,
     },       
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        nameId: 'leftEngineRPM',
+        stateToText: (state) => Math.round(state / 600) + '%',
+        text: 'n/a',
+        apiGet: 'ENG_L_RPM',
+        dynamicState: true,
+    },          
+    {   
+        type: buttonLogic.types.textToggle,
+        scheme: buttonLogic.colorScheme.blackButton,
+        sendState: false,
+        nameId: 'rightEngineRPM',
+        stateToText: (state) => Math.round(state / 600) + '%',
+        text: 'n/a',
+        apiGet: 'ENG_R_RPM',
+        dynamicState: true,
+    },          
+    
 ]
 
 buttonsTargeting = [
