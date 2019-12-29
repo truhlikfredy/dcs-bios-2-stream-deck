@@ -3709,7 +3709,7 @@ buttonsAux2 = [
 
 
 module.exports = {
-    name: "ka-50",
+    name: "15-ka-50",
     namespaces: [
         { name: 'default',               buttons: buttonsDefault},
         { name: 'hud',                   buttons: buttonsHud},

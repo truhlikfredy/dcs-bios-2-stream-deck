@@ -1,5 +1,5 @@
 module.exports = {
     forceImageRecreation: true,
     firstNamespaceName: 'default',
-    firstModuleName: 'ka-50',
+    firstModuleName: '15-ka-50',
 }

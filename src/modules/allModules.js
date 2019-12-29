@@ -1,5 +1,5 @@
-const ka50 = require('./module-ka-50.js')
+const module_15_ka50 = require('./module-15-ka-50.js')
 
 module.exports = [
-    ka50
+    module_15_ka50
 ]
