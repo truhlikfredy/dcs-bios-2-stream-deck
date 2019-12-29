@@ -117,9 +117,7 @@ buttonsEngineApu = [
         text: '<- Back',
         goTo: 'default',
     }, 
-    {   
-        type: buttonLogic.types.none,
-    },   
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -282,12 +280,8 @@ buttonsTargeting = [
         text: ['Movable', 'Fixed', 'ManBackup', 'Navigation', 'Failure'],
         apiSend: 'WEAPONS_MODE',
     },          
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.none,
-    },  
+    {},     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
@@ -308,9 +302,7 @@ buttonsTargeting = [
         apiSend: 'WEAPONS_GROUND_TARGET_BTN',
         apiGet: 'WEAPONS_GROUND_TARGET_LED',
     },    
-    {   
-        type: buttonLogic.types.none,
-    },      
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
@@ -389,17 +381,11 @@ buttonsVhf2 = [
         text: ['50', '100'],
         apiSend: 'R800_DATA_TRANSFER_RATE',
     },       
-    {   
-        type: buttonLogic.types.none,
-    },       
+    {},     
     
 
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.none,
-    }, 
+    {},     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -409,9 +395,7 @@ buttonsVhf2 = [
         apiSend: 'R800_TEST_BTN',
         sendState: false,
     },                  
-    {   
-        type: buttonLogic.types.none,
-    },   
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
@@ -549,9 +533,7 @@ buttonsVhf2freq = [
         apiSend: 'R800_FREQ4',
         dynamicState: true,
     },        
-    {   
-        type: buttonLogic.types.none,
-    },    
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
@@ -685,9 +667,7 @@ buttonsCounter = [
         apiSend: 'LWR_RESET',
         apiGet: 'LWR_RESET',
     },    
-    {   
-        type: buttonLogic.types.none,
-    },  
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
@@ -804,12 +784,8 @@ buttonsDatalink = [
         apiSend: 'DLNK_WINGMAN_ALL_BTN',
         apiGet: 'DLNK_WINGMAN_ALL_LED'
     },      
-    {   
-        type: buttonLogic.types.none,
-    },         
-    {   
-        type: buttonLogic.types.none,
-    },         
+    {},     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowStripeButton,
@@ -910,12 +886,8 @@ buttonsOverhead = [
         text: 'PilotHt\nTest',
         apiSend: 'OP_PITOT_HEAT_TEST',
     },   
-    {   
-        type: buttonLogic.types.none,
-    },       
-    {   
-        type: buttonLogic.types.none,
-    },       
+    {},     
+    {},     
 
     {   
         type: buttonLogic.types.textToggle,
@@ -933,12 +905,8 @@ buttonsOverhead = [
         text: 'Stopped\nGas\nTemp',
         apiSend: 'ENG_STOPPED_EGT_TEST',
     },  
-    {   
-        type: buttonLogic.types.none,
-    },       
-    {   
-        type: buttonLogic.types.none,
-    },       
+    {},     
+    {},     
 
     {   
         type: buttonLogic.types.textToggle,
@@ -959,9 +927,7 @@ buttonsFront = [
         text: '<- Back',
         goTo: 'default',
     },   
-    {   
-        type: buttonLogic.types.none,
-    },  
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowButton,
@@ -1085,15 +1051,9 @@ buttonsWall = [
         text: 'Fire',
         goTo: 'wall-fire',
     },
-    {   
-        type: buttonLogic.types.none,
-    },       
-    {   
-        type: buttonLogic.types.none,
-    },  
-    {   
-        type: buttonLogic.types.none,
-    },  
+    {},     
+    {},     
+    {},     
     
 
     {   
@@ -1193,9 +1153,7 @@ buttonsWallEquip = [
         text: 'Cover\nv',
         apiSend: 'HYD_POWER_COVER',
     },  
-    {   
-        type: buttonLogic.types.none,
-    },       
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -1211,9 +1169,7 @@ buttonsWallEquip = [
         text: 'Cover\nv',
         apiSend: 'WEAPONS_POWER_COVER',
     },            
-    {   
-        type: buttonLogic.types.none,
-    },  
+    {},     
     
     {   
         type: buttonLogic.types.textToggle,
@@ -1320,9 +1276,7 @@ buttonsWallEl1 = [
         goTo: 'wall-pumps',
     },
  
-    {   
-        type: buttonLogic.types.none,
-    },   
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
@@ -1347,9 +1301,7 @@ buttonsWallEl1 = [
         text: ['OFF', 'BAT1'],
         apiSend: 'ELEC_BATTERY_1',
     },      
-    {   
-        type: buttonLogic.types.none,
-    },   
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -1471,13 +1423,8 @@ buttonsWallGovernors = [
         apiSend: 'ENG_EEG_PT1_OPER_PT2',
     },  
 
-    {   
-        type: buttonLogic.types.none,
-    },   
-
-    {   
-        type: buttonLogic.types.none,
-    },           
+    {},     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -1580,18 +1527,10 @@ buttonsWallRadio = [
         text: ['OFF', 'VHF-TLK'],
         apiSend: 'COMM_DATALINK_VHF_TLK_POWER',
     },  
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.none,
-    },   
-    {   
-        type: buttonLogic.types.none,
-    },           
+    {},     
+    {},     
+    {},     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -1766,9 +1705,7 @@ buttonsWallEject = [
         text: 'Equip',
         goTo: 'wall-equip',
     },     
-    {   
-        type: buttonLogic.types.none,
-    },  
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -1790,9 +1727,7 @@ buttonsWallEject = [
         text: 'Cover\nv',
         apiSend: 'EJECT_POWER_COVER',
     },      
-    {   
-        type: buttonLogic.types.none,
-    },      
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -1821,9 +1756,7 @@ buttonsWallEject = [
         text: ['Eject3', 'OFF'],
         apiSend: 'EJECT_POWER_3',
     },  
-    {   
-        type: buttonLogic.types.none,
-    },               
+    {},     
 ]
 
 buttonsWallPumps = [
@@ -1909,9 +1842,7 @@ buttonsWallPumps = [
         text: 'Radio',
         goTo: 'wall-radio',
     },   
-    {   
-        type: buttonLogic.types.none,
-    }, 
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,
@@ -1919,12 +1850,8 @@ buttonsWallPumps = [
         text: 'Eject',
         goTo: 'wall-eject',
     },                            
-    {   
-        type: buttonLogic.types.none,
-    },    
-    {   
-        type: buttonLogic.types.none,
-    },     
+    {},     
+    {},     
 ]
 
 buttonsWallFuel = [
@@ -2377,9 +2304,7 @@ buttonsLand = [
         text: ['Outer', 'Auto*', 'Inner'],
         apiSend: 'ADF_NDB_MODE',
     },      
-    {   
-        type: buttonLogic.types.none,
-    },       
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -2452,12 +2377,8 @@ buttonsWeapons = [
         apiGet: 'WEAPONS_DISPLAY_CANNON_REMAIN',
         dynamicState: true,
     },
-    {   
-        type: buttonLogic.types.none,
-    },
-    {   
-        type: buttonLogic.types.none,
-    },       
+    {},     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
@@ -2482,9 +2403,7 @@ buttonsWeapons = [
         text: 'Jet\nATGM',
         apiSend: 'WEAPONS_EXPEDITE_ATGM_JETTISON',
     },
-    {   
-        type: buttonLogic.types.none,
-    },    
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
@@ -2973,9 +2892,7 @@ buttonsArbis = [
         text: ['Off', 'On'],
         apiSend: 'ABRIS_POWER',
     },
-    {   
-        type: buttonLogic.types.none,
-    },
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
@@ -3040,12 +2957,8 @@ buttonsArbis = [
         apiSend: 'ABRIS_BTN_5',
     },
 
-    {   
-        type: buttonLogic.types.none,
-    },
-    {   
-        type: buttonLogic.types.none,
-    },
+    {},     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
@@ -3228,9 +3141,7 @@ buttonsFlare = [
         text: '<- Back',
         goTo: 'default',
     },
-    {   
-        type: buttonLogic.types.none,
-    },    
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
@@ -3448,9 +3359,7 @@ buttonsVhf1 = [
         apiSend: 'R828_VOLUME',
         dynamicState: true,
     },                      
-    {   
-        type: buttonLogic.types.none,
-    },
+    {},     
 ]
 
 
@@ -3486,9 +3395,7 @@ buttonsAux1 = [
         text: 'Vibra',
         apiSend: 'ENG_VIBR_MONITOR',
     },     
-    {   
-        type: buttonLogic.types.none,
-    },     
+    {},     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.gotoButton,

@@ -81,8 +81,8 @@ function updateNamespace(namespace) {
     for (var i = 0; i < namespace.buttons.length; i++) {
         var button = namespace.buttons[i]
 
-        if (button === undefined) {
-            if (globals.displayOnSteamDeck) globals.deck.fillColor(keyIndex, 0, 0, 0)
+        if (button === undefined || !Object.keys(button).length) {
+            if (globals.displayOnSteamDeck) globals.deck.fillColor(i, 0, 0, 0)
             break;
         }
 
@@ -153,7 +153,9 @@ function updateNamespace(namespace) {
 globals.deck.on('down', keyIndex => {
     
     if (!(keyIndex in globals.currentNamespace.buttons) || 
-    globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
+        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none ||
+        !Object.keys(globals.currentNamespace.buttons[keyIndex]).length
+    ) {
         return
     }
     
@@ -205,7 +207,9 @@ globals.deck.on('down', keyIndex => {
 globals.deck.on('up', keyIndex => {
     
     if (!(keyIndex in globals.currentNamespace.buttons) || 
-    globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none) {
+        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none ||
+        !Object.keys(globals.currentNamespace.buttons[keyIndex]).length
+    ) {
         return
     }    
     

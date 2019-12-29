@@ -6,7 +6,7 @@ const graphics                    = require('../graphics.js')
 const globals                     = require('../globals.js')
 
 module.exports = {
-    types: new Enum(['none', 'textToggle', 'icon', 'textIcon']),
+    types: new Enum(['textToggle', 'icon', 'textIcon']),
     colorScheme: new Enum({
         'none': () => {},
     
