@@ -83,7 +83,7 @@ function updateNamespace(namespace) {
 
         if (button === undefined || !Object.keys(button).length) {
             if (globals.displayOnSteamDeck) globals.deck.fillColor(i, 0, 0, 0)
-            break;
+            continue;
         }
 
         if (button.goTo !== undefined) {
