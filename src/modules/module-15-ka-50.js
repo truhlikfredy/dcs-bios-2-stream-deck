@@ -2,106 +2,76 @@ const buttonLogic = require('./buttonLogic.js')
 
 buttonsDefault = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'vhf2',
         text: 'VHF2\nR800L1',
         goTo: 'vhf2',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'overhead',
         text: 'Overhead\nFront ->',
         goTo: 'overhead',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'counter',
         text: 'Counter\nmeasures',
         goTo: 'counter',
     },      
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'arbis',
         text: 'ARBIS',
         goTo: 'arbis',
     },    
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'wall',
         text: 'Wall',
         goTo: 'wall',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'engine',
         text: 'Engine\nAPU',
         goTo: 'engine',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'datalink',
         text: 'Datalink',
         goTo: 'datalink',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'hud',
         text: 'HUD\nTV\nLandLight',
         goTo: 'hud',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'pvi800-1',
         text: 'PVI800',
         goTo: 'pvi800-1',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'flare',
         text: 'ADF\nFlare',
         goTo: 'flare',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'targeting',
         text: 'Targeting',
         goTo: 'targeting',
     },    
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'front',
         text: 'Front\nLeft',
         goTo: 'front',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'weapons',
         text: 'Weap',
         goTo: 'weapons',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'ap',
         text: 'AP',
         goTo: 'ap',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'vhf1',
         text: 'VHF1\nR828',
         goTo: 'vhf1',
@@ -111,8 +81,6 @@ buttonsDefault = [
 
 buttonsEngineApu = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -238,8 +206,6 @@ buttonsEngineApu = [
 
 buttonsTargeting = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -350,8 +316,6 @@ buttonsTargeting = [
 
 buttonsVhf2 = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -407,8 +371,6 @@ buttonsVhf2 = [
     },     
     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'vhf2Freq',
         text: 'VHF2\nFreq',
         goTo: 'vhf2freq',
@@ -442,8 +404,6 @@ buttonsVhf2 = [
 
 buttonsVhf2freq = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -489,8 +449,6 @@ buttonsVhf2freq = [
     },        
 
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
         text: 'VHF2',
         goTo: 'vhf2',
@@ -577,8 +535,6 @@ buttonsVhf2freq = [
 
 buttonsCounter = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -688,8 +644,6 @@ buttonsCounter = [
 
 buttonsDatalink = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -822,8 +776,6 @@ buttonsDatalink = [
 
 buttonsOverhead = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -921,8 +873,6 @@ buttonsOverhead = [
 
 buttonsFront = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -1038,15 +988,11 @@ buttonsFront = [
 
 buttonsWall = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'fire',
         text: 'Fire',
         goTo: 'wall-fire',
@@ -1057,72 +1003,52 @@ buttonsWall = [
     
 
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elPumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elFuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'govenorsLights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elRadio',
         text: 'Radio',
         goTo: 'wall-radio',
     },    
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elEject',
         text: 'Eject',
         goTo: 'wall-eject',
     },  
  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
         text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux2',
         text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
@@ -1133,15 +1059,11 @@ buttonsWall = [
 
 buttonsWallEquip = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elFuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
@@ -1155,8 +1077,6 @@ buttonsWallEquip = [
     },  
     {},     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'govenorsLights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
@@ -1188,8 +1108,6 @@ buttonsWallEquip = [
         apiSend: 'NAV_POWER',
     },        
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
@@ -1229,8 +1147,6 @@ buttonsWallEquip = [
         apiSend: 'SAI_POWER',
     },        
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux',
         text: 'AUX\ntop',
         goTo: 'aux1',
@@ -1241,8 +1157,6 @@ buttonsWallEquip = [
 
 buttonsWallEl1 = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
@@ -1269,8 +1183,6 @@ buttonsWallEl1 = [
         apiSend: 'ELEC_BATTERY_1_COVER',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'wall-pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
@@ -1303,8 +1215,6 @@ buttonsWallEl1 = [
     },      
     {},     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elRadio',
         text: 'Radio',
         goTo: 'wall-radio',
@@ -1348,8 +1258,6 @@ buttonsWallEl1 = [
 
 buttonsWallGovernors = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
@@ -1383,8 +1291,6 @@ buttonsWallGovernors = [
         apiSend: 'ENG_EEG_PT1_OPER_PT2_COVER',
     },        
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
@@ -1426,22 +1332,16 @@ buttonsWallGovernors = [
     {},     
     {},     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
     },      
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
         text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux2',
         text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
@@ -1452,36 +1352,26 @@ buttonsWallGovernors = [
 
 buttonsWallRadio = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'fuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
@@ -1532,8 +1422,6 @@ buttonsWallRadio = [
     {},     
     {},     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'eject',
         text: 'Eject',
         goTo: 'wall-eject',
@@ -1543,36 +1431,26 @@ buttonsWallRadio = [
 
 buttonsWallFire = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'fuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
@@ -1671,36 +1549,26 @@ buttonsWallFire = [
 
 buttonsWallEject = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'fuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
@@ -1729,8 +1597,6 @@ buttonsWallEject = [
     },      
     {},     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'radio',
         text: 'Radio',
         goTo: 'wall-radio',
@@ -1761,36 +1627,26 @@ buttonsWallEject = [
 
 buttonsWallPumps = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elFuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },    
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },    
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'gov-lights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
@@ -1836,16 +1692,12 @@ buttonsWallPumps = [
         apiSend: 'FUEL_METER_POWER',
     },    
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elRadio',
         text: 'Radio',
         goTo: 'wall-radio',
     },   
     {},     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elEject',
         text: 'Eject',
         goTo: 'wall-eject',
@@ -1856,36 +1708,26 @@ buttonsWallPumps = [
 
 buttonsWallFuel = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'elPumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'gov-lights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
@@ -1919,8 +1761,6 @@ buttonsWallFuel = [
         apiSend: 'FUEL_XFEED_VLV_COVER',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
@@ -1964,8 +1804,6 @@ buttonsWallFuel = [
 
 buttonsHud = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -2110,8 +1948,6 @@ buttonsHud = [
         apiSend: 'HUD_DECLUTTER',
     },          
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'land',
         text: 'Landing\nlights',
         goTo: 'land',
@@ -2121,8 +1957,6 @@ buttonsHud = [
 
 buttonsLightsBrightness = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
@@ -2165,15 +1999,11 @@ buttonsLightsBrightness = [
         dynamicState: true,
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
         text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'govenorsLights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
@@ -2271,8 +2101,6 @@ buttonsLightsBrightness = [
 
 buttonsLand = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'hud',
@@ -2339,8 +2167,6 @@ buttonsLand = [
 
 buttonsWeapons = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -2444,8 +2270,6 @@ buttonsWeapons = [
 
 buttonsPvio800_3 = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'pvi800-1',
@@ -2752,8 +2576,6 @@ buttonsPvio800_2 = [
 
 buttonsPvio800_1 = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -2793,8 +2615,6 @@ buttonsPvio800_1 = [
         sendState: false,
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'pvi800-2',
         text: 'PVI800\nfunc',
         goTo: 'pvi800-2',
@@ -2832,8 +2652,6 @@ buttonsPvio800_1 = [
         apiSend: 'PVI_0',
     },
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'pvi800-3',
         text: 'PVI800\nPVTz-800',
         goTo: 'pvi800-3',
@@ -2877,8 +2695,6 @@ buttonsPvio800_1 = [
 
 buttonsArbis = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -2997,8 +2813,6 @@ buttonsArbis = [
 
 buttonsAp = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -3135,8 +2949,6 @@ buttonsAp = [
 
 buttonsFlare = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -3276,8 +3088,6 @@ buttonsFlare = [
 
 buttonsVhf1 = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'default',
@@ -3365,8 +3175,6 @@ buttonsVhf1 = [
 
 buttonsAux1 = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
@@ -3397,8 +3205,6 @@ buttonsAux1 = [
     },     
     {},     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux2',
         text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
@@ -3440,8 +3246,6 @@ buttonsAux1 = [
         apiSend: 'VOICE_MSG_SYS_TEST',
     },     
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
@@ -3488,8 +3292,6 @@ buttonsAux1 = [
 
 buttonsAux2 = [
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
@@ -3529,8 +3331,6 @@ buttonsAux2 = [
     },   
 
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'aux1',
         text: 'AUX',
         goTo: 'aux1',
@@ -3570,8 +3370,6 @@ buttonsAux2 = [
         apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER',
     },  
     {   
-        type: buttonLogic.types.textToggle,
-        scheme: buttonLogic.colorScheme.gotoButton,
         nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',

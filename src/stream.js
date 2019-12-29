@@ -86,6 +86,11 @@ function updateNamespace(namespace) {
             break;
         }
 
+        if (button.goTo !== undefined) {
+            if (button.scheme === undefined) button.scheme = buttonLogic.colorScheme.gotoButton
+            if (button.type === undefined) button.type = buttonLogic.types.textToggle
+        }
+        
         if (button.scheme != buttonLogic.colorScheme.gotoButton) {
             buttonsUpdated++
         }
