@@ -95,6 +95,10 @@ function updateNamespace(namespace) {
             buttonsUpdated++
         }
 
+        if (button.scheme == buttonLogic.colorScheme.switch && button.maxStatus === undefined) {
+            button.maxStatus = button.text.length - 1         
+        }
+
         if (button.sendJustTheIncrement === undefined) {
             button.sendJustTheIncrement = false
         }
