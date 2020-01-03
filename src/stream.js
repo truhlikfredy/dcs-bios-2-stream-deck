@@ -1,6 +1,4 @@
 
-const path       = require('path')
-const sharp      = require('sharp')
 const fs         = require("fs");
 const DcsBiosApi = require('dcs-bios-api')
 
@@ -16,35 +14,6 @@ api.startListening()
 
 var buttonsUpdated = 0;
 
-function updateButton(buttonId) {
-    if (globals.currentNamespace.buttons[buttonId].type == buttonLogic.types.none) {
-        if (globals.displayOnSteamDeck) globals.deck.fillColor(buttonId, 0, 0, 0)
-        return
-    }
-
-    const button = globals.currentNamespace.buttons[buttonId]
-    const fileName = helper.buttonName(globals.currentModule, globals.currentNamespace , button)
-
-    if (config.forceImageRecreation || button.dynamicState || !fs.existsSync(fileName)) {
-        graphics.generateImageFile(button)
-    }
-       
-    if (globals.displayOnSteamDeck) {
-        sharp.cache(false) // Have disable cache or the dynamicState buttons images wouldn't update from the initial content
-        sharp(path.resolve(fileName))
-            .flatten() // Eliminate alpha channel, if any.
-            .raw()     // Give us uncompressed RGB.
-            .toBuffer()
-            .then(buffer => {
-                globals.deck.fillImage(buttonId, buffer)
-            })
-            .catch(err => {
-                throw err
-            })        
-    }
-}
-
-
 function mapButtons(namespaceName, button, i) {
     button.bindDone = true
 
@@ -58,7 +27,7 @@ function mapButtons(namespaceName, button, i) {
             }
 
             if (globals.currentNamespaceName == namespaceName) {
-                updateButton(i)
+                graphics.updateButton(i)
             }
         });
     }    
@@ -180,7 +149,7 @@ function updateNamespace(namespace) {
             button.nameId = textToFileId(button.text)
         }
 
-        updateButton(i)
+        graphics.updateButton(i)
     }    
 
     for (var i = namespace.buttons.length; i < 15; i++) {
@@ -240,7 +209,7 @@ globals.deck.on('down', keyIndex => {
         }    
     }
 
-    updateButton(keyIndex);
+    graphics.updateButton(keyIndex);
 })
 
 

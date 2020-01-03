@@ -1,3 +1,4 @@
+const path                        = require('path')
 const sharp                       = require('sharp') // Order of these includes is sensitive
 const { createCanvas, loadImage } = require('canvas')
 const Enum                        = require('enum')
@@ -6,6 +7,7 @@ const fs                          = require("fs");
 const helper      = require('./helper.js')
 const buttonLogic = require('./modules/buttonLogic.js')
 const globals     = require('./globals.js')
+const config      = require('./config.js')
 
 
 fonts = [ 
@@ -70,6 +72,29 @@ module.exports = {
         fs.writeFileSync(fileName, buf);    
     },
     
+
+    updateButton: function(buttonId) {   
+        const button = globals.currentNamespace.buttons[buttonId]
+        const fileName = helper.buttonName(globals.currentModule, globals.currentNamespace , button)
+    
+        if (config.forceImageRecreation || button.dynamicState || !fs.existsSync(fileName)) {
+            this.generateImageFile(button)
+        }
+           
+        if (globals.displayOnSteamDeck) {
+            sharp.cache(false) // Have disable cache or the dynamicState buttons images wouldn't update from the initial content
+            sharp(path.resolve(fileName))
+                .flatten() // Eliminate alpha channel, if any.
+                .raw()     // Give us uncompressed RGB.
+                .toBuffer()
+                .then(buffer => {
+                    globals.deck.fillImage(buttonId, buffer)
+                })
+                .catch(err => {
+                    throw err
+                })        
+        }
+    },
     
 
 }
