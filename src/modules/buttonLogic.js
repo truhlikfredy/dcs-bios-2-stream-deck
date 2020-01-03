@@ -94,6 +94,9 @@ module.exports = {
         'greenStripeButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text) + 1
 
+            ctx.fillStyle = '#000000'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+            
             if (button.state) {
                 ctx.fillStyle = '#003322'
                 ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)    
@@ -112,6 +115,9 @@ module.exports = {
         'yellowStripeButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
+            ctx.fillStyle = '#000000'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+
             if (button.state) {
                 ctx.fillStyle = '#444400'
                 ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)    
