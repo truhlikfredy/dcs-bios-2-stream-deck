@@ -77,6 +77,33 @@ function setNamespaceName(name) {
 }
 
 
+function textToFileId(text) {
+    var flatText = (Array.isArray(text)) ? text.join('\n') : text
+
+    var patterns = {
+        '<': ' less ',
+        '>': ' greater ',
+        '\\.': ' dot ',
+        '-': ' minus ',
+        '\\+': ' plus ',
+        '\\/': ' backslash ',
+        '\\\\': ' slash ',
+        '\\%': ' percent ',
+        '\\#': ' hash ',
+        '\\*': ' asterisk ',
+        '!': ' not '
+    }
+    
+    Object.entries(patterns).forEach( ([k,v]) => flatText = flatText.replace(RegExp(k, "g"), v))
+
+    return flatText.trim().split('\n').map( line => {
+        return line.trim().split(' ')
+            .map( (item, index) => (index == 0) ? item.toLowerCase() : item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+            .join('');        
+    }).join('_')
+}
+
+
 function updateNamespace(namespace) {
     for (var i = 0; i < namespace.buttons.length; i++) {
         var button = namespace.buttons[i]
@@ -147,6 +174,10 @@ function updateNamespace(namespace) {
 
         if (button.bindDone === undefined) {
             mapButtons(namespace.name, button, i)
+        }
+
+        if (button.nameId === undefined) {
+            button.nameId = textToFileId(button.text)
         }
 
         updateButton(i)

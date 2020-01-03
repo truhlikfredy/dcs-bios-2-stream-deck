@@ -2,77 +2,62 @@ const buttonLogic = require('./buttonLogic.js')
 
 buttonsDefault = [
     {   
-        nameId: 'vhf2',
         text: 'VHF2\nR800L1',
         goTo: 'vhf2',
     },  
     {   
-        nameId: 'overhead',
         text: 'Overhead\nFront ->',
         goTo: 'overhead',
     },  
     {   
-        nameId: 'counter',
         text: 'Counter\nmeasures',
         goTo: 'counter',
     },      
     {   
-        nameId: 'arbis',
         text: 'ARBIS',
         goTo: 'arbis',
     },    
     {   
-        nameId: 'wall',
         text: 'Wall',
         goTo: 'wall',
     },   
     {   
-        nameId: 'engine',
         text: 'Engine\nAPU',
         goTo: 'engine',
     },
     {   
-        nameId: 'datalink',
         text: 'Datalink',
         goTo: 'datalink',
     },
     {   
-        nameId: 'hud',
         text: 'HUD\nTV\nLandLight',
         goTo: 'hud',
     },   
     {   
-        nameId: 'pvi800-1',
         text: 'PVI800',
         goTo: 'pvi800-1',
     },
     {   
-        nameId: 'flare',
         text: 'ADF\nFlare',
         goTo: 'flare',
     },
     {   
-        nameId: 'targeting',
         text: 'Targeting',
         goTo: 'targeting',
     },    
     {   
-        nameId: 'front',
         text: 'Front\nLeft',
         goTo: 'front',
     },
     {   
-        nameId: 'weapons',
         text: 'Weap',
         goTo: 'weapons',
     },  
     {   
-        nameId: 'ap',
         text: 'AP',
         goTo: 'ap',
     },
     {   
-        nameId: 'vhf1',
         text: 'VHF1\nR828',
         goTo: 'vhf1',
     },
@@ -81,7 +66,6 @@ buttonsDefault = [
 
 buttonsEngineApu = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     }, 
@@ -89,7 +73,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'startApuEngine',
         sendState: false,
         maxStatus: 0,
         text: 'Start',
@@ -98,7 +81,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'startIrq',
         sendState: false,
         maxStatus: 0,
         text: 'Start\nAbort',
@@ -107,7 +89,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'apuShutdown',
         sendState: false,
         maxStatus: 0,
         text: 'APU\nSTOP',
@@ -117,7 +98,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
-        nameId: 'fuelOpen',
         sendState: false,
         text: 'Fuel\nOpen',
         apiGet: 'APU_FUEL_VLV_OPEN',
@@ -125,7 +105,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
-        nameId: 'oilPresure',
         sendState: false,
         text: 'Oil\nPresure',
         apiGet: 'APU_OIL_PRESS',
@@ -133,7 +112,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowButton,
-        nameId: 'valveOpen',
         sendState: false,
         text: 'Valve\nOpen',
         apiGet: 'ENG_START_VLV_OPEN',
@@ -141,14 +119,12 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'startMode',
         text: ['Startup', 'Crank', 'FalseS'],
         apiSend: 'ENG_STARTUP_MODE',
     },                
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'tgApuLeftRight',
         inversed: true,
         text: ['APU', 'Left ENG', 'Right ENG', 'Turbo Gear'],
         apiSend: 'ENG_SELECTOR',
@@ -156,7 +132,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
-        nameId: 'rpmAbort',
         sendState: false,
         text: 'RPM\nAbort',
         apiGet: 'APU_STOP_RPM',
@@ -164,7 +139,6 @@ buttonsEngineApu = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
-        nameId: 'Started',
         sendState: false,
         text: 'Started',
         apiGet: 'APU_OPER',
@@ -199,19 +173,16 @@ buttonsEngineApu = [
         apiGet: 'ENG_R_RPM',
         dynamicState: true,
     },          
-    
 ]
 
 buttonsTargeting = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'train',
         inversed: true,
         text: ['OFF', 'Train'],
         apiSend: 'WEAPONS_TRAINING_MODE',
@@ -220,7 +191,6 @@ buttonsTargeting = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'autoturn',
         text: 'Auto\nTurn',
         maxStatus: 0,
         apiSend: 'WEAPONS_AUTO_TURN_BTN',
@@ -230,7 +200,6 @@ buttonsTargeting = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'airho',
         text: 'Air\nH/O',
         maxStatus: 0,
         apiSend: 'WEAPONS_FORWARD_HEMI_TARGET_BTN',
@@ -239,7 +208,6 @@ buttonsTargeting = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'train',
         text: ['Movable', 'Fixed', 'ManBackup', 'Navigation', 'Failure'],
         apiSend: 'WEAPONS_MODE',
     },          
@@ -249,7 +217,6 @@ buttonsTargeting = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'air',
         text: 'Air',
         maxStatus: 0,
         apiSend: 'WEAPONS_AIRBORNE_TARGET_BTN',
@@ -259,7 +226,6 @@ buttonsTargeting = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'gndMovable',
         text: 'Mov\nGND',
         maxStatus: 0,
         apiSend: 'WEAPONS_GROUND_TARGET_BTN',
@@ -269,7 +235,6 @@ buttonsTargeting = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'train',
         inversed: true,
         text: ['OFF', 'K041 ON'],
         apiSend: 'K041_POWER',
@@ -277,7 +242,6 @@ buttonsTargeting = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'hms',
         inversed: true,
         text: ['OFF', 'HMS'],
         apiSend: 'HMS_POWER',
@@ -285,7 +249,6 @@ buttonsTargeting = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'autoGunSight',
         inversed: true,
         text: ['GunSight', 'AutoTrack'],
         apiSend: 'WEAPONS_AUTOTRACK_GUNSIGHT',
@@ -293,7 +256,6 @@ buttonsTargeting = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'laser',
         inversed: true,
         text: ['OFF', 'Laser'],
         apiSend: 'LASER_STANDBY',
@@ -302,7 +264,6 @@ buttonsTargeting = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'reset',
         text: 'Reset',
         maxStatus: 0,
         apiSend: 'WEAPONS_TARGET_RESET_BTN',
@@ -313,14 +274,12 @@ buttonsTargeting = [
 
 buttonsVhf2 = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'amFm',
         inversed: true,
         text: ['FM', 'AM'],
         apiSend: 'R800_AM_FM',
@@ -328,7 +287,6 @@ buttonsVhf2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowButton,
-        nameId: 'bitPass',
         text: 'BIT\nPASS',
         maxStatus: 0,
         apiGet: 'R800_TEST_LAMP',
@@ -337,7 +295,6 @@ buttonsVhf2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: '50-100',
         inversed: true,
         text: ['50', '100'],
         apiSend: 'R800_DATA_TRANSFER_RATE',
@@ -350,7 +307,6 @@ buttonsVhf2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'bit',
         text: 'BIT',
         maxStatus: 0,
         apiSend: 'R800_TEST_BTN',
@@ -360,21 +316,18 @@ buttonsVhf2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'radioSource',
         inversed: true,
         text: ['VHF-2', 'VHF-1', 'SW', 'G-Intercom'],
         apiSend: 'RADIO_SELECTOR',
     },     
     
     {   
-        nameId: 'vhf2Freq',
         text: 'VHF2\nFreq',
         goTo: 'vhf2freq',
     },  
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'emergencyRx',
         inversed: true,
         text: ['Norm', 'E121.5'],
         apiSend: 'R800_EMER_RCVR',
@@ -382,7 +335,6 @@ buttonsVhf2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'adf',
         inversed: true,
         text: ['Off', 'ADF'],
         apiSend: 'R800_ADF',
@@ -390,7 +342,6 @@ buttonsVhf2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'noiseReduction',
         inversed: true,
         text: ['Off', 'NRedu'],
         apiSend: 'R800_SQUELCH',
@@ -452,7 +403,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: '10+',
         text: '+\n10',
         sendLiterarly: 'INC',
         maxStatus: 0,
@@ -462,7 +412,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: '1+',
         text: '+\n1',
         sendLiterarly: 'INC',
         maxStatus: 0,
@@ -472,7 +421,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'dot1+',
         text: '+\n0.1',
         sendLiterarly: 'INC',
         apiSend: 'R800_FREQ3',
@@ -481,7 +429,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'dot01+',
         text: '+\n0.01',
         sendLiterarly: 'INC',
         apiSend: 'R800_FREQ4',
@@ -491,7 +438,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: '10-',
         text: '-\n10',
         sendLiterarly: 'DEC',
         maxStatus: 0,
@@ -501,7 +447,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: '1-',
         text: '-\n1',
         sendLiterarly: 'DEC',
         maxStatus: 0,
@@ -511,7 +456,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'dot1-',
         text: '-\n0.1',
         sendLiterarly: 'DEC',
         apiSend: 'R800_FREQ3',
@@ -520,7 +464,6 @@ buttonsVhf2freq = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'dot01-',
         text: '-\n0.01',
         sendLiterarly: 'DEC',
         apiSend: 'R800_FREQ4',
@@ -531,7 +474,6 @@ buttonsVhf2freq = [
 
 buttonsCounter = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },   
@@ -539,7 +481,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'left',
         text: '<-',
         apiGet: 'UV26_L_DISPENSER',
     },    
@@ -547,7 +488,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'series',
         text: 'Seq Series\n0 = inf\n5 = 12\n7 = 15',
         apiSend: 'UV26_SERIES',
     },      
@@ -555,7 +495,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'interval',
         text: 'Interval (s)\n0 = 0.125\n7 = 0.25\n9 = 0.5',
         apiSend: 'UV26_INTERVAL',
     },      
@@ -563,7 +502,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'right',
         text: '->',
         apiGet: 'UV26_R_DISPENSER',
     },     
@@ -578,7 +516,6 @@ buttonsCounter = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'leftBothRight',
         inversed: true,
         fontIndex: 4,
         text: ['<-', 'Both', '->'],
@@ -588,7 +525,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'burst',
         text: 'Burst\nin 1 seq',
         apiSend: 'UV26_BURST',
     },      
@@ -596,14 +532,12 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'reset',
         text: 'Reset',
         apiSend: 'UV26_RESET',
     },    
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'progCount',
         inversed: true,
         fontIndex: 4,
         text: ['Count', 'Prog'],
@@ -613,7 +547,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'lwrReset',
         text: 'LWR\nRESET',
         apiSend: 'LWR_RESET',
         apiGet: 'LWR_RESET',
@@ -623,7 +556,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
         sendState: false,
-        nameId: 'stop',
         text: 'Stop',
         apiSend: 'UV26_STOP',
     },    
@@ -631,7 +563,6 @@ buttonsCounter = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'start',
         text: 'Start',
         apiSend: 'UV26_START',
     },    
@@ -639,7 +570,6 @@ buttonsCounter = [
 
 buttonsDatalink = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },   
@@ -647,7 +577,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'vehicle',
         text: '1\nVehi',
         maxStatus: 0,
         apiSend: 'DLNK_TARGET_VEHICLE_BTN',
@@ -657,7 +586,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'aaa',
         text: '2\nAAA',
         maxStatus: 0,
         apiSend: 'DLNK_TARGET_SAM_BTN',
@@ -667,7 +595,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'other',
         text: '3\nOther',
         maxStatus: 0,
         apiSend: 'DLNK_TARGET_OTHER_BTN',
@@ -677,7 +604,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'initIngress',
         text: 'Ingress',
         maxStatus: 0,
         apiSend: 'DLNK_TARGET_POINT_LED',
@@ -687,7 +613,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: '1',
         text: 'Wing\n1',
         maxStatus: 0,
         apiSend: 'DLNK_WINGMAN_1_BTN',
@@ -697,7 +622,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: '2',
         text: 'Wing\n2',
         maxStatus: 0,
         apiSend: 'DLNK_WINGMAN_2_BTN',
@@ -707,7 +631,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: '3',
         text: 'Wing\n3',
         maxStatus: 0,
         apiSend: 'DLNK_WINGMAN_3_BTN',
@@ -717,7 +640,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: '4',
         text: 'Wing\n4',
         maxStatus: 0,
         apiSend: 'DLNK_WINGMAN_4_BTN',
@@ -727,7 +649,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'all',
         text: 'Wing\nAll',
         maxStatus: 0,
         apiSend: 'DLNK_WINGMAN_ALL_BTN',
@@ -739,7 +660,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowStripeButton,
         sendState: false,
-        nameId: 'erase',
         text: 'Erase',
         maxStatus: 0,
         apiSend: 'DLNK_ERASE_BTN',
@@ -749,7 +669,6 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowStripeButton,
         sendState: false,
-        nameId: 'ingressToTrg',
         text: 'Ingress\nTo',
         maxStatus: 0,
         apiSend: 'DLNK_ESCAPE_BTN',
@@ -759,26 +678,21 @@ buttonsDatalink = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowStripeButton,
         sendState: false,
-        nameId: 'sendMem',
         text: 'Send\nMemory',
         maxStatus: 0,
         apiSend: 'DLNK_SEND_BTN',
         apiGet: 'DLNK_SEND_LED'
     },  
-    
-    
 ]
 
 buttonsOverhead = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },   
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'wingTipLight',
         inversed: true,
         text: ['Wing-0%', 'Wing-10%', 'Wing-30%', 'Wing-100%'],
         apiSend: 'OP_NAV_LIGHTS',
@@ -786,7 +700,6 @@ buttonsOverhead = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'wiper',
         inversed: true,
         text: ['WiperOff', 'Wiper3', 'Wiper2', 'Wiper1'],
         apiSend: 'OP_WINDSHIELD_WIPER',
@@ -794,7 +707,6 @@ buttonsOverhead = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'sensorHeat',
         inversed: true,
         text: ['Off', 'SensHt'],
         apiSend: 'OP_PITOT_PORT_HEAT',
@@ -802,7 +714,6 @@ buttonsOverhead = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'sensorHeat',
         inversed: true,
         text: ['Off', 'PilotHt'],
         apiSend: 'OP_PITOT_RAM_HEAT',
@@ -810,7 +721,6 @@ buttonsOverhead = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'rotorDeice',
         inversed: true,
         text: ['Off', '!RotIce'],
         apiSend: 'OP_ROTOR_DEICE',
@@ -818,7 +728,6 @@ buttonsOverhead = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'engineDeIceDeDust',
         inversed: true,
         text: ['!Dusting', '!Icing'],
         apiSend: 'OP_ENG_DEICE',
@@ -827,7 +736,6 @@ buttonsOverhead = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'pilotHeatTest',
         text: 'PilotHt\nTest',
         apiSend: 'OP_PITOT_HEAT_TEST',
     },   
@@ -838,7 +746,6 @@ buttonsOverhead = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'runningGasTemp',
         text: 'Running\nGas\nTemp',
         apiSend: 'ENG_RUNNING_EGT_TEST',
     },    
@@ -846,7 +753,6 @@ buttonsOverhead = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'stoppedGasTemp',
         text: 'Stopped\nGas\nTemp',
         apiSend: 'ENG_STOPPED_EGT_TEST',
     },  
@@ -857,7 +763,6 @@ buttonsOverhead = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'fuelTest',
         text: 'Fuel\nTest',
         apiSend: 'FUEL_TEST',
     },       
@@ -866,7 +771,6 @@ buttonsOverhead = [
 
 buttonsFront = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },   
@@ -875,7 +779,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowButton,
         sendState: false,
-        nameId: 'rotorRpm',
         maxStatus: 0,
         text: 'R RPM',
         apiSend: 'SC_ROTOR_RPM_BTN',
@@ -885,7 +788,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'lampTest',
         text: 'Lamp\nTest',
         apiSend: 'SC_LAMPS_TEST',
     },    
@@ -893,7 +795,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'master',
         text: 'MASTER\nCAUTION',
         apiSend: 'SC_MASTER_CAUTION_BTN',
         apiGet: 'SC_MASTER_CAUTION_LED',
@@ -909,7 +810,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
         sendState: false,
-        nameId: 'leftDown',
         text: 'Left\nDown',
         apiGet: 'GEAR_L_MAIN_DOWN',
     },         
@@ -917,7 +817,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
         sendState: false,
-        nameId: 'noseDown',
         text: 'Nose\nDown',
         apiGet: 'GEAR_NOSE_DOWN',
     },          
@@ -925,7 +824,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenButton,
         sendState: false,
-        nameId: 'rightDown',
         text: 'Right\nDown',
         apiGet: 'GEAR_R_MAIN_DOWN',
     },  
@@ -933,7 +831,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'lwrReset',
         text: 'LWR\nRESET',
         apiSend: 'LWR_RESET',
         apiGet: 'LWR_RESET',
@@ -941,14 +838,12 @@ buttonsFront = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'emergGearSelect',
         text: ['MainG', 'EmerG' ],
         apiSend: 'GEAR_EMER_HYD',
     },  
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'gear',
         text: ['Gear ^', 'Gear v'],
         apiSend: 'GEAR_LEVER',
     },      
@@ -956,7 +851,6 @@ buttonsFront = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'laserReset',
         text: 'Laser\nReset',
         apiSend: 'LASER_RESET',
     },          
@@ -970,23 +864,19 @@ buttonsFront = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'laserMode',
         inversed: true,
         text: ['LRange', 'LDesig'],
         apiSend: 'LASER_MODE',
     },  
-             
 ]
 
 
 buttonsWall = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },   
     {   
-        nameId: 'fire',
         text: 'Fire',
         goTo: 'wall-fire',
     },
@@ -996,68 +886,55 @@ buttonsWall = [
     
 
     {   
-        nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },
     {   
-        nameId: 'elPumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },
     {   
-        nameId: 'elFuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },
     {   
-        nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },
     {   
-        nameId: 'govenorsLights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
     },
     {   
-        nameId: 'elRadio',
         text: 'Radio',
         goTo: 'wall-radio',
     },    
     {   
-        nameId: 'elEject',
         text: 'Eject',
         goTo: 'wall-eject',
     },  
  
     {   
-        nameId: 'aux1',
         text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
-        nameId: 'aux2',
         text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
     },
     {   
-        nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
     },    
-    
 ]
 
 
 buttonsWallEquip = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },  
     {   
-        nameId: 'elFuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },
@@ -1070,7 +947,6 @@ buttonsWallEquip = [
     },  
     {},     
     {   
-        nameId: 'govenorsLights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
     },
@@ -1087,7 +963,6 @@ buttonsWallEquip = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'hydrPwr',
         inversed: true,
         text: ['HydPwr', 'OFF'],
         apiSend: 'HYD_POWER',
@@ -1095,13 +970,11 @@ buttonsWallEquip = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'hydrPwr',
         inversed: true,
         text: ['OFF', 'TgrNav'],
         apiSend: 'NAV_POWER',
     },        
     {   
-        nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
     },  
@@ -1109,7 +982,6 @@ buttonsWallEquip = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'wepPwr',
         inversed: true,
         text: ['OFF', 'Wep-PWR'],
         apiSend: 'WEAPONS_POWER',
@@ -1117,7 +989,6 @@ buttonsWallEquip = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'antiColBeacon',
         inversed: true,
         text: ['OFF', '!ColBeac'],
         apiSend: 'LIGHT_BEACON',
@@ -1125,7 +996,6 @@ buttonsWallEquip = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'inuAlignment',
         inversed: false,
         text: ['Magne', 'FliGyro', 'Manual'],
         apiSend: 'NAV_GYRO_MAG_MAN_HDG',
@@ -1133,23 +1003,19 @@ buttonsWallEquip = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'standBy',
         inversed: true,
         text: ['OFF', 'SAI'],
         apiSend: 'SAI_POWER',
     },        
     {   
-        nameId: 'aux',
         text: 'AUX\ntop',
         goTo: 'aux1',
     },  
-    
 ]
 
 
 buttonsWallEl1 = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
@@ -1175,7 +1041,6 @@ buttonsWallEl1 = [
         apiSend: 'ELEC_BATTERY_1_COVER',
     },   
     {   
-        nameId: 'wall-pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },
@@ -1184,7 +1049,6 @@ buttonsWallEl1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'grndDCPowr',
         inversed: true,
         text: ['OFF', 'GND-DC'],
         apiSend: 'ELEC_DC_GROUND_POWER',
@@ -1192,7 +1056,6 @@ buttonsWallEl1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'bat2',
         inversed: true,
         text: ['OFF', 'BAT2'],
         apiSend: 'ELEC_BATTERY_2',
@@ -1200,21 +1063,18 @@ buttonsWallEl1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'bat1',
         inversed: true,
         text: ['OFF', 'BAT1'],
         apiSend: 'ELEC_BATTERY_1',
     },      
     {},     
     {   
-        nameId: 'elRadio',
         text: 'Radio',
         goTo: 'wall-radio',
     },   
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'grndACPowr',
         inversed: true,
         text: ['OFF', 'GND-AC'],
         apiSend: 'ELEC_AC_GROUND_POWER',
@@ -1222,7 +1082,6 @@ buttonsWallEl1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'leftAc',
         inversed: true,
         text: ['OFF', 'LEFT-AC'],
         apiSend: 'ELEC_AC_L_GEN',
@@ -1230,7 +1089,6 @@ buttonsWallEl1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'rightAc',
         inversed: true,
         text: ['OFF', 'RIGHT-AC'],
         apiSend: 'ELEC_AC_R_GEN',
@@ -1238,18 +1096,15 @@ buttonsWallEl1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'inverter',
         inversed: true,
         text: ['Manual', 'OFF', 'Inverter'],
         apiSend: 'ELEC_DC_AC',
     },       
-    
 ]
 
 
 buttonsWallGovernors = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
@@ -1282,14 +1137,12 @@ buttonsWallGovernors = [
         apiSend: 'ENG_EEG_PT1_OPER_PT2_COVER',
     },        
     {   
-        nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'leftGov',
         inversed: true,
         text: ['OFF', 'LeftGov'],
         apiSend: 'ENG_L_ENG_EEG',
@@ -1297,7 +1150,6 @@ buttonsWallGovernors = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'rightGov',
         inversed: true,
         text: ['OFF', 'RightGov'],
         apiSend: 'ENG_R_ENG_EEG',
@@ -1305,7 +1157,6 @@ buttonsWallGovernors = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'ggTest',
         inversed: true,
         text: ['OFF', 'GGTest'],
         apiSend: 'ENG_EEG_GG_TEST_OPER',
@@ -1313,7 +1164,6 @@ buttonsWallGovernors = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'tkTest',
         inversed: true,
         text: ['PT-1 Test', 'Operatio', 'PT-2 Test'],
         apiSend: 'ENG_EEG_PT1_OPER_PT2',
@@ -1322,47 +1172,38 @@ buttonsWallGovernors = [
     {},     
     {},     
     {   
-        nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
     },      
     {   
-        nameId: 'aux1',
         text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
-        nameId: 'aux2',
         text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
     },     
-    
 ]
 
 
 buttonsWallRadio = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        nameId: 'pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },  
     {   
-        nameId: 'fuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },  
     {   
-        nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },     
@@ -1370,7 +1211,6 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'spu9',
         inversed: true,
         text: ['OFF', 'IntCom'],
         apiSend: 'COMM_INTERCOM_POWER',
@@ -1378,7 +1218,6 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'vhi1',
         inversed: true,
         text: ['OFF', 'VHI-1'],
         apiSend: 'COMM_VHF1_POWER',
@@ -1386,7 +1225,6 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'vhi2',
         inversed: true,
         text: ['OFF', 'VHI-2'],
         apiSend: 'COMM_VHF2_POWER',
@@ -1394,7 +1232,6 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'tlk',
         inversed: true,
         text: ['OFF', 'TLK'],
         apiSend: 'COMM_DATALINK_TLK_POWER',
@@ -1402,7 +1239,6 @@ buttonsWallRadio = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'vhftlk',
         inversed: true,
         text: ['OFF', 'VHF-TLK'],
         apiSend: 'COMM_DATALINK_VHF_TLK_POWER',
@@ -1412,7 +1248,6 @@ buttonsWallRadio = [
     {},     
     {},     
     {   
-        nameId: 'eject',
         text: 'Eject',
         goTo: 'wall-eject',
     },                 
@@ -1421,34 +1256,28 @@ buttonsWallRadio = [
 
 buttonsWallFire = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        nameId: 'pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },  
     {   
-        nameId: 'fuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },  
     {   
-        nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },     
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
-        nameId: 'leftEng',
         text: 'Left\nENG',
         maxStatus: 0,
         sendState: false,
@@ -1458,7 +1287,6 @@ buttonsWallFire = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
-        nameId: 'apu',
         text: 'APU',
         maxStatus: 0,
         sendState: false,
@@ -1468,7 +1296,6 @@ buttonsWallFire = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
-        nameId: 'rightEng',
         text: 'Right\nENG',
         maxStatus: 0,
         sendState: false,
@@ -1478,7 +1305,6 @@ buttonsWallFire = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
-        nameId: 'vent',
         text: 'Vent',
         maxStatus: 0,
         sendState: false,
@@ -1502,14 +1328,12 @@ buttonsWallFire = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'auto-manual',
         text: ['Auto', 'Manual'],
         apiSend: 'FIREEXT_AUTO_MANUAL',
     },          
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'testAlarmOff',
         inversed: true,
         text: ['Off', 'Alarm'],
         apiSend: 'FIREEXT_MONITOR',
@@ -1517,48 +1341,40 @@ buttonsWallFire = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'group123',
         inversed: true,
         maxStatus: 2,
-        text: ['Test 3', 'Test 1', 'Test 2'],
+        text: ['Test  3', 'Test  1', 'Test  2'],
         apiSend: 'FIREEXT_WARN_TEST',
     },  
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'testWork',
         inversed: true,
         fontIndex: 5,
         text: ['Test', 'Off', 'Work'],
         apiSend: 'FIREEXT_EXT_MODE',
-    },         
-         
+    },
 ]
 
 
 buttonsWallEject = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        nameId: 'pumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },  
     {   
-        nameId: 'fuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },  
     {   
-        nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },     
@@ -1586,64 +1402,53 @@ buttonsWallEject = [
     },      
     {},     
     {   
-        nameId: 'radio',
         text: 'Radio',
         goTo: 'wall-radio',
     },  
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'eject1',
         text: ['Eject1', 'OFF'],
         apiSend: 'EJECT_POWER_1',
     },           
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'eject2',
         text: ['Eject2', 'OFF'],
         apiSend: 'EJECT_POWER_2',
     },           
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'eject3',
         text: ['Eject3', 'OFF'],
         apiSend: 'EJECT_POWER_3',
     },  
-    {},     
 ]
 
 buttonsWallPumps = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
     {   
-        nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        nameId: 'elFuel',
         text: 'Fuel',
         goTo: 'wall-fuel',
     },    
     {   
-        nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },    
     {   
-        nameId: 'gov-lights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
     },    
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'pumpFwd',
         inversed: true,
         text: ['OFF', 'PUMP-FWD'],
         apiSend: 'FUEL_FORWARD_PUMP_POWER',
@@ -1651,7 +1456,6 @@ buttonsWallPumps = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'pumpAft',
         inversed: true,
         text: ['OFF', 'PUMP-AFT'],
         apiSend: 'FUEL_AFT_PUMP_POWER',
@@ -1659,7 +1463,6 @@ buttonsWallPumps = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'pumpInner',
         inversed: true,
         text: ['OFF', 'PUMP-INN'],
         apiSend: 'FUEL_INNER_PUMP_POWER',
@@ -1667,27 +1470,23 @@ buttonsWallPumps = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'pumpOuter',
         inversed: true,
-        text: ['OFF', 'PUMP-OUT'],
+        text: ['OFF', 'PUMP-OUTE'],
         apiSend: 'FUEL_OUTER_PUMP_POWER',
     },    
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'fuelMeter',
         inversed: true,
         text: ['OFF', 'Meter'],
         apiSend: 'FUEL_METER_POWER',
     },    
     {   
-        nameId: 'elRadio',
         text: 'Radio',
         goTo: 'wall-radio',
     },   
     {},     
     {   
-        nameId: 'elEject',
         text: 'Eject',
         goTo: 'wall-eject',
     },                            
@@ -1697,27 +1496,22 @@ buttonsWallPumps = [
 
 buttonsWallFuel = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },  
     {   
-        nameId: 'elec1',
         text: 'Elect',
         goTo: 'wall-electrical1',
     },     
     {   
-        nameId: 'elPumps',
         text: 'Pumps',
         goTo: 'wall-pumps',
     },
     {   
-        nameId: 'equip',
         text: 'Equip',
         goTo: 'wall-equip',
     },
     {   
-        nameId: 'gov-lights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
     },    
@@ -1750,7 +1544,6 @@ buttonsWallFuel = [
         apiSend: 'FUEL_XFEED_VLV_COVER',
     },  
     {   
-        nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
     },  
@@ -1758,7 +1551,6 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'left',
         inversed: true,
         text: ['OFF', 'PUMP-LEFT'],
         apiSend: 'FUEL_L_ENG_VLV',
@@ -1766,7 +1558,6 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'right',
         inversed: true,
         text: ['OFF', 'PUMP-RIGHT'],
         apiSend: 'FUEL_R_ENG_VLV',
@@ -1774,7 +1565,6 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'apu',
         inversed: true,
         text: ['OFF', 'PUMP-APU'],
         apiSend: 'FUEL_APU_VLV',
@@ -1782,18 +1572,15 @@ buttonsWallFuel = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'xfeed',
         inversed: true,
         text: ['OFF', 'X-FEED'],
         apiSend: 'FUEL_XFEED_VLV',
     },   
-    
 ]
 
 
 buttonsHud = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },   
@@ -1801,7 +1588,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: true,
-        nameId: 'handle',
         text: 'Filter',
         apiSend: 'HUD_FILTER_HANDLE',
     },  
@@ -1809,7 +1595,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -1821,7 +1606,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright+',
         increment: +4095,
         maxStatus: 65535,
         overflow: false,
@@ -1832,7 +1616,6 @@ buttonsHud = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'mode',
         inversed: true,
         text: ['Night', 'Day', 'StandBy'],
         apiSend: 'HUD_MODE',
@@ -1840,7 +1623,6 @@ buttonsHud = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'polarity',
         inversed: true,
         text: ['White', 'Black'],
         apiSend: 'SHKVAL_POLARITY',
@@ -1849,7 +1631,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'hms-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -1861,7 +1642,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'hms+',
         increment: +2047,
         maxStatus: 65535,
         overflow: false,
@@ -1873,7 +1653,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright-',
         increment: -2048,
         maxStatus: 65535,
         overflow: false,
@@ -1885,7 +1664,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright+',
         increment: +2048,
         maxStatus: 65535,
         overflow: false,
@@ -1897,7 +1675,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'contrast-',
         increment: -2048,
         maxStatus: 65535,
         overflow: false,
@@ -1909,7 +1686,6 @@ buttonsHud = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'contrast+',
         increment: +2048,
         maxStatus: 65535,
         overflow: false,
@@ -1919,7 +1695,6 @@ buttonsHud = [
     },        {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'laserCode',
         inversed: true,
         text: ['Laser #1', 'Laser #2', 'Laser #3'],
         apiSend: 'LASER_CODE',
@@ -1927,13 +1702,11 @@ buttonsHud = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'declutter',
         inversed: true,
         text: ['Full H', 'Declu'],
         apiSend: 'HUD_DECLUTTER',
     },          
     {   
-        nameId: 'land',
         text: 'Landing\nlights',
         goTo: 'land',
     },    
@@ -1942,7 +1715,6 @@ buttonsHud = [
 
 buttonsLightsBrightness = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },   
@@ -1951,7 +1723,6 @@ buttonsLightsBrightness = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bbright+',
         increment: +4095,
         maxStatus: 65535,
         overflow: false,
@@ -1963,7 +1734,6 @@ buttonsLightsBrightness = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'saibright+',
         increment: +4095,
         maxStatus: 65535,
         overflow: false,
@@ -1975,7 +1745,6 @@ buttonsLightsBrightness = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'panelbright+',
         increment: +4095,
         maxStatus: 65535,
         overflow: false,
@@ -1984,12 +1753,10 @@ buttonsLightsBrightness = [
         dynamicState: true,
     },  
     {   
-        nameId: 'aux1',
         text: 'AUX\ntop',
         goTo: 'aux1',
     },
     {   
-        nameId: 'govenorsLights',
         text: 'Govern',
         goTo: 'wall-governors-lights',
     },
@@ -1997,7 +1764,6 @@ buttonsLightsBrightness = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bbright-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -2009,7 +1775,6 @@ buttonsLightsBrightness = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'saibright-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -2021,7 +1786,6 @@ buttonsLightsBrightness = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'panelbright-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -2032,7 +1796,6 @@ buttonsLightsBrightness = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'interiorLight',
         inversed: true,
         text: ['OFF', 'Interior' ],
         apiSend: 'LIGHT_CPT_INT',
@@ -2041,7 +1804,6 @@ buttonsLightsBrightness = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'rotor',
         inversed: true,
         text: ['OFF', 'Rotor' ],
         apiSend: 'LIGHT_ROTOR_TIP',
@@ -2049,7 +1811,6 @@ buttonsLightsBrightness = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'formation',
         inversed: true,
         text: ['Frm0%', 'Frm10%', 'Frm30%', 'Frm100%'],
         apiSend: 'LIGHT_FORMATION',
@@ -2057,7 +1818,6 @@ buttonsLightsBrightness = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'saiAdi',
         inversed: true,
         text: ['OFF', 'SAI+ADI' ],
         apiSend: 'LIGHT_ADI_SAI',
@@ -2065,7 +1825,6 @@ buttonsLightsBrightness = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'nightVission',
         inversed: true,
         text: ['OFF', 'NVG' ],
         apiSend: 'LIGHT_COCKPIT_NVG',
@@ -2073,26 +1832,20 @@ buttonsLightsBrightness = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'cockpit',
         inversed: true,
         text: ['OFF', 'Cockpit' ],
         apiSend: 'LIGHT_COCKPIT',
     },      
-
-         
-    
 ]
 
 buttonsLand = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'hud',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'landingLight',
         inversed: true,
         text: ['Retract', 'Off', 'Extend'],
         apiSend: 'LIGHT_LANDING_ON_RETR_OFF',
@@ -2100,14 +1853,12 @@ buttonsLand = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'mainBackup',
         text: ['Main', 'Back'],
         apiSend: 'LIGHT_LANDING_MAIN_BACKUP',
     },      
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'adfMode',
         fontIndex: 4,
         inversed: true,
         text: ['Outer', 'Auto*', 'Inner'],
@@ -2118,7 +1869,6 @@ buttonsLand = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'msgOff',
         text: 'VMU\ncease',
         apiSend: 'VOICE_MSG_OFF',
     },
@@ -2126,35 +1876,28 @@ buttonsLand = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'msgRepeat',
         text: 'VMU\nrepeat',
         apiSend: 'VOICE_MSG_REPEAT',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'declutter',
         fontIndex: 4,
         inversed: true,
         text: ['Emerg', 'Norm'],
         apiSend: 'VOICE_MSG_EMER',
     },      
-    
-     
-        
 ]
 
 
 buttonsWeapons = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },       
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'masterArm',
         inversed: true,
         text: ['Moff', 'MArm'],
         apiSend: 'WEAPONS_MASTER_ARM',
@@ -2189,14 +1932,12 @@ buttonsWeapons = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'jetExt',
         text: 'Jet\nExt',
         apiSend: 'WEAPONS_JETTISON_EXT',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'jetArm',
         inversed: true,
         text: ['Joff', 'JArm'],
         apiSend: 'WEAPONS_JETTISON_ARM_MODE',
@@ -2205,7 +1946,6 @@ buttonsWeapons = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: 'jetAtgm',
         text: 'Jet\nATGM',
         apiSend: 'WEAPONS_EXPEDITE_ATGM_JETTISON',
     },
@@ -2213,7 +1953,6 @@ buttonsWeapons = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'cAutoMan',
         inversed: true,
         text: ['Auto', 'Manual'],
         apiSend: 'WEAPONS_MANUAL_AUTO',
@@ -2221,7 +1960,6 @@ buttonsWeapons = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'cBurst',
         fontIndex: 5,
         inversed: true,
         text: ['low', 'med', 'long'],
@@ -2230,7 +1968,6 @@ buttonsWeapons = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'cHe',
         inversed: true,
         text: ['AP', 'HE'],
         apiSend: 'WEAPONS_CANNON_ROUND',
@@ -2238,7 +1975,6 @@ buttonsWeapons = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'cRate',
         inversed: true,
         text: ['High', 'Low'],
         apiSend: 'WEAPONS_CANNON_RATE',
@@ -2249,7 +1985,6 @@ buttonsWeapons = [
 
 buttonsPvio800_3 = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'pvi800-1',
     },
@@ -2277,7 +2012,6 @@ buttonsPvio800_3 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'mag-',
         increment: -4095,
         sendState: false,
         text: '-\nMagne',
@@ -2288,7 +2022,6 @@ buttonsPvio800_3 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'mag+',
         increment: +4095,
         sendState: false,
         maxStatus: 65535,
@@ -2300,7 +2033,6 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'mode',
         fontIndex: 7,
         inversed: true,
         text: ['OFF', 'CHECK', 'EDIT', 'OPER', 'SIM'],
@@ -2309,7 +2041,6 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'inu',
         inversed: true,
         text: ['UPDATE', 'INU'],
         apiSend: 'PVI_INU_FIX',
@@ -2317,7 +2048,6 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'power',
         inversed: true,
         text: ['OFF', 'ON'],
         apiSend: 'PVI_POWER',
@@ -2326,7 +2056,6 @@ buttonsPvio800_3 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -2338,7 +2067,6 @@ buttonsPvio800_3 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright+',
         increment: +4095,
         maxStatus: 65535,
         overflow: false,
@@ -2350,7 +2078,6 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'id',
         fontIndex: 7,
         text: ['1', '2', '3', '4'],
         apiSend: 'DLNK_SELF_ID',
@@ -2358,7 +2085,6 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'masterMode',
         text: ['OFF', 'Rx-Only', 'Wingman', 'CMDR'],
         apiSend: 'DLNK_MASTER_MODE',
     },
@@ -2366,7 +2092,6 @@ buttonsPvio800_3 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'scan-',
         increment: -1,
         maxStatus: 7,
         overflow: false,
@@ -2378,7 +2103,6 @@ buttonsPvio800_3 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'scan+',
         increment: 1,
         maxStatus: 7,
         overflow: false,
@@ -2389,7 +2113,6 @@ buttonsPvio800_3 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'northSouth',
         text: ['North', 'South'],
         apiSend: 'PSHK7_NORTH_SOUTH',
     },           
@@ -2411,7 +2134,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'fixPnt',
         text: 'FIX\nPNT',
         maxStatus: 0,
         apiSend: 'PVI_FIXPOINTS_BTN',
@@ -2421,7 +2143,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'selfCord',
         text: 'SELF\nCOOR',
         maxStatus: 0,
         apiSend: 'PVI_SELF_COOR_BTN',
@@ -2431,7 +2152,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'trueHead',
         text: 'T-HEAD\nTIME/DI',
         maxStatus: 0,
         apiSend: 'PVI_THDG_TIME_RANGE_BTN',
@@ -2441,7 +2161,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'inuprec',
         text: 'INU\nPREC',
         maxStatus: 0,
         apiSend: 'PVI_INU_PRECISE_ALIGN_BTN',
@@ -2460,7 +2179,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'airfield',
         text: 'AIR\nFIELD',
         maxStatus: 0,
         apiSend: 'PVI_AIRFIELDS_BTN',
@@ -2470,7 +2188,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'dtaDh',
         text: 'DTA\nDH',
         maxStatus: 0,
         apiSend: 'PVI_DTA_DH_BTN',
@@ -2480,7 +2197,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'headra',
         text: 'HEAD/RA\nTGT PNT',
         maxStatus: 0,
         apiSend: 'PVI_BEARING_RANGE_BTN',
@@ -2490,7 +2206,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'inunorm',
         text: 'INU\nNORM',
         maxStatus: 0,
         apiSend: 'PVI_INU_NORMAL_ALIGN_BTN',
@@ -2501,7 +2216,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'wpt',
         text: 'WPT',
         maxStatus: 0,
         apiSend: 'PVI_WAYPOINTS_BTN',
@@ -2511,7 +2225,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'navTarget',
         text: 'NAV\nTGT',
         maxStatus: 0,
         apiSend: 'PVI_TARGETS_BTN',
@@ -2521,7 +2234,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'windSpeedHead',
         text: 'WIND\nDI/SP',
         maxStatus: 0,
         apiSend: 'PVI_WIND_HDG_SPEED_BTN',
@@ -2531,7 +2243,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'inuRerun',
         text: 'INU\nRERUN',
         maxStatus: 0,
         apiSend: 'PVI_INU_INFLIGHT_REALIGN_BTN',
@@ -2541,7 +2252,6 @@ buttonsPvio800_2 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'initPnt',
         text: 'INIT\nPNT',
         maxStatus: 0,
         apiSend: 'PVI_INIT_PNT_BTN',
@@ -2552,7 +2262,6 @@ buttonsPvio800_2 = [
 
 buttonsPvio800_1 = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },
@@ -2560,7 +2269,6 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '1',
         text: '-\n1',
         apiSend: 'PVI_1',
     },
@@ -2568,7 +2276,6 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '2',
         text: '2',
         apiSend: 'PVI_2',
     },
@@ -2576,14 +2283,12 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '3',
         text: '3',
         apiSend: 'PVI_3',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowStripeButton,
-        nameId: 'reset',
         text: 'Reset',
         maxStatus: 0,
         apiSend: 'PVI_RESET_BTN',
@@ -2591,7 +2296,6 @@ buttonsPvio800_1 = [
         sendState: false,
     },
     {   
-        nameId: 'pvi800-2',
         text: 'PVI800\nfunc',
         goTo: 'pvi800-2',
     },
@@ -2599,7 +2303,6 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '4',
         text: '4',
         apiSend: 'PVI_4',
     },
@@ -2607,7 +2310,6 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '5',
         text: '5',
         apiSend: 'PVI_5',
     },
@@ -2615,7 +2317,6 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '6',
         text: '6',
         apiSend: 'PVI_6',
     },
@@ -2623,12 +2324,10 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '0',
         text: '+\n0',
         apiSend: 'PVI_0',
     },
     {   
-        nameId: 'pvi800-3',
         text: 'PVI800\nPVTz-800',
         goTo: 'pvi800-3',
     },
@@ -2636,7 +2335,6 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '7',
         text: '7',
         apiSend: 'PVI_7',
     },
@@ -2644,7 +2342,6 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '8',
         text: '8',
         apiSend: 'PVI_8',
     },
@@ -2652,14 +2349,12 @@ buttonsPvio800_1 = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
         sendState: false,
-        nameId: '9',
         text: '9',
         apiSend: 'PVI_9',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowStripeButton,
-        nameId: 'enter',
         text: 'Enter',
         maxStatus: 0,
         apiSend: 'PVI_ENTER_BTN',
@@ -2671,7 +2366,6 @@ buttonsPvio800_1 = [
 
 buttonsArbis = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },
@@ -2679,7 +2373,6 @@ buttonsArbis = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'pwr',
         inversed: true,
         text: ['Off', 'On'],
         apiSend: 'ABRIS_POWER',
@@ -2689,7 +2382,6 @@ buttonsArbis = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -2700,7 +2392,6 @@ buttonsArbis = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bright+',
         increment: +4095,
         maxStatus: 65535,
         overflow: false,
@@ -2712,7 +2403,6 @@ buttonsArbis = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
-        nameId: '1',
         text: '^\n1',
         apiSend: 'ABRIS_BTN_1',
     },
@@ -2720,7 +2410,6 @@ buttonsArbis = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
-        nameId: '2',
         text: '^\n2',
         apiSend: 'ABRIS_BTN_2',
     },
@@ -2728,7 +2417,6 @@ buttonsArbis = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
-        nameId: '3',
         text: '^\n3',
         apiSend: 'ABRIS_BTN_3',
     },
@@ -2736,7 +2424,6 @@ buttonsArbis = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
-        nameId: '4',
         text: '^\n4',
         apiSend: 'ABRIS_BTN_4',
     },
@@ -2744,7 +2431,6 @@ buttonsArbis = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
         sendState: false,
-        nameId: '5',
         text: '^\n5',
         apiSend: 'ABRIS_BTN_5',
     },
@@ -2754,7 +2440,6 @@ buttonsArbis = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'cur-',
         increment: -4095,
         sendState: false,
         maxStatus: 65535,
@@ -2766,15 +2451,13 @@ buttonsArbis = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'curBtn',
-        text: 'Cursor\nbutton',
+        text: 'Button\nCursor',
         apiSend: 'ABRIS_CURSOR_BTN',
         sendState: false,
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'cur+',
         increment: +4095,
         sendState: false,
         overflow: true,
@@ -2783,13 +2466,11 @@ buttonsArbis = [
         apiSend: 'ABRIS_CURSOR_ROT',
         dynamicState: true,
     },
-    
 ]
 
 
 buttonsAp = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },
@@ -2797,7 +2478,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'lwrReset',
         text: 'LWR\nRESET',
         apiSend: 'LWR_RESET',
         apiGet: 'LWR_RESET',
@@ -2805,7 +2485,6 @@ buttonsAp = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'hms',
         inversed: true,
         text: ['OFF', 'HMS'],
         apiSend: 'HMS_POWER',
@@ -2814,7 +2493,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'autoturn',
         text: 'Auto\nTurn',
         maxStatus: 0,
         apiSend: 'WEAPONS_AUTO_TURN_BTN',
@@ -2824,7 +2502,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'master',
         text: 'MASTER\nCAUTION',
         apiSend: 'SC_MASTER_CAUTION_BTN',
         apiGet: 'SC_MASTER_CAUTION_LED',
@@ -2833,7 +2510,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'bank',
         text: 'BANK\nHOLD',
         apiSend: 'AP_BANK_HOLD_BTN',
         apiGet: 'AP_BANK_HOLD_LED',
@@ -2842,7 +2518,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'pitch',
         text: 'PITCH\nHOLD',
         apiSend: 'AP_PITCH_HOLD_BTN',
         apiGet: 'AP_PITCH_HOLD_LED',
@@ -2851,7 +2526,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowButton,
         sendState: false,
-        nameId: 'rotorRpm',
         maxStatus: 0,
         text: 'R RPM',
         apiSend: 'SC_ROTOR_RPM_BTN',
@@ -2861,7 +2535,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'fd',
         text: 'FD\nAP',
         apiSend: 'AP_FD_BTN',
         apiGet: 'AP_FD_LED',
@@ -2870,7 +2543,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.greenStripeButton,
         sendState: false,
-        nameId: 'reset',
         text: 'Weap\nReset',
         maxStatus: 0,
         apiSend: 'WEAPONS_TARGET_RESET_BTN',
@@ -2880,7 +2552,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'hdg',
         text: 'HDG\nHOLD',
         apiSend: 'AP_HDG_HOLD_BTN',
         apiGet: 'AP_HDG_HOLD_LED',
@@ -2889,7 +2560,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blueButton,
         sendState: false,
-        nameId: 'alt',
         text: 'ALT\nHOLD',
         apiSend: 'AP_ALT_HOLD_BTN',        
         apiGet: 'AP_ALT_HOLD_LED',
@@ -2897,7 +2567,6 @@ buttonsAp = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'altMode',
         fontIndex: 4, 
         text: ['BR', '--', 'RD'],
         apiSend: 'AP_BARO_RALT',
@@ -2905,7 +2574,6 @@ buttonsAp = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'hdgMode',
         fontIndex: 4, 
         text: ['DH', '--', 'DT'],
         apiSend: 'AP_DH_DT',
@@ -2914,7 +2582,6 @@ buttonsAp = [
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.redButton,
         sendState: false,
-        nameId: 'counterStart',
         text: 'Counter\nStart',
         apiSend: 'UV26_START',
     },    
@@ -2923,7 +2590,6 @@ buttonsAp = [
 
 buttonsFlare = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },
@@ -2941,7 +2607,6 @@ buttonsFlare = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'ch-',
         increment: -1,
         maxStatus: 9,
         text: '-\nChannel',
@@ -2951,7 +2616,6 @@ buttonsFlare = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'ch+',
         maxStatus: 9,
         overflow: false,
         text: '+\nChannel',
@@ -2961,9 +2625,7 @@ buttonsFlare = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'vol-',
         increment: -4095,
-        // sendState: false,
         overflow: false,
         maxStatus: 65535,
         text: '-\nVolume',
@@ -2973,9 +2635,7 @@ buttonsFlare = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'vol+',
         increment: +4095,
-        // sendState: false,
         overflow: false,
         maxStatus: 65535,
         text: '+\nVolume',
@@ -2985,8 +2645,6 @@ buttonsFlare = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'adfNdb',
-        // inversed: true,
         text: ['TLF', 'TLG'],
         apiSend: 'ADF_TLF_TLG',
     },
@@ -2994,7 +2652,6 @@ buttonsFlare = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'adfTest',
         sendState: false,
         maxStatus: 0,
         text: 'ADF\nTest',
@@ -3003,15 +2660,12 @@ buttonsFlare = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'compasAnt',
-        // inversed: true,
         text: ['CMPS', 'ANT' ],
         apiSend: 'ADF_CMPS_ANT',
     },   
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'power',
         inversed: true,
         text: ['Off', 'On'],
         apiSend: 'FLARES_POWER',
@@ -3021,7 +2675,6 @@ buttonsFlare = [
         maxStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         customFontColor: '#dd0000',
-        nameId: 'red',
         text: 'Red\nflare',
         sendState: false,
         apiSend: 'FLARES_RED',
@@ -3031,7 +2684,6 @@ buttonsFlare = [
         maxStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         customFontColor: '#00dd00',
-        nameId: 'green',
         text: 'Green\nflare',
         sendState: false,
         apiSend: 'FLARES_GREEN',
@@ -3040,7 +2692,6 @@ buttonsFlare = [
         type: buttonLogic.types.textToggle,
         maxStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'white',
         text: 'White\nflare',
         sendState: false,
         apiSend: 'FLARES_WHITE',
@@ -3050,18 +2701,15 @@ buttonsFlare = [
         maxStatus: 0,
         scheme: buttonLogic.colorScheme.grayButton,
         customFontColor: '#dddd00',
-        nameId: 'yellow',
         text: 'Yellow\nflare',
         sendState: false,
         apiSend: 'FLARES_YELLOW',
     },
-    
 ]
 
 
 buttonsVhf1 = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'default',
     },
@@ -3078,7 +2726,6 @@ buttonsVhf1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'ch-',
         increment: -1,
         overflow: true,
         maxStatus: 9,
@@ -3089,7 +2736,6 @@ buttonsVhf1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'ch+',
         overflow: true,
         maxStatus: 9,
         text: '+\nChannel',
@@ -3099,7 +2745,6 @@ buttonsVhf1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'autoTune',
         sendState: false,
         text: 'Auto\ntune',
         apiSend: 'R828_TUNER',
@@ -3107,7 +2752,6 @@ buttonsVhf1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowButton,
-        nameId: 'autoTuneLamp',
         sendState: false,
         text: 'Tuning',
         apiGet: 'R828_TUNER_LAMP',
@@ -3115,7 +2759,6 @@ buttonsVhf1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'noiseReduction',
         inversed: true,
         text: ['Off', 'NRedu'],
         apiSend: 'R828_SQUELCH',
@@ -3123,7 +2766,6 @@ buttonsVhf1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'vol-',
         overflow: false,
         increment: -4095,
         maxStatus: 655535,
@@ -3134,7 +2776,6 @@ buttonsVhf1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'vol+',
         overflow: false,
         increment: 4095,
         maxStatus: 655535,
@@ -3142,20 +2783,17 @@ buttonsVhf1 = [
         apiSend: 'R828_VOLUME',
         dynamicState: true,
     },                      
-    {},     
 ]
 
 
 buttonsAux1 = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'leftGov',
         sendState: false,
         text: 'Left\nGov',
         apiSend: 'ENG_L_EGT_GOVERNOR',
@@ -3163,7 +2801,6 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'rightGov',
         sendState: false,
         text: 'Right\nGov',
         apiSend: 'ENG_R_EGT_GOVERNOR',
@@ -3171,21 +2808,18 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'vibr',
         sendState: false,
         text: 'Vibra',
         apiSend: 'ENG_VIBR_MONITOR',
     },     
     {},     
     {   
-        nameId: 'aux2',
         text: 'LWS\nCounter\nEkran',
         goTo: 'aux2',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'eject_test',
         sendState: false,
         text: 'Eject\ntest',
         apiSend: 'EJECT_SYS_TEST_BTN',
@@ -3193,33 +2827,31 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'eject-',
         overflow: false,
         increment: -1,
         maxStatus: 6,
         text: 'Eject-',
+        dynamicState: true,
         apiSend: 'EJECT_SYS_SELECTOR',
     },          
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'eject+',
         overflow: false,
         maxStatus: 6,
         text: 'Eject+',
+        dynamicState: true,
         apiSend: 'EJECT_SYS_SELECTOR',
     }, 
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'voiceTest',
         maxStatus: 0,
         sendState: false,
         text: 'Voice\ntest',
         apiSend: 'VOICE_MSG_SYS_TEST',
     },     
     {   
-        nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
     },  
@@ -3236,7 +2868,6 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bal-',
         overflow: false,
         increment: -1,
         maxStatus: 10,
@@ -3246,7 +2877,6 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'bal+',
         overflow: false,
         maxStatus: 10,
         text: 'Bal+',
@@ -3255,7 +2885,6 @@ buttonsAux1 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'inuPower',
         inversed: true,
         text: ['off', 'INU'],
         apiSend: 'PPK800_INU_POWER',
@@ -3265,14 +2894,12 @@ buttonsAux1 = [
 
 buttonsAux2 = [
     {   
-        nameId: 'back',
         text: '<- Back',
         goTo: 'wall',
     },
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.yellowButton,
-        nameId: 'lwsOper',
         text: 'LWS\nOper',
         maxStatus: 0,
         apiGet: 'LWS_OPER',
@@ -3281,7 +2908,6 @@ buttonsAux2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'lwsPower',
         inversed: true,
         text: ['OFF', 'LWS'],
         apiSend: 'LWS_POWER',
@@ -3289,7 +2915,6 @@ buttonsAux2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.grayButton,
-        nameId: 'lwsTest',
         maxStatus: 0,
         sendState: false,
         text: 'LWS\ntest',
@@ -3304,7 +2929,6 @@ buttonsAux2 = [
     },   
 
     {   
-        nameId: 'aux1',
         text: 'AUX',
         goTo: 'aux1',
     },
@@ -3326,7 +2950,6 @@ buttonsAux2 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'auxLight+',
         increment: +4095,
         maxStatus: 65535,
         overflow: false,
@@ -3337,20 +2960,17 @@ buttonsAux2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'ekranPower',
         inversed: true,
         text: ['OFF', 'EkrHydTrns'],
         apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER',
     },  
     {   
-        nameId: 'lightBright',
         text: 'Lights',
         goTo: 'lights-bright',
     },  
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'u26Power',
         inversed: true,
         text: ['OFF', 'U26-PWR'],
         apiSend: 'UV26_POWER',
@@ -3358,7 +2978,6 @@ buttonsAux2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'u26test',
         inversed: true,
         text: ['OFF', 'TEST'],
         apiSend: 'UV26_TEST',
@@ -3367,7 +2986,6 @@ buttonsAux2 = [
         type: buttonLogic.types.textToggle,
         defaultStatus: 0,
         scheme: buttonLogic.colorScheme.blackButton,
-        nameId: 'auxLight-',
         increment: -4095,
         maxStatus: 65535,
         overflow: false,
@@ -3378,7 +2996,6 @@ buttonsAux2 = [
     {   
         type: buttonLogic.types.textToggle,
         scheme: buttonLogic.colorScheme.switch,
-        nameId: 'rearLights',
         inversed: true,
         text: ['OFF', 'RearLight'],
         apiSend: 'ELEC_AUX_LIGHTS',
