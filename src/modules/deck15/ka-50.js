@@ -1,4 +1,4 @@
-const buttonLogic = require('./buttonLogic.js')
+const buttonLogic = require('../buttonLogic.js')
 
 buttonsDefault = [
     {   
@@ -3004,7 +3004,7 @@ buttonsAux2 = [
 
 
 module.exports = {
-    name: "15-ka-50",
+    name: "deck15-ka-50",
     namespaces: [
         { name: 'default',               buttons: buttonsDefault},
         { name: 'hud',                   buttons: buttonsHud},
