@@ -12,6 +12,8 @@ const graphics    = require('./graphics.js')
 var api = new DcsBiosApi({ logLevel: 'INFO' });
 api.startListening()
 
+var namespaceReferenced = []
+var namespaceImplemented = []
 var buttonsUpdated = 0;
 
 function mapButtons(namespaceName, button, i) {
@@ -85,6 +87,8 @@ function updateNamespace(namespace) {
         if (button.goTo !== undefined) {
             if (button.scheme === undefined) button.scheme = buttonLogic.colorScheme.gotoButton
             if (button.type === undefined) button.type = buttonLogic.types.textToggle
+
+            if (namespaceReferenced.indexOf(button.goTo) == -1) namespaceReferenced.push(button.goTo)
         }
         
         if (button.scheme != buttonLogic.colorScheme.gotoButton) {
@@ -252,8 +256,18 @@ setModuleName(config.firstModuleName)
 globals.displayOnSteamDeck = false
 globals.currentModule.namespaces.forEach(namespace => {
     setNamespaceName(namespace.name)
-    updateNamespace(globals.currentNamespace)    
+    updateNamespace(globals.currentNamespace)  
+    if (namespaceImplemented.indexOf(namespace.name) != -1) {
+        throw('Namespace ' + namespace.name + ' was implemented twice')
+    }
+    namespaceImplemented.push(namespace.name)
 });
+
+namespaceReferenced.forEach( namespace => {
+    if (namespaceImplemented.indexOf(namespace) == -1) {
+        throw('Namespace ' + namespace + ' was referenced, but never implemented')
+    }
+})
 
 console.log('Opened all namespaces and generated %d buttons (excluding the goTo buttons)', buttonsUpdated)
 
