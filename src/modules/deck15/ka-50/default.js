@@ -97,11 +97,11 @@ module.exports = {
         require('./pvi800-control.js'),
         require('./adf-flare.js'),
         
-        require('./ka-50/targeting.js'),
-        require('./ka-50/frontLeft.js'),
-        require('./ka-50/weapons.js'),
-        require('./ka-50/ap.js'),
-        require('./ka-50/vhf1.js'),
+        require('./targeting.js'),
+        require('./frontLeft.js'),
+        require('./weapons.js'),
+        require('./ap.js'),
+        require('./vhf1.js'),
     ]
 }
 
