@@ -40,7 +40,7 @@ module.exports = {
 
         {   
             text: 'AUX',
-            goTo: 'aux1',
+            goTo: 'aux-top',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -76,7 +76,7 @@ module.exports = {
         },  
         {   
             text: 'Lights',
-            goTo: 'lights-bright',
+            goTo: 'wall-lights',
         },  
         {   
             type: buttonLogic.types.textToggle,

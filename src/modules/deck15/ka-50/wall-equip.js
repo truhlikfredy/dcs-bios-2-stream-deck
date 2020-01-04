@@ -21,7 +21,7 @@ module.exports = {
         {},     
         {   
             text: 'Govern',
-            goTo: 'wall-governors-lights',
+            goTo: 'wall-governors',
         },
 
         {   
@@ -49,7 +49,7 @@ module.exports = {
         },        
         {   
             text: 'Lights',
-            goTo: 'lights-bright',
+            goTo: 'wall-lights',
         },  
 
         {   
@@ -82,7 +82,7 @@ module.exports = {
         },        
         {   
             text: 'AUX\ntop',
-            goTo: 'aux1',
+            goTo: 'aux-top',
         },  
     ]
 }

@@ -21,7 +21,7 @@ module.exports = {
         },
         {   
             text: 'Govern',
-            goTo: 'wall-governors-lights',
+            goTo: 'wall-governors',
         },    
         {   
             type: buttonLogic.types.textToggle,
@@ -53,7 +53,7 @@ module.exports = {
         },  
         {   
             text: 'Lights',
-            goTo: 'lights-bright',
+            goTo: 'wall-lights',
         },  
     
         {   

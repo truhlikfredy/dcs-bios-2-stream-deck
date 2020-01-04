@@ -32,7 +32,7 @@ module.exports = {
         },
         {   
             text: 'Govern',
-            goTo: 'wall-governors-lights',
+            goTo: 'wall-governors',
         },
         {   
             text: 'Radio',
@@ -45,15 +45,15 @@ module.exports = {
     
         {   
             text: 'AUX\ntop',
-            goTo: 'aux1',
+            goTo: 'aux-top',
         },
         {   
             text: 'LWS\nCounter\nEkran',
-            goTo: 'aux2',
+            goTo: 'aux-bottom',
         },
         {   
             text: 'Lights',
-            goTo: 'lights-bright',
+            goTo: 'wall-lights',
         },    
     ]
 }

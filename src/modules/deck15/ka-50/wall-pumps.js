@@ -9,7 +9,7 @@ module.exports = {
         },   
         {   
             text: 'Elect',
-            goTo: 'wall-electrical1',
+            goTo: 'wall-electrical',
         },     
         {   
             text: 'Fuel',
@@ -21,7 +21,7 @@ module.exports = {
         },    
         {   
             text: 'Govern',
-            goTo: 'wall-governors-lights',
+            goTo: 'wall-governors',
         },    
         {   
             type: buttonLogic.types.textToggle,

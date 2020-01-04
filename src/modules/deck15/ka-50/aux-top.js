@@ -31,7 +31,7 @@ module.exports = {
         {},     
         {   
             text: 'LWS\nCounter\nEkran',
-            goTo: 'aux2',
+            goTo: 'aux-bottom',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -69,7 +69,7 @@ module.exports = {
         },     
         {   
             text: 'Lights',
-            goTo: 'lights-bright',
+            goTo: 'wall-lights',
         },  
         {   
             type: buttonLogic.types.textToggle,

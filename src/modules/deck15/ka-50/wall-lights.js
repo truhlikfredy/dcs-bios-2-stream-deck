@@ -42,11 +42,11 @@ module.exports = {
         },  
         {   
             text: 'AUX\ntop',
-            goTo: 'aux1',
+            goTo: 'aux-top',
         },
         {   
             text: 'Govern',
-            goTo: 'wall-governors-lights',
+            goTo: 'wall-governors',
         },
         {   
             type: buttonLogic.types.textToggle,

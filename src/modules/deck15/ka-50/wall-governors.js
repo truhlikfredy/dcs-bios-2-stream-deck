@@ -72,15 +72,15 @@ module.exports = {
         {},     
         {   
             text: 'Lights',
-            goTo: 'lights-bright',
+            goTo: 'wall-lights',
         },      
         {   
             text: 'AUX\ntop',
-            goTo: 'aux1',
+            goTo: 'aux-top',
         },
         {   
             text: 'LWS\nCounter\nEkran',
-            goTo: 'aux2',
+            goTo: 'aux-bottom',
         },     
     ]
 }
