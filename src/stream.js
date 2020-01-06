@@ -12,11 +12,11 @@ const graphics    = require('./graphics.js')
 var api = new DcsBiosApi({ logLevel: 'INFO' });
 api.startListening()
 
-var namespaceReferenced = []
-var namespaceImplemented = []
+var pageReferenced = []
+var pageImplemented = []
 var buttonsUpdated = 0;
 
-function mapButtons(namespaceName, button, i) {
+function mapButtons(pageName, button, i) {
     button.bindDone = true
 
     if (button.apiGet !== undefined) {
@@ -28,7 +28,7 @@ function mapButtons(namespaceName, button, i) {
                 button.text = button.stateToText(button.state).toString()
             }
 
-            if (globals.currentNamespaceName == namespaceName) {
+            if (globals.currentPageName == pageName) {
                 graphics.updateButton(i)
             }
         });
@@ -42,9 +42,9 @@ function setModuleName(name) {
 }
 
 
-function setNamespaceName(name) {
-    globals.currentNamespaceName = name
-    globals.currentNamespace = globals.currentModule.namespaces.find( v => v.name == globals.currentNamespaceName)    
+function setPageName(name) {
+    globals.currentPageName = name
+    globals.currentPage = globals.currentModule.pages.find( v => v.name == globals.currentPageName)    
 }
 
 
@@ -75,9 +75,9 @@ function textToFileId(text) {
 }
 
 
-function updateNamespace(namespace) {
-    for (var i = 0; i < namespace.buttons.length; i++) {
-        var button = namespace.buttons[i]
+function updatePage(page) {
+    for (var i = 0; i < page.buttons.length; i++) {
+        var button = page.buttons[i]
 
         if (button === undefined || !Object.keys(button).length) {
             if (globals.displayOnSteamDeck) globals.deck.fillColor(i, 0, 0, 0)
@@ -88,7 +88,7 @@ function updateNamespace(namespace) {
             if (button.scheme === undefined) button.scheme = buttonLogic.colorScheme.gotoButton
             if (button.type === undefined) button.type = buttonLogic.types.textToggle
 
-            if (namespaceReferenced.indexOf(button.goTo) == -1) namespaceReferenced.push(button.goTo)
+            if (pageReferenced.indexOf(button.goTo) == -1) pageReferenced.push(button.goTo)
         }
         
         if (button.scheme != buttonLogic.colorScheme.gotoButton) {
@@ -146,7 +146,7 @@ function updateNamespace(namespace) {
         }
 
         if (button.bindDone === undefined) {
-            mapButtons(namespace.name, button, i)
+            mapButtons(page.name, button, i)
         }
 
         if (button.nameId === undefined) {
@@ -156,7 +156,7 @@ function updateNamespace(namespace) {
         graphics.updateButton(i)
     }    
 
-    for (var i = namespace.buttons.length; i < 15; i++) {
+    for (var i = page.buttons.length; i < 15; i++) {
         if (globals.displayOnSteamDeck) globals.deck.fillColor(i, 0, 0, 0)
     }
 
@@ -165,20 +165,20 @@ function updateNamespace(namespace) {
 
 globals.deck.on('down', keyIndex => {
     
-    if (!(keyIndex in globals.currentNamespace.buttons) || 
-        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none ||
-        !Object.keys(globals.currentNamespace.buttons[keyIndex]).length
+    if (!(keyIndex in globals.currentPage.buttons) || 
+        globals.currentPage.buttons[keyIndex].type === buttonLogic.types.none ||
+        !Object.keys(globals.currentPage.buttons[keyIndex]).length
     ) {
         return
     }
     
-    var button = globals.currentNamespace.buttons[keyIndex]
+    var button = globals.currentPage.buttons[keyIndex]
     var buttonText = (Array.isArray(button.text)) ? button.text.join(' ') : button.text.split('\n').join(' ')
     console.log('Key #%d "%s"  pressed', keyIndex, buttonText)
 
     if (button.goTo !== undefined) {
-        setNamespaceName(button.goTo)
-        updateNamespace(globals.currentNamespace)
+        setPageName(button.goTo)
+        updatePage(globals.currentPage)
         return
     }
 
@@ -219,14 +219,14 @@ globals.deck.on('down', keyIndex => {
 
 globals.deck.on('up', keyIndex => {
     
-    if (!(keyIndex in globals.currentNamespace.buttons) || 
-        globals.currentNamespace.buttons[keyIndex].type === buttonLogic.types.none ||
-        !Object.keys(globals.currentNamespace.buttons[keyIndex]).length
+    if (!(keyIndex in globals.currentPage.buttons) || 
+        globals.currentPage.buttons[keyIndex].type === buttonLogic.types.none ||
+        !Object.keys(globals.currentPage.buttons[keyIndex]).length
     ) {
         return
     }    
     
-    var button = globals.currentNamespace.buttons[keyIndex]
+    var button = globals.currentPage.buttons[keyIndex]
     
     if (button.apiSend === undefined) {
         return        
@@ -250,31 +250,30 @@ if (!fs.existsSync('imgDynamic')){
     fs.mkdirSync('imgDynamic');
 }
 
-console.log('Processing module ', config.firstModuleName)
 setModuleName(config.firstModuleName)
 
-// Bind all events in namespaces in this module
+// Bind all events in pages in this module
 globals.displayOnSteamDeck = false
-globals.currentModule.namespaces.forEach(namespace => {
-    setNamespaceName(namespace.name)
-    updateNamespace(globals.currentNamespace)  
-    if (namespaceImplemented.indexOf(namespace.name) != -1) {
-        throw('Namespace ' + namespace.name + ' was implemented twice')
+globals.currentModule.pages.forEach(page => {
+    setPageName(page.name)
+    updatePage(globals.currentPage)  
+    if (pageImplemented.indexOf(page.name) != -1) {
+        throw('Page ' + page.name + ' was implemented twice')
     }
-    namespaceImplemented.push(namespace.name)
+    pageImplemented.push(page.name)
 });
 
-namespaceReferenced.forEach( namespace => {
-    if (namespaceImplemented.indexOf(namespace) == -1) {
-        throw('Namespace ' + namespace + ' was referenced, but never implemented')
+pageReferenced.forEach( page => {
+    if (pageImplemented.indexOf(page) == -1) {
+        throw('Page ' + page + ' was referenced, but never implemented')
     }
 })
 
-console.log('Opened all namespaces and generated %d buttons (excluding the goTo buttons) in %d namespaces (pages)', buttonsUpdated, namespaceReferenced.length)
+console.log('Opened all pages and generated %d buttons (excluding the goTo buttons)', buttonsUpdated)
 
-// But in the end display the default namespace
+// But in the end display the default page
 globals.displayOnSteamDeck = true
-setNamespaceName(config.firstNamespaceName)
-updateNamespace(globals.currentNamespace)
+setPageName(config.firstPageName)
+updatePage(globals.currentPage)
 
 

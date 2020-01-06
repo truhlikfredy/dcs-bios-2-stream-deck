@@ -1,10 +1,10 @@
 module.exports = {
-    buttonName: function(dcs_module, namespace, button) {
+    buttonName: function(dcs_module, page, button) {
         if (button.dynamicState) {
-            return "imgDynamic/" + dcs_module.name + "-" + namespace.name + "-" + button.nameId + ".png";
+            return "imgDynamic/" + dcs_module.name + "-" + page.name + "-" + button.nameId + ".png";
         }
         else {
-            return "imgDynamic/" + dcs_module.name + "-" + namespace.name + "-" + button.nameId + "-" + button.state + ".png";
+            return "imgDynamic/" + dcs_module.name + "-" + page.name + "-" + button.nameId + "-" + button.state + ".png";
         }
     }
 }

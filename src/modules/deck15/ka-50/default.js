@@ -67,7 +67,7 @@ defaultButtons = {
 
 module.exports = {
     name: "deck15-ka-50",
-    namespaces: [
+    pages: [
         defaultButtons,
 
         require('./vhf2.js'),

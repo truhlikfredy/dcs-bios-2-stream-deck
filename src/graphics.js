@@ -61,7 +61,7 @@ module.exports = {
 
 
     generateImageFile: function (button) {
-        const fileName = helper.buttonName(globals.currentModule, globals.currentNamespace , button)
+        const fileName = helper.buttonName(globals.currentModule, globals.currentPage , button)
     
         const canvas = createCanvas(globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
         const ctx = canvas.getContext('2d')
@@ -74,8 +74,8 @@ module.exports = {
     
 
     updateButton: function(buttonId) {   
-        const button = globals.currentNamespace.buttons[buttonId]
-        const fileName = helper.buttonName(globals.currentModule, globals.currentNamespace , button)
+        const button = globals.currentPage.buttons[buttonId]
+        const fileName = helper.buttonName(globals.currentModule, globals.currentPage , button)
     
         if (config.forceImageRecreation || button.dynamicState || !fs.existsSync(fileName)) {
             this.generateImageFile(button)
