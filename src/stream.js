@@ -250,6 +250,7 @@ if (!fs.existsSync('imgDynamic')){
     fs.mkdirSync('imgDynamic');
 }
 
+console.log('Processing module ', config.firstModuleName)
 setModuleName(config.firstModuleName)
 
 // Bind all events in namespaces in this module
@@ -269,7 +270,7 @@ namespaceReferenced.forEach( namespace => {
     }
 })
 
-console.log('Opened all namespaces and generated %d buttons (excluding the goTo buttons)', buttonsUpdated)
+console.log('Opened all namespaces and generated %d buttons (excluding the goTo buttons) in %d namespaces (pages)', buttonsUpdated, namespaceReferenced.length)
 
 // But in the end display the default namespace
 globals.displayOnSteamDeck = true
