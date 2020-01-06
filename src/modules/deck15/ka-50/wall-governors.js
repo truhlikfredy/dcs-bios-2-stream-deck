@@ -5,7 +5,7 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'wall',
+            goToPage: 'wall',
         },   
         {   
             type: buttonLogic.types.textToggle,
@@ -37,7 +37,7 @@ module.exports = {
         },        
         {   
             text: 'Equip',
-            goTo: 'wall-equip',
+            goToPage: 'wall-equip',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -72,15 +72,15 @@ module.exports = {
         {},     
         {   
             text: 'Lights',
-            goTo: 'wall-lights',
+            goToPage: 'wall-lights',
         },      
         {   
             text: 'AUX\ntop',
-            goTo: 'aux-top',
+            goToPage: 'aux-top',
         },
         {   
             text: 'LWS\nCounter\nEkran',
-            goTo: 'aux-bottom',
+            goToPage: 'aux-bottom',
         },     
     ]
 }

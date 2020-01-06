@@ -5,7 +5,7 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'wall',
+            goToPage: 'wall',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -40,7 +40,7 @@ module.exports = {
 
         {   
             text: 'AUX',
-            goTo: 'aux-top',
+            goToPage: 'aux-top',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -76,7 +76,7 @@ module.exports = {
         },  
         {   
             text: 'Lights',
-            goTo: 'wall-lights',
+            goToPage: 'wall-lights',
         },  
         {   
             type: buttonLogic.types.textToggle,

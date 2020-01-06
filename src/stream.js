@@ -84,14 +84,14 @@ function updatePage(page) {
             continue;
         }
 
-        if (button.goTo !== undefined) {
-            if (button.scheme === undefined) button.scheme = buttonLogic.colorScheme.gotoButton
+        if (button.goToPage !== undefined) {
+            if (button.scheme === undefined) button.scheme = buttonLogic.colorScheme.goToPageButton
             if (button.type === undefined) button.type = buttonLogic.types.textToggle
 
-            if (pageReferenced.indexOf(button.goTo) == -1) pageReferenced.push(button.goTo)
+            if (pageReferenced.indexOf(button.goToPage) == -1) pageReferenced.push(button.goToPage)
         }
         
-        if (button.scheme != buttonLogic.colorScheme.gotoButton) {
+        if (button.scheme != buttonLogic.colorScheme.goToPageButton) {
             buttonsUpdated++
         }
 
@@ -176,8 +176,8 @@ globals.deck.on('down', keyIndex => {
     var buttonText = (Array.isArray(button.text)) ? button.text.join(' ') : button.text.split('\n').join(' ')
     console.log('Key #%d "%s"  pressed', keyIndex, buttonText)
 
-    if (button.goTo !== undefined) {
-        setPageName(button.goTo)
+    if (button.goToPage !== undefined) {
+        setPageName(button.goToPage)
         updatePage(globals.currentPage)
         return
     }
@@ -269,7 +269,7 @@ pageReferenced.forEach( page => {
     }
 })
 
-console.log('Opened all pages and generated %d buttons (excluding the goTo buttons)', buttonsUpdated)
+console.log('Opened all pages and generated %d buttons (excluding the goToPage buttons)', buttonsUpdated)
 
 // But in the end display the default page
 globals.displayOnSteamDeck = true

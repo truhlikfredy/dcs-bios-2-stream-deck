@@ -5,7 +5,7 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'wall',
+            goToPage: 'wall',
         },   
         {   
             type: buttonLogic.types.textToggle,
@@ -30,7 +30,7 @@ module.exports = {
         },   
         {   
             text: 'Pumps',
-            goTo: 'wall-pumps',
+            goToPage: 'wall-pumps',
         },
     
         {},     
@@ -58,7 +58,7 @@ module.exports = {
         {},     
         {   
             text: 'Radio',
-            goTo: 'wall-radio',
+            goToPage: 'wall-radio',
         },   
         {   
             type: buttonLogic.types.textToggle,

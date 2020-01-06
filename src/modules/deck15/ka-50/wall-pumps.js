@@ -5,23 +5,23 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'wall',
+            goToPage: 'wall',
         },   
         {   
             text: 'Elect',
-            goTo: 'wall-electrical',
+            goToPage: 'wall-electrical',
         },     
         {   
             text: 'Fuel',
-            goTo: 'wall-fuel',
+            goToPage: 'wall-fuel',
         },    
         {   
             text: 'Equip',
-            goTo: 'wall-equip',
+            goToPage: 'wall-equip',
         },    
         {   
             text: 'Govern',
-            goTo: 'wall-governors',
+            goToPage: 'wall-governors',
         },    
         {   
             type: buttonLogic.types.textToggle,
@@ -60,12 +60,12 @@ module.exports = {
         },    
         {   
             text: 'Radio',
-            goTo: 'wall-radio',
+            goToPage: 'wall-radio',
         },   
         {},     
         {   
             text: 'Eject',
-            goTo: 'wall-eject',
+            goToPage: 'wall-eject',
         },                            
         {},     
         {},     

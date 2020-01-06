@@ -5,23 +5,23 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'wall',
+            goToPage: 'wall',
         },   
         {   
             text: 'Elect',
-            goTo: 'wall-electrical',
+            goToPage: 'wall-electrical',
         },     
         {   
             text: 'Pumps',
-            goTo: 'wall-pumps',
+            goToPage: 'wall-pumps',
         },  
         {   
             text: 'Fuel',
-            goTo: 'wall-fuel',
+            goToPage: 'wall-fuel',
         },  
         {   
             text: 'Equip',
-            goTo: 'wall-equip',
+            goToPage: 'wall-equip',
         },     
         
         {   
@@ -65,7 +65,7 @@ module.exports = {
         {},     
         {   
             text: 'Eject',
-            goTo: 'wall-eject',
+            goToPage: 'wall-eject',
         },                 
     ]
 }

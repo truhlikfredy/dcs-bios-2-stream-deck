@@ -5,7 +5,7 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'default',
+            goToPage: 'default',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -39,7 +39,7 @@ module.exports = {
         },
         {   
             text: 'PVI800\nfunc',
-            goTo: 'pvi800-functions',
+            goToPage: 'pvi800-functions',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -71,7 +71,7 @@ module.exports = {
         },
         {   
             text: 'PVI800\nPVTz-800',
-            goTo: 'pvi800-control',
+            goToPage: 'pvi800-control',
         },
         {   
             type: buttonLogic.types.textToggle,

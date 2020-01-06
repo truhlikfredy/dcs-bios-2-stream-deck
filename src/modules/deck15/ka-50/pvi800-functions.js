@@ -9,7 +9,7 @@ module.exports = {
             sendState: false,
             nameId: 'line1',
             apiGet: 'PVI_LINE1_TEXT',
-            goTo: 'pvi800',
+            goToPage: 'pvi800',
             dynamicState: true,
         },
         {   

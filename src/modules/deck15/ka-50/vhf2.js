@@ -5,7 +5,7 @@ module.exports = {
     buttons: [
         {   
             text: '<- Back',
-            goTo: 'default',
+            goToPage: 'default',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -53,7 +53,7 @@ module.exports = {
         
         {   
             text: 'VHF2\nFreq',
-            goTo: 'vhf2-freq',
+            goToPage: 'vhf2-freq',
         },  
         {   
             type: buttonLogic.types.textToggle,

@@ -5,7 +5,7 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'pvi800',
+            goToPage: 'pvi800',
         },
         {   
             type: buttonLogic.types.textToggle,

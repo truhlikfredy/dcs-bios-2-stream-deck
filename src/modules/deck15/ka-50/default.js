@@ -4,63 +4,63 @@ defaultButtons = {
     buttons: [
         {   
             text: 'VHF2\nR800L1',
-            goTo: 'vhf2',
+            goToPage: 'vhf2',
         },  
         {   
             text: 'Overhead\nFront ->',
-            goTo: 'overhead-frontRight',
+            goToPage: 'overhead-frontRight',
         },  
         {   
             text: 'Counter\nmeasures',
-            goTo: 'counterMeasures',
+            goToPage: 'counterMeasures',
         },      
         {   
             text: 'ARBIS',
-            goTo: 'arbis',
+            goToPage: 'arbis',
         },    
         {   
             text: 'Wall',
-            goTo: 'wall',
+            goToPage: 'wall',
         },   
         {   
             text: 'Engines\nAPU',
-            goTo: 'engines-apu',
+            goToPage: 'engines-apu',
         },
         {   
             text: 'Datalink',
-            goTo: 'datalink',
+            goToPage: 'datalink',
         },
         {   
             text: 'HUD\nTV\nLandLight',
-            goTo: 'hud-tv',
+            goToPage: 'hud-tv',
         },   
         {   
             text: 'PVI800',
-            goTo: 'pvi800',
+            goToPage: 'pvi800',
         },
         {   
             text: 'ADF\nFlare',
-            goTo: 'adf-flare',
+            goToPage: 'adf-flare',
         },
         {   
             text: 'Targeting',
-            goTo: 'targeting',
+            goToPage: 'targeting',
         },    
         {   
             text: 'Front\nLeft',
-            goTo: 'frontLeft',
+            goToPage: 'frontLeft',
         },
         {   
             text: 'Weap',
-            goTo: 'weapons',
+            goToPage: 'weapons',
         },  
         {   
             text: 'AP',
-            goTo: 'ap',
+            goToPage: 'ap',
         },
         {   
             text: 'VHF1\nR828',
-            goTo: 'vhf1',
+            goToPage: 'vhf1',
         },
     ]    
 }

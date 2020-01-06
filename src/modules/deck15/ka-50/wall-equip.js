@@ -5,11 +5,11 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'wall',
+            goToPage: 'wall',
         },  
         {   
             text: 'Fuel',
-            goTo: 'wall-fuel',
+            goToPage: 'wall-fuel',
         },
         {   
             type: buttonLogic.types.textToggle,
@@ -21,7 +21,7 @@ module.exports = {
         {},     
         {   
             text: 'Govern',
-            goTo: 'wall-governors',
+            goToPage: 'wall-governors',
         },
 
         {   
@@ -49,7 +49,7 @@ module.exports = {
         },        
         {   
             text: 'Lights',
-            goTo: 'wall-lights',
+            goToPage: 'wall-lights',
         },  
 
         {   
@@ -82,7 +82,7 @@ module.exports = {
         },        
         {   
             text: 'AUX\ntop',
-            goTo: 'aux-top',
+            goToPage: 'aux-top',
         },  
     ]
 }

@@ -23,7 +23,7 @@ module.exports = {
             ctx.fillText(button.state.toString(), centerX, centerY)        
         },
 
-        'gotoButton': (button, ctx) => {
+        'goToPageButton': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
             ctx.fillStyle = '#300550'

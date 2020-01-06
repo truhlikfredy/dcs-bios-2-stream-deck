@@ -6,7 +6,7 @@ module.exports = {
         {   
             nameId: 'back',
             text: '<- Back',
-            goTo: 'vhf2',
+            goToPage: 'vhf2',
         },   
         {   
             type: buttonLogic.types.textToggle,

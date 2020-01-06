@@ -5,23 +5,23 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'wall',
+            goToPage: 'wall',
         },  
         {   
             text: 'Elect',
-            goTo: 'wall-electrical',
+            goToPage: 'wall-electrical',
         },     
         {   
             text: 'Pumps',
-            goTo: 'wall-pumps',
+            goToPage: 'wall-pumps',
         },
         {   
             text: 'Equip',
-            goTo: 'wall-equip',
+            goToPage: 'wall-equip',
         },
         {   
             text: 'Govern',
-            goTo: 'wall-governors',
+            goToPage: 'wall-governors',
         },    
         {   
             type: buttonLogic.types.textToggle,
@@ -53,7 +53,7 @@ module.exports = {
         },  
         {   
             text: 'Lights',
-            goTo: 'wall-lights',
+            goToPage: 'wall-lights',
         },  
     
         {   

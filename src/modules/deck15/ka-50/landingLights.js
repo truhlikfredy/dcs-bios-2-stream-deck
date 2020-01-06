@@ -5,7 +5,7 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'hud-tv',
+            goToPage: 'hud-tv',
         },
         {   
             type: buttonLogic.types.textToggle,

@@ -3,11 +3,11 @@ module.exports = {
     buttons : [
         {   
             text: '<- Back',
-            goTo: 'default',
+            goToPage: 'default',
         },   
         {   
             text: 'Fire',
-            goTo: 'wall-fire',
+            goToPage: 'wall-fire',
         },
         {},     
         {},     
@@ -16,44 +16,44 @@ module.exports = {
 
         {   
             text: 'Elect',
-            goTo: 'wall-electrical',
+            goToPage: 'wall-electrical',
         },
         {   
             text: 'Pumps',
-            goTo: 'wall-pumps',
+            goToPage: 'wall-pumps',
         },
         {   
             text: 'Fuel',
-            goTo: 'wall-fuel',
+            goToPage: 'wall-fuel',
         },
         {   
             text: 'Equip',
-            goTo: 'wall-equip',
+            goToPage: 'wall-equip',
         },
         {   
             text: 'Govern',
-            goTo: 'wall-governors',
+            goToPage: 'wall-governors',
         },
         {   
             text: 'Radio',
-            goTo: 'wall-radio',
+            goToPage: 'wall-radio',
         },    
         {   
             text: 'Eject',
-            goTo: 'wall-eject',
+            goToPage: 'wall-eject',
         },  
     
         {   
             text: 'AUX\ntop',
-            goTo: 'aux-top',
+            goToPage: 'aux-top',
         },
         {   
             text: 'LWS\nCounter\nEkran',
-            goTo: 'aux-bottom',
+            goToPage: 'aux-bottom',
         },
         {   
             text: 'Lights',
-            goTo: 'wall-lights',
+            goToPage: 'wall-lights',
         },    
     ]
 }
