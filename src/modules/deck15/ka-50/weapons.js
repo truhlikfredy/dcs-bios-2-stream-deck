@@ -42,7 +42,7 @@ module.exports = {
         {},     
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.grayButton,
+            scheme: buttonLogic.colorScheme.redButton,
             sendState: false,
             text: 'Jet\nExt',
             apiSend: 'WEAPONS_JETTISON_EXT',
@@ -56,7 +56,7 @@ module.exports = {
         },
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.grayButton,
+            scheme: buttonLogic.colorScheme.redButton,
             sendState: false,
             text: 'Jet\nATGM',
             apiSend: 'WEAPONS_EXPEDITE_ATGM_JETTISON',
