@@ -79,7 +79,7 @@ module.exports = {
         require('./wall-fire.js'),
         require('./wall-electrical.js'),
         require('./wall-pumps.js'),
-        require('./wall-fuel.js'),
+        require('./wall-fuel-valve.js'),
         require('./wall-equip.js'),
         require('./wall-governors.js'),
         require('./wall-radio.js'),
