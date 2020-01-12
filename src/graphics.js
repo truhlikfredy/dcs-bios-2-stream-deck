@@ -71,7 +71,8 @@ module.exports = {
 
 
     generateImageFile: function (button) {
-        const fileName = helper.buttonName(globals.currentModule, globals.currentPage , button)
+        // generate images will always go to the dynamic folder
+        const fileName = config.folderImagesDynamic + "/" + helper.buttonName(globals.currentModule, globals.currentPage , button)
     
         const canvas = createCanvas(globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
         const ctx = canvas.getContext('2d')
@@ -84,9 +85,18 @@ module.exports = {
     
 
     updateButton: function(buttonId) {   
-        const button = globals.currentPage.buttons[buttonId]
-        const fileName = helper.buttonName(globals.currentModule, globals.currentPage , button)
-    
+        const button   = globals.currentPage.buttons[buttonId]
+        var   fileName = helper.buttonName(globals.currentModule, globals.currentPage , button)
+
+        if (!button.dynamicState && fs.existsSync(config.folderImagesStatic + "/" + fileName)) {
+            // If static variant exists, then use it
+            fileName = config.folderImagesStatic + "/" + fileName
+        }
+        else {
+            // But use dynamic variant if it doesn't or we are forced to use dynamic state (i.e. single filename will contain differnt states of the button)
+            fileName = config.folderImagesDynamic + "/" + fileName
+        }
+        
         if (config.forceImageRecreation || button.dynamicState || !fs.existsSync(fileName)) {
             this.generateImageFile(button)
         }

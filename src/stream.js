@@ -246,8 +246,14 @@ globals.deck.on('error', error => {
 
 
 // Make 'imgDynamic' folder if it doesn't exist already
-if (!fs.existsSync('imgDynamic')){
-    fs.mkdirSync('imgDynamic');
+if (!fs.existsSync(config.folderImagesDynamic)){
+    fs.mkdirSync(config.folderImagesDynamic);
+}
+
+
+// Make 'imgStatic' folder if it doesn't exist already
+if (!fs.existsSync(config.folderImagesStatic)){
+    fs.mkdirSync(config.folderImagesStatic);
 }
 
 setModuleName(config.firstModuleName)
