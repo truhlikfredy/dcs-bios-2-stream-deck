@@ -78,7 +78,7 @@ module.exports = {
         require('./wall.js'),
         require('./wall-fire.js'),
         require('./wall-electrical.js'),
-        require('./wall-pumps.js'),
+        require('./wall-fuel-pumps.js'),
         require('./wall-fuel-valves.js'),
         require('./wall-equip.js'),
         require('./wall-governors.js'),

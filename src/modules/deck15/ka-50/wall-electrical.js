@@ -29,8 +29,8 @@ module.exports = {
             apiSend: 'ELEC_BATTERY_1_COVER',
         },   
         {   
-            text: 'Pumps',
-            goToPage: 'wall-pumps',
+            text: 'Fuel\nPumps',
+            goToPage: 'wall-fuel-pumps',
         },
     
         {},     

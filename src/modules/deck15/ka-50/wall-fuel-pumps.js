@@ -1,7 +1,7 @@
 const buttonLogic = require('../../buttonLogic.js')
 
 module.exports = {
-    name: 'wall-pumps',
+    name: 'wall-fuel-pumps',
     buttons : [
         {   
             text: '<- Back',
