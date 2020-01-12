@@ -19,7 +19,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,
@@ -29,7 +29,7 @@ module.exports = {
         },
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             maxStatus: 65535,
             overflow: false,
@@ -77,7 +77,7 @@ module.exports = {
         {},     
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             sendState: false,
             maxStatus: 65535,
@@ -88,14 +88,14 @@ module.exports = {
         },
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: 'Button\nCursor',
             apiSend: 'ABRIS_CURSOR_BTN',
             sendState: false,
         },
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             sendState: false,
             overflow: true,

@@ -19,7 +19,7 @@ module.exports = {
         },    
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -1,
             overflow: true,
             maxStatus: 9,
@@ -29,7 +29,7 @@ module.exports = {
         },    
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             overflow: true,
             maxStatus: 9,
             text: '+\nChannel',
@@ -59,7 +59,7 @@ module.exports = {
         },
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             overflow: false,
             increment: -4095,
             maxStatus: 655535,
@@ -69,7 +69,7 @@ module.exports = {
         },         
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             overflow: false,
             increment: 4095,
             maxStatus: 655535,

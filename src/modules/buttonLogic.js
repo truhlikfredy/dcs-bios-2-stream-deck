@@ -1,10 +1,9 @@
 
-const sharp                       = require('sharp') // Order of these includes is sensitive
-const { createCanvas, loadImage, ImageData, Image } = require('canvas')
-const Enum                        = require('enum')
-const path                        = require('path')
-const graphics                    = require('../graphics.js')
-const globals                     = require('../globals.js')
+const sharp    = require('sharp') // Order of these includes is sensitive
+const Enum     = require('enum')
+const path     = require('path')
+const graphics = require('../graphics.js')
+const globals  = require('../globals.js')
 
 module.exports = {
     types: new Enum(['textToggle', 'icon', 'textIcon']),
@@ -37,12 +36,28 @@ module.exports = {
             ctx.fillText(button.text, centerX, centerY)        
         },
 
-        'blackButton': (button, ctx) => {
+        'rotary': (button, ctx) => {
             const fontId = graphics.detectFontSize(button, button.text)
     
             ctx.fillStyle = '#000000'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-rotary'], 0, 0)
             
+            ctx.fillStyle = '#ffffff'
+            ctx.font = fonts[fontId].face
+    
+            const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.fillText(button.text, centerX, centerY)        
+        },        
+
+        'blackButton': (button, ctx) => {
+            // black button doesn't have active state
+            const fontId = graphics.detectFontSize(button, button.text)
+    
+            ctx.fillStyle = '#000000'
+            ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+             
             ctx.fillStyle = '#dddddd'
             ctx.font = fonts[fontId].face
     

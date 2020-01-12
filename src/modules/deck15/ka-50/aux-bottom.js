@@ -59,7 +59,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             maxStatus: 65535,
             overflow: false,
@@ -74,6 +74,7 @@ module.exports = {
             text: ['OFF', 'EkrHydTrns'],
             apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER',
         },  
+
         {   
             text: 'Lights',
             goToPage: 'wall-lights',
@@ -95,7 +96,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,

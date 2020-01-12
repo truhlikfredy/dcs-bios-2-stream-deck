@@ -52,7 +52,7 @@ module.exports = {
         },      
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '+\n10',
             sendLiterarly: 'INC',
             maxStatus: 0,
@@ -61,7 +61,7 @@ module.exports = {
         },        
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '+\n1',
             sendLiterarly: 'INC',
             maxStatus: 0,
@@ -70,7 +70,7 @@ module.exports = {
         },        
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '+\n0.1',
             sendLiterarly: 'INC',
             apiSend: 'R800_FREQ3',
@@ -78,7 +78,7 @@ module.exports = {
         },        
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '+\n0.01',
             sendLiterarly: 'INC',
             apiSend: 'R800_FREQ4',
@@ -87,7 +87,7 @@ module.exports = {
         {},     
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '-\n10',
             sendLiterarly: 'DEC',
             maxStatus: 0,
@@ -96,7 +96,7 @@ module.exports = {
         },        
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '-\n1',
             sendLiterarly: 'DEC',
             maxStatus: 0,
@@ -105,7 +105,7 @@ module.exports = {
         },        
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '-\n0.1',
             sendLiterarly: 'DEC',
             apiSend: 'R800_FREQ3',
@@ -113,7 +113,7 @@ module.exports = {
         },        
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             text: '-\n0.01',
             sendLiterarly: 'DEC',
             apiSend: 'R800_FREQ4',

@@ -34,6 +34,8 @@ module.exports = {
         await this.loadAsset('deck15-ka-50-button-sqaure-0', 72);
         await this.loadAsset('deck15-ka-50-button-sqaure-1', 72);
 
+        await this.loadAsset('deck15-ka-50-rotary', 72);
+
         console.log('Loaded assets: ', assetsLoaded)        
     }
 }

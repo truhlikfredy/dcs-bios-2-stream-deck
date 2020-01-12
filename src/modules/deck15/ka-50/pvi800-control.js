@@ -30,7 +30,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             sendState: false,
             text: '-\nMagne',
@@ -40,7 +40,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             sendState: false,
             maxStatus: 65535,
@@ -73,7 +73,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,
@@ -84,7 +84,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             maxStatus: 65535,
             overflow: false,
@@ -108,7 +108,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -1,
             maxStatus: 7,
             overflow: false,
@@ -119,7 +119,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: 1,
             maxStatus: 7,
             overflow: false,

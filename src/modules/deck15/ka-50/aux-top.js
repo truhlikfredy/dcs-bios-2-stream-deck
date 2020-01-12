@@ -28,7 +28,8 @@ module.exports = {
             text: 'Vibra',
             apiSend: 'ENG_VIBR_MONITOR',
         },     
-        {},     
+        {},   
+
         {   
             text: 'LWS\nCounter\nEkran',
             goToPage: 'aux-bottom',
@@ -42,7 +43,7 @@ module.exports = {
         },          
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             overflow: false,
             increment: -1,
             maxStatus: 6,
@@ -52,7 +53,7 @@ module.exports = {
         },          
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             overflow: false,
             maxStatus: 6,
             text: 'Eject+',
@@ -67,6 +68,7 @@ module.exports = {
             text: 'Voice\ntest',
             apiSend: 'VOICE_MSG_SYS_TEST',
         },     
+
         {   
             text: 'Lights',
             goToPage: 'wall-lights',
@@ -83,7 +85,7 @@ module.exports = {
         },         
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             overflow: false,
             increment: -1,
             maxStatus: 10,
@@ -92,7 +94,7 @@ module.exports = {
         },     
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             overflow: false,
             maxStatus: 10,
             text: 'Bal+',

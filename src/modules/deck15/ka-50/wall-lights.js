@@ -10,7 +10,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             maxStatus: 65535,
             overflow: false,
@@ -21,7 +21,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             maxStatus: 65535,
             overflow: false,
@@ -32,7 +32,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             maxStatus: 65535,
             overflow: false,
@@ -44,6 +44,7 @@ module.exports = {
             text: 'AUX\ntop',
             goToPage: 'aux-top',
         },
+
         {   
             text: 'Govern',
             goToPage: 'wall-governors',
@@ -51,7 +52,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,
@@ -62,7 +63,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,
@@ -73,7 +74,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,

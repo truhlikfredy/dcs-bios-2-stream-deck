@@ -17,7 +17,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,
@@ -28,7 +28,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +4095,
             maxStatus: 65535,
             overflow: false,
@@ -53,7 +53,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -4095,
             maxStatus: 65535,
             overflow: false,
@@ -64,7 +64,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +2047,
             maxStatus: 65535,
             overflow: false,
@@ -75,7 +75,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -2048,
             maxStatus: 65535,
             overflow: false,
@@ -86,7 +86,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +2048,
             maxStatus: 65535,
             overflow: false,
@@ -97,7 +97,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: -2048,
             maxStatus: 65535,
             overflow: false,
@@ -108,7 +108,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,
-            scheme: buttonLogic.colorScheme.blackButton,
+            scheme: buttonLogic.colorScheme.rotary,
             increment: +2048,
             maxStatus: 65535,
             overflow: false,
