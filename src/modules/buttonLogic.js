@@ -1,7 +1,8 @@
 
 const sharp                       = require('sharp') // Order of these includes is sensitive
-const { createCanvas, loadImage } = require('canvas')
+const { createCanvas, loadImage, ImageData, Image } = require('canvas')
 const Enum                        = require('enum')
+const path                        = require('path')
 const graphics                    = require('../graphics.js')
 const globals                     = require('../globals.js')
 
@@ -54,6 +55,8 @@ module.exports = {
     
             ctx.fillStyle = button.state ? '#999999' : '#222222'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
+
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-button-sqaure-0.png'], 0, 0)
             
             ctx.fillStyle = button.state ? '#ffffff' : '#dddddd'
             if (button.customFontColor !== undefined) {
@@ -71,6 +74,8 @@ module.exports = {
             ctx.fillStyle = button.state ? '#20C2EE' : '#006070'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-button-sqaure-0.png'], 0, 0)
+
             ctx.fillStyle = button.state ? '#ffffff' : '#10B2DE'
             ctx.font = fonts[fontId].face
     
@@ -84,6 +89,8 @@ module.exports = {
             ctx.fillStyle = button.state ? '#10de30' : '#008020'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-button-sqaure-0.png'], 0, 0)
+
             ctx.fillStyle = button.state ? '#ffffff' : '#50dE52'
             ctx.font = fonts[fontId].face
     
@@ -104,7 +111,9 @@ module.exports = {
             
             ctx.fillStyle = button.state ? '#99ffee' : '#004433'
             ctx.fillRect(0, globals.deck.ICON_SIZE * 0.80, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
-            
+
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-button-sqaure-0.png'], 0, 0)
+                              
             ctx.fillStyle = button.state ? '#ffffee' : '#777777'
             ctx.font = fonts[fontId].face
     
@@ -126,6 +135,8 @@ module.exports = {
             ctx.fillStyle = button.state ? '#ffff44' : '#333300'
             ctx.fillRect(0, globals.deck.ICON_SIZE * 0.75, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-button-sqaure-0.png'], 0, 0)
+            
             ctx.fillStyle = button.state ? '#ffffff' : '#777777'
             ctx.font = fonts[fontId].face
     
@@ -139,6 +150,8 @@ module.exports = {
             ctx.fillStyle = button.state ? '#ffff88' : '#aaaa00'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-button-sqaure-0.png'], 0, 0)
+
             ctx.fillStyle = button.state ? '#444444' : '#000000'
             ctx.font = fonts[fontId].face
     
@@ -151,7 +164,9 @@ module.exports = {
     
             ctx.fillStyle = button.state ? '#ff8888' : '#dd0000'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
-            
+
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-button-sqaure-0.png'], 0, 0)
+
             ctx.fillStyle = button.state ? '#ffffff' : '#dddddd'
             ctx.font = fonts[fontId].face
     

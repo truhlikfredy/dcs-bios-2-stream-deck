@@ -245,41 +245,45 @@ globals.deck.on('error', error => {
 })
 
 
-// Make 'imgDynamic' folder if it doesn't exist already
-if (!fs.existsSync(config.folderImagesDynamic)){
-    fs.mkdirSync(config.folderImagesDynamic);
+async function startApplication() {
+    await globals.assets.loadAssets()
+    
+    // Make 'imgDynamic' folder if it doesn't exist already
+    if (!fs.existsSync(config.folderImagesDynamic)){
+        fs.mkdirSync(config.folderImagesDynamic);
+    }
+    
+    // Make 'imgStatic' folder if it doesn't exist already
+    if (!fs.existsSync(config.folderImagesStatic)){
+        fs.mkdirSync(config.folderImagesStatic);
+    }
+    
+    setModuleName(config.firstModuleName)
+    
+    // Bind all events in pages in this module
+    globals.displayOnSteamDeck = false
+    globals.currentModule.pages.forEach(page => {
+        setPageName(page.name)
+        updatePage(globals.currentPage)  
+        if (pageImplemented.indexOf(page.name) != -1) {
+            throw('Page ' + page.name + ' was implemented twice')
+        }
+        pageImplemented.push(page.name)
+    });
+    
+    pageReferenced.forEach( page => {
+        if (pageImplemented.indexOf(page) == -1) {
+            throw('Page ' + page + ' was referenced, but never implemented')
+        }
+    })
+    
+    console.log('Opened all pages and generated %d buttons (excluding the goToPage buttons)', buttonsUpdated)
+    
+    // But in the end display the default page
+    globals.displayOnSteamDeck = true
+    setPageName(config.firstPageName)
+    updatePage(globals.currentPage)    
 }
 
 
-// Make 'imgStatic' folder if it doesn't exist already
-if (!fs.existsSync(config.folderImagesStatic)){
-    fs.mkdirSync(config.folderImagesStatic);
-}
-
-setModuleName(config.firstModuleName)
-
-// Bind all events in pages in this module
-globals.displayOnSteamDeck = false
-globals.currentModule.pages.forEach(page => {
-    setPageName(page.name)
-    updatePage(globals.currentPage)  
-    if (pageImplemented.indexOf(page.name) != -1) {
-        throw('Page ' + page.name + ' was implemented twice')
-    }
-    pageImplemented.push(page.name)
-});
-
-pageReferenced.forEach( page => {
-    if (pageImplemented.indexOf(page) == -1) {
-        throw('Page ' + page + ' was referenced, but never implemented')
-    }
-})
-
-console.log('Opened all pages and generated %d buttons (excluding the goToPage buttons)', buttonsUpdated)
-
-// But in the end display the default page
-globals.displayOnSteamDeck = true
-setPageName(config.firstPageName)
-updatePage(globals.currentPage)
-
-
+startApplication()
