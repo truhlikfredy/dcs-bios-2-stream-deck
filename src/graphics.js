@@ -28,7 +28,7 @@ module.exports = {
 
 
     estimateHeight: function (lines, fontId) {
-        return (lines <= 1) ? fonts[fontId].px : (lines -1) * fonts[fontId].px * 1.2
+        return (lines <= 1) ? fonts[fontId].px : lines * fonts[fontId].px * 1.1
     },
 
 
@@ -44,7 +44,7 @@ module.exports = {
             ctx.font = fonts[i].face
             var textMeasurement = ctx.measureText(text)
             if (textMeasurement.width < (globals.deck.ICON_SIZE * 0.85) && 
-                this.estimateHeight(text.split("\n").length, i) < (globals.deck.ICON_SIZE * 0.8)) {
+                this.estimateHeight(text.split("\n").length, i) < (globals.deck.ICON_SIZE * 0.95)) {
 
                 return i
             }
@@ -59,12 +59,13 @@ module.exports = {
         const ctx = canvas.getContext('2d')
         
         const lines = text.split("\n").length
+        const fontCenterLineOffset = fonts[fontId].px * 1.5
         ctx.font = fonts[fontId].face
     
         var text = ctx.measureText(text)
         return { 
             centerX: (globals.deck.ICON_SIZE - text.width) / 2, 
-            centerY: (globals.deck.ICON_SIZE + fonts[fontId].px /2 - this.estimateHeight(lines, fontId) ) / 2
+            centerY: (globals.deck.ICON_SIZE + fontCenterLineOffset - this.estimateHeight(lines, fontId) ) / 2
         }
     },
 
