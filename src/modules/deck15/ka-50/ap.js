@@ -100,14 +100,12 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            fontIndex: 4, 
             text: ['BR', '--', 'RD'],
             apiSend: 'AP_BARO_RALT',
         },
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            fontIndex: 4, 
             text: ['DH', '--', 'DT'],
             apiSend: 'AP_DH_DT',
         },

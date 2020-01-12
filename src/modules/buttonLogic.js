@@ -109,7 +109,7 @@ module.exports = {
             ctx.font = fonts[fontId].face
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
-            ctx.fillText(button.text, centerX, centerY - globals.deck.ICON_SIZE * 0.1)        
+            ctx.fillText(button.text, centerX, centerY - globals.deck.ICON_SIZE * 0.06)        
         },
         
         'yellowStripeButton': (button, ctx) => {
@@ -130,7 +130,7 @@ module.exports = {
             ctx.font = fonts[fontId].face
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
-            ctx.fillText(button.text, centerX, centerY)        
+            ctx.fillText(button.text, centerX, centerY - globals.deck.ICON_SIZE * 0.06)     
         },
         
         'yellowButton': (button, ctx) => {

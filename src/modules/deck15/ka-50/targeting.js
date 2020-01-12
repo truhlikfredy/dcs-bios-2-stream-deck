@@ -35,7 +35,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            text: ['Movable', 'Fixed', 'ManBackup', 'Navigation', 'Failure'],
+            text: ['Movable', 'Fixed', 'ManBckp', 'Navigation', 'Failure'],
             apiSend: 'WEAPONS_MODE',
         },          
         {},     

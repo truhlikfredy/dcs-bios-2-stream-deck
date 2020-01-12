@@ -52,7 +52,6 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            fontIndex: 7,
             inversed: true,
             text: ['OFF', 'CHECK', 'EDIT', 'OPER', 'SIM'],
             apiSend: 'PVI_MODES',
@@ -97,7 +96,6 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            fontIndex: 7,
             text: ['1', '2', '3', '4'],
             apiSend: 'DLNK_SELF_ID',
         },

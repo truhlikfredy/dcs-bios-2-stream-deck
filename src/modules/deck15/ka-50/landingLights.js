@@ -23,7 +23,6 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            fontIndex: 4,
             inversed: true,
             text: ['Outer', 'Auto*', 'Inner'],
             apiSend: 'ADF_NDB_MODE',
@@ -46,7 +45,6 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            fontIndex: 4,
             inversed: true,
             text: ['Emerg', 'Norm'],
             apiSend: 'VOICE_MSG_EMER',

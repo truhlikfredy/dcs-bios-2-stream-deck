@@ -72,7 +72,6 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            fontIndex: 5,
             inversed: true,
             text: ['low', 'med', 'long'],
             apiSend: 'WEAPONS_CANNON_BURST',

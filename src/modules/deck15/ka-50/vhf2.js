@@ -47,7 +47,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
-            text: ['VHF-2', 'VHF-1', 'SW', 'G-Intercom'],
+            text: ['VHF-2', 'VHF-1', 'SW', 'G-InterC'],
             apiSend: 'RADIO_SELECTOR',
         },     
         

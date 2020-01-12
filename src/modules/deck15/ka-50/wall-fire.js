@@ -98,7 +98,6 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
-            fontIndex: 5,
             text: ['Test', 'Off', 'Work'],
             apiSend: 'FIREEXT_EXT_MODE',
         },
