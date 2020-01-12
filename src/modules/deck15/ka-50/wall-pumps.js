@@ -12,8 +12,8 @@ module.exports = {
             goToPage: 'wall-electrical',
         },     
         {   
-            text: 'Fuel\nValve',
-            goToPage: 'wall-fuel-valve',
+            text: 'Fuel\nValves',
+            goToPage: 'wall-fuel-valves',
         },    
         {   
             text: 'Equip',

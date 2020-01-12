@@ -23,8 +23,8 @@ module.exports = {
             goToPage: 'wall-pumps',
         },
         {   
-            text: 'Fuel\nValve',
-            goToPage: 'wall-fuel-valve',
+            text: 'Fuel\nValves',
+            goToPage: 'wall-fuel-valves',
         },
         {   
             text: 'Equip',

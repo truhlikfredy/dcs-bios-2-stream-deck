@@ -8,8 +8,8 @@ module.exports = {
             goToPage: 'wall',
         },  
         {   
-            text: 'Fuel\nValve',
-            goToPage: 'wall-fuel-valve',
+            text: 'Fuel\nValves',
+            goToPage: 'wall-fuel-valves',
         },
         {   
             type: buttonLogic.types.textToggle,
