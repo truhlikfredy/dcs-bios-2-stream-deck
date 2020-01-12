@@ -1,5 +1,5 @@
 module.exports = {
-    forceImageRecreation: true,
+    forceImageRecreation: false,
     firstPageName:        'default',
     firstModuleName:      'deck15-ka-50',
 }
