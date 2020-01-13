@@ -72,6 +72,7 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
             text: ['OFF', 'EkrHydTrns'],
+            dependsOnButtonIdState: 4,
             apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER',
         },  
 
@@ -83,6 +84,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
+            dependsOnButtonIdState: 6,            
             text: ['OFF', 'U26-PWR'],
             apiSend: 'UV26_POWER',
         },     
@@ -90,6 +92,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
+            dependsOnButtonIdState: 7,
             text: ['OFF', 'TEST'],
             apiSend: 'UV26_TEST',
         },     

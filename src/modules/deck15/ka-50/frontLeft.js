@@ -32,6 +32,7 @@ module.exports = {
             apiSend: 'SC_MASTER_CAUTION_BTN',
             apiGet: 'SC_MASTER_CAUTION_LED',
         }, 
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,
@@ -68,9 +69,11 @@ module.exports = {
             apiSend: 'LWR_RESET',
             apiGet: 'LWR_RESET',
         },
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
+            dependsOnButtonIdState: 5,
             text: ['MainG', 'EmerG' ],
             apiSend: 'GEAR_EMER_HYD',
         },  
@@ -98,6 +101,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
+            dependsOnButtonIdState: 13,
             text: ['LRange', 'LDesig'],
             apiSend: 'LASER_MODE',
         },  

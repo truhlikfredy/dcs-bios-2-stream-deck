@@ -23,6 +23,7 @@ module.exports = {
             text: 'Equip',
             goToPage: 'wall-equip',
         },     
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.redButton,
@@ -65,7 +66,8 @@ module.exports = {
             nameId: 'slectCover',
             text: 'Cover\nv',
             apiSend: 'FIREEXT_EXT_MODE_COVER',
-        },         
+        },     
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,
@@ -76,6 +78,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
+            dependsOnButtonIdState: 10,            
             text: ['Auto', 'Manual'],
             apiSend: 'FIREEXT_AUTO_MANUAL',
         },          
@@ -98,6 +101,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
+            dependsOnButtonIdState: 9,
             text: ['Test', 'Off', 'Work'],
             apiSend: 'FIREEXT_EXT_MODE',
         },

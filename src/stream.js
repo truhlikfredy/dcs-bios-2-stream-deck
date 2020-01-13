@@ -95,6 +95,10 @@ function updatePage(page) {
             buttonsUpdated++
         }
 
+        if (button.dependsOnButtonIdState === undefined) {
+            button.dependsOnButtonIdState = -1
+        }
+
         if (button.scheme == buttonLogic.colorScheme.switch && button.maxStatus === undefined) {
             button.maxStatus = button.text.length - 1         
         }
@@ -184,6 +188,13 @@ globals.deck.on('down', keyIndex => {
 
     if (button.apiSend === undefined) {
         return        
+    }
+
+    if (button.dependsOnButtonIdState != -1) {
+        // This button is active/usable/enabled only when a specific (different) button state is 1
+        if (globals.currentPage.buttons[button.dependsOnButtonIdState].state != 1) {
+            return
+        }
     }
 
     if (button.overflow) {

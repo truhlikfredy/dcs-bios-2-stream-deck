@@ -23,6 +23,7 @@ module.exports = {
             text: 'Equip',
             goToPage: 'wall-equip',
         },     
+
         {},     
         {   
             type: buttonLogic.types.textToggle,
@@ -45,7 +46,8 @@ module.exports = {
             text: 'Cover\nv',
             apiSend: 'EJECT_POWER_COVER',
         },      
-        {},     
+        {},    
+
         {   
             text: 'Radio',
             goToPage: 'wall-radio',
@@ -54,18 +56,21 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             text: ['Eject1', 'OFF'],
+            dependsOnButtonIdState: 6,
             apiSend: 'EJECT_POWER_1',
         },           
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             text: ['Eject2', 'OFF'],
+            dependsOnButtonIdState: 7,
             apiSend: 'EJECT_POWER_2',
         },           
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             text: ['Eject3', 'OFF'],
+            dependsOnButtonIdState: 8,
             apiSend: 'EJECT_POWER_3',
         },  
     ]

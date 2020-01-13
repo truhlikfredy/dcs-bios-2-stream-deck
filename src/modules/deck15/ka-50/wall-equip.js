@@ -32,11 +32,11 @@ module.exports = {
             apiSend: 'WEAPONS_POWER_COVER',
         },            
         {},     
-        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
+            dependsOnButtonIdState: 2,
             text: ['HydPwr', 'OFF'],
             apiSend: 'HYD_POWER',
         },        
@@ -56,6 +56,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
+            dependsOnButtonIdState: 5,
             text: ['OFF', 'Wep-PWR'],
             apiSend: 'WEAPONS_POWER',
         },      
