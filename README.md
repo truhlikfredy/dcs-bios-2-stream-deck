@@ -25,7 +25,7 @@ It is possible to supply to it custom images for all buttons and they will be us
 
 - The stream deck will be somewhat interactive even without DCS BIOS connection, of course it will not communicate to the DCS and some states/buttons will not display as expected (before or after they were pressed).
 
-- Tested only on 15 button Stream deck, with some modifications it should be usable with bigger/smaller Stream deck. It's a TODO for the future.
+- Tested only on 15 button Stream deck, with some modifications it should be usable with bigger/smaller Stream deck. It's a TODO for the future, just I do not have a device to test it on.
 
 - Button image caching is disabled. Simpler buttons/functions have only a few states and have dedicated image for each combination, however more dynamic content such as 7 segment displays would create a lot of unique images and therefore they are reusing just one single image. The content of these images can be updated frequently and caching might not recognize the changes and keep reusing stale content. But so far the performance impact is not bad as the images are not updated frequently and do not need rescaling or other features.
 
