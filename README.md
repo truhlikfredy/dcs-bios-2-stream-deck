@@ -23,8 +23,6 @@ It is possible to supply to it custom images for all buttons and they will be us
 
 - Some functions which are not clickable might not be reachable through this package as these are not exposed to the LUA scripts in the DCS BIOS
 
-- If the KA-50 cockpit interior light is not working, then update the DCS BIOS plugin as this got fixed recently thanks to @WarLord211
-
 - The stream deck will be somewhat interactive even without DCS BIOS connection, of course it will not communicate to the DCS and some states/buttons will not display as expected (before or after they were pressed).
 
 - Tested only on 15 button Stream deck, with some modifications it should be usable with bigger/smaller Stream deck. It's a TODO for the future.
