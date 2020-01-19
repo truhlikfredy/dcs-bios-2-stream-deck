@@ -25,15 +25,31 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,
             sendState: false,
-            text: 'Vibra',
+            text: 'Vibrat\nmonitor',
             apiSend: 'ENG_VIBR_MONITOR',
         },     
-        {},   
+        {   
+            type: buttonLogic.types.textToggle,
+            scheme: buttonLogic.colorScheme.grayButton,
+            maxStatus: 0,
+            sendState: false,
+            text: 'Betty\nvoice\ntest',
+            apiSend: 'VOICE_MSG_SYS_TEST',
+        },  
+
 
         {   
             text: 'LWS\nCounter\nEkran',
             goToPage: 'aux-bottom',
         },
+        {   
+            type: buttonLogic.types.textToggle,
+            scheme: buttonLogic.colorScheme.yellowButton,
+            text: 'Eject\nlamp',
+            maxStatus: 0,
+            apiGet: 'EJECT_SYS_TEST_LAMP',
+            sendState: false,
+        },        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,
@@ -60,14 +76,7 @@ module.exports = {
             dynamicState: true,
             apiSend: 'EJECT_SYS_SELECTOR',
         }, 
-        {   
-            type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.grayButton,
-            maxStatus: 0,
-            sendState: false,
-            text: 'Voice\ntest',
-            apiSend: 'VOICE_MSG_SYS_TEST',
-        },     
+   
 
         {   
             text: 'Lights',
