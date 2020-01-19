@@ -7,7 +7,6 @@ module.exports = {
             text: '<- Back',
             goToPage: 'default',
         },   
-        {},     
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.yellowButton,
@@ -32,6 +31,14 @@ module.exports = {
             apiSend: 'SC_MASTER_CAUTION_BTN',
             apiGet: 'SC_MASTER_CAUTION_LED',
         }, 
+        {   
+            type: buttonLogic.types.textToggle,
+            scheme: buttonLogic.colorScheme.redButton,
+            sendState: false,
+            text: 'Laser\nWarning',
+            apiGet: 'CL_LASER_WARN',
+        }, 
+
 
         {   
             type: buttonLogic.types.textToggle,
@@ -69,6 +76,7 @@ module.exports = {
             apiSend: 'LWR_RESET',
             apiGet: 'LWR_RESET',
         },
+
 
         {   
             type: buttonLogic.types.textToggle,
