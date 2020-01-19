@@ -57,6 +57,8 @@ module.exports = {
             sendLiterarly: 'INC',
             maxStatus: 0,
             apiSend: 'R800_FREQ1',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },        
         {   
@@ -66,6 +68,8 @@ module.exports = {
             sendLiterarly: 'INC',
             maxStatus: 0,
             apiSend: 'R800_FREQ2',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },        
         {   
@@ -74,6 +78,8 @@ module.exports = {
             text: '+\n0.1',
             sendLiterarly: 'INC',
             apiSend: 'R800_FREQ3',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },        
         {   
@@ -82,6 +88,8 @@ module.exports = {
             text: '+\n0.01',
             sendLiterarly: 'INC',
             apiSend: 'R800_FREQ4',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },        
         {},     
@@ -92,6 +100,8 @@ module.exports = {
             sendLiterarly: 'DEC',
             maxStatus: 0,
             apiSend: 'R800_FREQ1',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },        
         {   
@@ -101,6 +111,8 @@ module.exports = {
             sendLiterarly: 'DEC',
             maxStatus: 0,
             apiSend: 'R800_FREQ2',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },        
         {   
@@ -109,6 +121,8 @@ module.exports = {
             text: '-\n0.1',
             sendLiterarly: 'DEC',
             apiSend: 'R800_FREQ3',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },        
         {   
@@ -117,6 +131,8 @@ module.exports = {
             text: '-\n0.01',
             sendLiterarly: 'DEC',
             apiSend: 'R800_FREQ4',
+            repeatDelay: 600,
+            repeatRate: 600,
             dynamicState: true,
         },            
     ]

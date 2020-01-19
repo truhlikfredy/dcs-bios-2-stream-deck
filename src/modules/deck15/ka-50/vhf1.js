@@ -25,6 +25,7 @@ module.exports = {
             maxStatus: 9,
             text: '-\nChannel',
             apiSend: 'R828_CHANNEL',
+            repeatRate: 400,
             dynamicState: true,
         },    
         {   
@@ -34,6 +35,7 @@ module.exports = {
             maxStatus: 9,
             text: '+\nChannel',
             apiSend: 'R828_CHANNEL',
+            repeatRate: 400,
             dynamicState: true,
         },    
         {   

@@ -16,6 +16,8 @@ var pageReferenced = []
 var pageImplemented = []
 var buttonsUpdated = 0;
 
+var buttonTimeouts = []
+
 function mapButtons(pageName, button, i) {
     button.bindDone = true
 
@@ -157,6 +159,26 @@ function updatePage(page) {
             button.nameId = textToFileId(button.text)
         }
 
+        if (button.repeatEnabled === undefined) {
+            if (button.scheme === undefined || button.scheme != buttonLogic.colorScheme.rotary) {
+                button.repeatEnabled = false
+            } else {
+                button.repeatEnabled = true
+            }    
+        }
+
+        if (button.repeatDelay === undefined) {
+            button.repeatDelay = config.buttonRepeatDelay
+        }
+
+        if (button.repeatRate === undefined) {
+            button.repeatRate = config.buttonRepeatRate
+        }
+
+        if (button.repeatPressedLong === undefined) {
+            button.repeatPressedLong = false
+        }
+
         graphics.updateButton(i)
     }    
 
@@ -167,8 +189,27 @@ function updatePage(page) {
 }
 
 
-globals.deck.on('down', keyIndex => {
-    
+function setButtonRepeat(keyIndex) {
+    if (globals.currentPage.buttons[keyIndex].repeatEnabled == true) {       
+        if (globals.currentPage.buttons[keyIndex].repeatPressedLong == false) {
+            buttonTimeouts[keyIndex] = setTimeout(buttonDown, globals.currentPage.buttons[keyIndex].repeatDelay, keyIndex)
+            globals.currentPage.buttons[keyIndex].repeatPressedLong = true
+        } else {
+            buttonTimeouts[keyIndex] = setTimeout(buttonDown, globals.currentPage.buttons[keyIndex].repeatRate, keyIndex)        
+        }    
+    }
+}
+
+
+function clearButtonRepeat(keyIndex) {
+    if (globals.currentPage.buttons[keyIndex].repeatEnabled == true) {
+        clearTimeout(buttonTimeouts[keyIndex])
+        globals.currentPage.buttons[keyIndex].repeatPressedLong = false
+    }
+}
+
+
+function buttonDown(keyIndex) {
     if (!(keyIndex in globals.currentPage.buttons) || 
         globals.currentPage.buttons[keyIndex].type === buttonLogic.types.none ||
         !Object.keys(globals.currentPage.buttons[keyIndex]).length
@@ -197,6 +238,8 @@ globals.deck.on('down', keyIndex => {
         }
     }
 
+    setButtonRepeat(keyIndex)
+    
     if (button.overflow) {
         button.state = (button.state + button.increment) % (button.maxStatus + 1)
     }
@@ -224,24 +267,30 @@ globals.deck.on('down', keyIndex => {
         }    
     }
 
-    graphics.updateButton(keyIndex);
+    graphics.updateButton(keyIndex)    
+}
+
+
+globals.deck.on('down', keyIndex => {
+    buttonDown(keyIndex)
 })
 
 
-globals.deck.on('up', keyIndex => {
-    
+globals.deck.on('up', keyIndex => {    
     if (!(keyIndex in globals.currentPage.buttons) || 
         globals.currentPage.buttons[keyIndex].type === buttonLogic.types.none ||
         !Object.keys(globals.currentPage.buttons[keyIndex]).length
     ) {
         return
     }    
-    
+       
     var button = globals.currentPage.buttons[keyIndex]
     
     if (button.apiSend === undefined) {
         return        
     }
+
+    clearButtonRepeat(keyIndex)
     
     if (!button.sendState) {
         api.sendMessage(button.apiSend + " 0").then( error => {

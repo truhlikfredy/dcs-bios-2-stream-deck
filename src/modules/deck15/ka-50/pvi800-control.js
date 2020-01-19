@@ -114,6 +114,7 @@ module.exports = {
             overflow: false,
             text: '-\nScan RT',
             apiSend: 'SHKVAL_OPTICS_SCAN_RATE',
+            repeatRate: 200,
             dynamicState: true,
         },
         {   
@@ -125,6 +126,7 @@ module.exports = {
             overflow: false,
             text: '+\nScan RT',
             apiSend: 'SHKVAL_OPTICS_SCAN_RATE',
+            repeatRate: 200,
             dynamicState: true,
         },   
         {   

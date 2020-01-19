@@ -66,6 +66,7 @@ module.exports = {
             text: 'Eject-',
             dynamicState: true,
             apiSend: 'EJECT_SYS_SELECTOR',
+            repeatRate: 300,
         },          
         {   
             type: buttonLogic.types.textToggle,
@@ -75,6 +76,7 @@ module.exports = {
             text: 'Eject+',
             dynamicState: true,
             apiSend: 'EJECT_SYS_SELECTOR',
+            repeatRate: 300,
         }, 
    
 
@@ -100,6 +102,8 @@ module.exports = {
             maxStatus: 10,
             text: 'Bal-',
             apiSend: 'PPK800_BAL_DATA',
+            repeatDelay: 700,
+            repeatRate: 600,
         },     
         {   
             type: buttonLogic.types.textToggle,
@@ -108,6 +112,8 @@ module.exports = {
             maxStatus: 10,
             text: 'Bal+',
             apiSend: 'PPK800_BAL_DATA',
+            repeatDelay: 700,
+            repeatRate: 600,
         },     
         {   
             type: buttonLogic.types.textToggle,

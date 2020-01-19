@@ -122,7 +122,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
-            text: ['OFF', 'Cockpit' ],
+            text: ['OFF', 'Panels' ],
             apiSend: 'LIGHT_COCKPIT',
         },      
     ]
