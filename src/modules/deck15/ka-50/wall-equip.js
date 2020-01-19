@@ -24,6 +24,7 @@ module.exports = {
             goToPage: 'wall-governors',
         },
 
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,
@@ -51,6 +52,7 @@ module.exports = {
             text: 'Lights',
             goToPage: 'wall-lights',
         },  
+
 
         {   
             type: buttonLogic.types.textToggle,

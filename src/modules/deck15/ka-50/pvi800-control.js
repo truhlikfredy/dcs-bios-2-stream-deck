@@ -49,6 +49,8 @@ module.exports = {
             apiSend: 'ZMS3_MAGVAR_SELECTOR',
             dynamicState: true,
         },
+
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
@@ -92,6 +94,7 @@ module.exports = {
             apiSend: 'PVI_BRIGHTNESS',
             dynamicState: true,
         },    
+
 
         {   
             type: buttonLogic.types.textToggle,

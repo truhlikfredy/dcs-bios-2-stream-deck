@@ -34,7 +34,9 @@ module.exports = {
             inversed: true,
             text: ['Off', 'PilotHt'],
             apiSend: 'OP_PITOT_RAM_HEAT',
-        },         
+        },     
+        
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
@@ -59,6 +61,7 @@ module.exports = {
         {},     
         {},     
 
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,

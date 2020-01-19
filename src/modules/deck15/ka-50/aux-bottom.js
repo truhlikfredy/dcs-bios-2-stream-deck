@@ -38,6 +38,7 @@ module.exports = {
             apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER_COVER',
         },   
 
+        
         {   
             text: 'AUX',
             goToPage: 'aux-top',
@@ -75,6 +76,7 @@ module.exports = {
             dependsOnButtonIdState: 4,
             apiSend: 'ELEC_HYD_TRAN_EKRAN_POWER',
         },  
+
 
         {   
             text: 'Lights',

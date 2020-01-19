@@ -45,6 +45,7 @@ module.exports = {
             goToPage: 'aux-top',
         },
 
+
         {   
             text: 'Govern',
             goToPage: 'wall-governors',
@@ -90,6 +91,7 @@ module.exports = {
             apiSend: 'LIGHT_CPT_INT',
         },         
 
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,

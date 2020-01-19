@@ -37,7 +37,9 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             text: ['Movable', 'Fixed', 'ManBckp', 'Navigation', 'Failure'],
             apiSend: 'WEAPONS_MODE',
-        },          
+        },
+        
+        
         {},     
         {},     
         {   
@@ -58,7 +60,9 @@ module.exports = {
             apiSend: 'WEAPONS_GROUND_TARGET_BTN',
             apiGet: 'WEAPONS_GROUND_TARGET_LED',
         },    
-        {},     
+        {},  
+        
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,

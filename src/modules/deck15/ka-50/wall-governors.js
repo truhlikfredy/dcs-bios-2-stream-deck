@@ -36,6 +36,7 @@ module.exports = {
             apiSend: 'ENG_EEG_PT1_OPER_PT2_COVER',
         },        
 
+        
         {   
             text: 'Equip',
             goToPage: 'wall-equip',
@@ -72,6 +73,7 @@ module.exports = {
             text: ['PT-1 Test', 'Operatio', 'PT-2 Test'],
             apiSend: 'ENG_EEG_PT1_OPER_PT2',
         },  
+
 
         {},     
         {},     

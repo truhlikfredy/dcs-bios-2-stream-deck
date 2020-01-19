@@ -34,7 +34,9 @@ module.exports = {
             sendState: false,
             text: '->',
             apiGet: 'UV26_R_DISPENSER',
-        },     
+        },   
+        
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.green7seg,
@@ -70,7 +72,9 @@ module.exports = {
             inversed: true,
             text: ['Count', 'Prog'],
             apiSend: 'UV26_MODE',
-        },       
+        },   
+        
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.redButton,

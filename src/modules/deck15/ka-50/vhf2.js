@@ -51,6 +51,7 @@ module.exports = {
             apiSend: 'RADIO_SELECTOR',
         },     
         
+        
         {   
             text: 'VHF2\nFreq',
             goToPage: 'vhf2-freq',

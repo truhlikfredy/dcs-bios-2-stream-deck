@@ -37,7 +37,9 @@ module.exports = {
             apiSend: 'ADF_CHANNEL',
             repeatRate: 400,
             dynamicState: true,
-        },      
+        },   
+        
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.rotary,
@@ -64,7 +66,6 @@ module.exports = {
             text: ['TLF', 'TLG'],
             apiSend: 'ADF_TLF_TLG',
         },
-        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,
@@ -79,6 +80,8 @@ module.exports = {
             text: ['CMPS', 'ANT' ],
             apiSend: 'ADF_CMPS_ANT',
         },   
+
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,

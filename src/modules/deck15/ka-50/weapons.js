@@ -38,6 +38,8 @@ module.exports = {
             apiGet: 'WEAPONS_DISPLAY_CANNON_REMAIN',
             dynamicState: true,
         },
+
+
         {},     
         {},     
         {   
@@ -61,6 +63,8 @@ module.exports = {
             text: 'Jet\nATGM',
             apiSend: 'WEAPONS_EXPEDITE_ATGM_JETTISON',
         },
+
+
         {},     
         {   
             type: buttonLogic.types.textToggle,
@@ -90,6 +94,5 @@ module.exports = {
             text: ['High', 'Low'],
             apiSend: 'WEAPONS_CANNON_RATE',
         },
-
     ]
 }

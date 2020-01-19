@@ -24,6 +24,7 @@ module.exports = {
             goToPage: 'wall-equip',
         },     
 
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.redButton,
@@ -67,6 +68,7 @@ module.exports = {
             text: 'Cover\nv',
             apiSend: 'FIREEXT_EXT_MODE_COVER',
         },     
+
 
         {   
             type: buttonLogic.types.textToggle,

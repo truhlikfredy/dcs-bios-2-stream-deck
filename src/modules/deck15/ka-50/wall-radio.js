@@ -24,6 +24,7 @@ module.exports = {
             goToPage: 'wall-equip',
         },     
         
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
@@ -59,6 +60,8 @@ module.exports = {
             text: ['OFF', 'VHF-TLK'],
             apiSend: 'COMM_DATALINK_VHF_TLK_POWER',
         },  
+
+        
         {},     
         {},     
         {},     

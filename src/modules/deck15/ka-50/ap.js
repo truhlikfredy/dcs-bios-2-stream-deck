@@ -39,6 +39,8 @@ module.exports = {
             apiSend: 'SC_MASTER_CAUTION_BTN',
             apiGet: 'SC_MASTER_CAUTION_LED',
         },
+
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.blueButton,
@@ -81,6 +83,8 @@ module.exports = {
             apiSend: 'WEAPONS_TARGET_RESET_BTN',
             apiGet: 'WEAPONS_TARGET_RESET_LED',
         },    
+
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.blueButton,

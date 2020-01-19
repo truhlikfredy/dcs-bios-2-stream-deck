@@ -23,6 +23,8 @@ module.exports = {
             text: 'Govern',
             goToPage: 'wall-governors',
         },    
+
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
@@ -58,6 +60,8 @@ module.exports = {
             text: ['OFF', 'Meter'],
             apiSend: 'FUEL_METER_POWER',
         },    
+
+        
         {   
             text: 'Radio',
             goToPage: 'wall-radio',

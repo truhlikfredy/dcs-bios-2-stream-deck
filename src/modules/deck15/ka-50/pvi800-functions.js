@@ -49,6 +49,7 @@ module.exports = {
             apiGet: 'PVI_INU_PRECISE_ALIGN_LED',
         }, 
 
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.green7seg,
@@ -94,6 +95,7 @@ module.exports = {
             apiGet: 'PVI_INU_NORMAL_ALIGN_LED',
         },    
 
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.greenStripeButton,

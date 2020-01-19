@@ -37,6 +37,8 @@ module.exports = {
             apiGet: 'PVI_RESET_LED',
             sendState: false,
         },
+
+
         {   
             text: 'PVI800\nfunc',
             goToPage: 'pvi800-functions',
@@ -69,6 +71,8 @@ module.exports = {
             text: '+\n0',
             apiSend: 'PVI_0',
         },
+
+        
         {   
             text: 'PVI800\nPVTz-800',
             goToPage: 'pvi800-control',

@@ -45,6 +45,8 @@ module.exports = {
             text: 'Auto\ntune',
             apiSend: 'R828_TUNER',
         },    
+
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.yellowButton,

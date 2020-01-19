@@ -48,6 +48,7 @@ module.exports = {
             dynamicState: true,
         },        
 
+
         {   
         },      
         {   
@@ -91,7 +92,9 @@ module.exports = {
             repeatDelay: 600,
             repeatRate: 600,
             dynamicState: true,
-        },        
+        },   
+        
+        
         {},     
         {   
             type: buttonLogic.types.textToggle,

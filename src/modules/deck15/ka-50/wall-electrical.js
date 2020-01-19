@@ -33,6 +33,7 @@ module.exports = {
             goToPage: 'wall-fuel-pumps',
         },
     
+
         {},     
         {   
             type: buttonLogic.types.textToggle,
@@ -58,7 +59,9 @@ module.exports = {
             text: ['OFF', 'BAT1'],
             apiSend: 'ELEC_BATTERY_1',
         },      
-        {},     
+        {},   
+        
+        
         {   
             text: 'Radio',
             goToPage: 'wall-radio',

@@ -37,6 +37,8 @@ module.exports = {
             apiSend: 'ABRIS_BRIGHTNESS',
             dynamicState: true,
         },
+
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.blackButton,
@@ -72,6 +74,7 @@ module.exports = {
             text: '^\n5',
             apiSend: 'ABRIS_BTN_5',
         },
+
 
         {},     
         {},     

@@ -43,6 +43,8 @@ module.exports = {
             text: ['Night', 'Day', 'StandBy'],
             apiSend: 'HUD_MODE',
         },
+
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
@@ -93,7 +95,9 @@ module.exports = {
             text: '+\nShkval\nBright',
             apiSend: 'SHKVAL_BRIGHTNESS',
             dynamicState: true,
-        },      
+        },  
+        
+        
         {   
             type: buttonLogic.types.textToggle,
             defaultStatus: 0,

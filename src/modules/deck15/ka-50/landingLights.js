@@ -27,7 +27,9 @@ module.exports = {
             text: ['Outer', 'Auto*', 'Inner'],
             apiSend: 'ADF_NDB_MODE',
         },      
-        {},     
+        {},  
+        
+        
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.grayButton,

@@ -24,6 +24,7 @@ module.exports = {
             goToPage: 'wall-equip',
         },     
 
+
         {},     
         {   
             type: buttonLogic.types.textToggle,
@@ -48,6 +49,7 @@ module.exports = {
         },      
         {},    
 
+        
         {   
             text: 'Radio',
             goToPage: 'wall-radio',

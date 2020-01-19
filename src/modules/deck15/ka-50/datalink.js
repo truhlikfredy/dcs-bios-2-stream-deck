@@ -43,6 +43,8 @@ module.exports = {
             apiSend: 'DLNK_TARGET_POINT_LED',
             apiGet: 'DLNK_TARGET_POINT_BTN',
         },    
+
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.greenStripeButton,
@@ -87,7 +89,9 @@ module.exports = {
             maxStatus: 0,
             apiSend: 'DLNK_WINGMAN_ALL_BTN',
             apiGet: 'DLNK_WINGMAN_ALL_LED'
-        },      
+        },  
+        
+        
         {},     
         {},     
         {   

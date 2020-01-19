@@ -22,6 +22,8 @@ defaultButtons = {
             text: 'Wall',
             goToPage: 'wall',
         },   
+
+
         {   
             text: 'Engines\nAPU',
             goToPage: 'engines-apu',
@@ -42,6 +44,8 @@ defaultButtons = {
             text: 'ADF\nFlare',
             goToPage: 'adf-flare',
         },
+
+        
         {   
             text: 'Targeting',
             goToPage: 'targeting',
@@ -70,6 +74,7 @@ module.exports = {
     pages: [
         defaultButtons,
 
+
         require('./vhf2.js'),
         require('./vhf2-freq.js'),
         require('./overhead-frontRight.js'),
@@ -88,6 +93,7 @@ module.exports = {
         require('./aux-bottom.js'),
         require('./wall-lights.js'),
 
+
         require('./engines-apu.js'),
         require('./datalink.js'),
         require('./hud-tv.js'),
@@ -97,6 +103,7 @@ module.exports = {
         require('./pvi800-control.js'),
         require('./adf-flare.js'),
         
+
         require('./targeting.js'),
         require('./frontLeft.js'),
         require('./weapons.js'),
