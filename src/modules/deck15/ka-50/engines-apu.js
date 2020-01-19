@@ -64,6 +64,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
+            switchSelector: false,
             inversed: true,
             text: ['APU', 'Left ENG', 'Right ENG', 'Turbo Gear'],
             apiSend: 'ENG_SELECTOR',

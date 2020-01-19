@@ -91,7 +91,7 @@ module.exports = {
             apiSend: 'LIGHT_CPT_INT',
         },         
 
-        
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
@@ -102,6 +102,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
+            switchSelector: false,
             inversed: true,
             text: ['Frm0%', 'Frm10%', 'Frm30%', 'Frm100%'],
             apiSend: 'LIGHT_FORMATION',

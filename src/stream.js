@@ -97,6 +97,10 @@ function updatePage(page) {
             buttonsUpdated++
         }
 
+        if (button.switchSelector === undefined && button.scheme == buttonLogic.colorScheme.switch) {
+            button.switchSelector = true
+        }
+        
         if (button.dependsOnButtonIdState === undefined) {
             button.dependsOnButtonIdState = -1
         }

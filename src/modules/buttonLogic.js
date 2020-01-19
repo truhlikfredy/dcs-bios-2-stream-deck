@@ -78,8 +78,12 @@ module.exports = {
                 ctx.fillStyle = button.customFontColor
             }
             ctx.font = fonts[fontId].face
+
+            ctx.strokeStyle='#000000'
+            ctx.lineWidth=4;            
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.strokeText(button.text, centerX, centerY)        
             ctx.fillText(button.text, centerX, centerY)        
         },
         
@@ -93,8 +97,12 @@ module.exports = {
 
             ctx.fillStyle = button.state ? '#ffffff' : '#10B2DE'
             ctx.font = fonts[fontId].face
+
+            ctx.strokeStyle='#000022'
+            ctx.lineWidth=3;            
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.strokeText(button.text, centerX, centerY)        
             ctx.fillText(button.text, centerX, centerY)        
         },
 
@@ -108,8 +116,12 @@ module.exports = {
 
             ctx.fillStyle = button.state ? '#ffffff' : '#50dE52'
             ctx.font = fonts[fontId].face
-    
+
+            ctx.strokeStyle='#004400'
+            ctx.lineWidth=3;            
+
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.strokeText(button.text, centerX, centerY)        
             ctx.fillText(button.text, centerX, centerY)        
         },
         
@@ -131,8 +143,12 @@ module.exports = {
                               
             ctx.fillStyle = button.state ? '#ffffee' : '#777777'
             ctx.font = fonts[fontId].face
+
+            ctx.strokeStyle='#000000'
+            ctx.lineWidth=3;                        
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.strokeText(button.text, centerX, centerY - globals.deck.ICON_SIZE * 0.06)        
             ctx.fillText(button.text, centerX, centerY - globals.deck.ICON_SIZE * 0.06)        
         },
         
@@ -154,8 +170,12 @@ module.exports = {
             
             ctx.fillStyle = button.state ? '#ffffff' : '#777777'
             ctx.font = fonts[fontId].face
+
+            ctx.strokeStyle='#000000'
+            ctx.lineWidth=3;                        
     
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.strokeText(button.text, centerX, centerY - globals.deck.ICON_SIZE * 0.06)        
             ctx.fillText(button.text, centerX, centerY - globals.deck.ICON_SIZE * 0.06)     
         },
         
@@ -184,7 +204,7 @@ module.exports = {
 
             ctx.fillStyle = button.state ? '#ffffff' : '#dddddd'
             ctx.font = fonts[fontId].face
-    
+
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
             ctx.fillText(button.text, centerX, centerY)        
         },
@@ -197,10 +217,52 @@ module.exports = {
             ctx.fillStyle = '#000000'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
             
-            ctx.fillStyle = '#555555'
+            var states = []
+
+            if (textArray.length == 2) {
+                // Two state togle switch
+                states = [ "up", "down"]
+                if (button.inversed) {
+                    states = ["down", "up"]
+                }
+                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
+            } else if (textArray.length == 3) {
+                // Three state togle switch
+                states = [ "up", "middle", "down"]
+                if (button.inversed) {
+                    states = ["down", "middle", "up"]
+                }
+                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
+            } else if (button.switchSelector == true) {                
+                // Rotary selector
+                ctx.drawImage(globals.assets.canvases['deck15-switch-selector'], 0, 0)
+            } else if (textArray.length == 4) {
+                // 4 state switch, but not rotary selector
+                states = [ "up", "3", "1", "middle"]
+                if (button.inversed) {
+                    states = [ "middle", "1", "3", "up"]
+                }
+                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
+            } else if (textArray.length == 5) {
+                // 5 state switch, but not rotary selector
+                states = [ "up", "middle", "down", "1", "3"]
+                if (button.inversed) {
+                    states = [ "3", "1", "down", "middle", "up"]
+                }
+                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
+            } else {
+                // Fallback for many state non rotary selector switch
+                ctx.drawImage(globals.assets.canvases['deck15-switch-middle' ], 0, 0)
+            }
+            
+            ctx.fillStyle = '#888888'
             ctx.font = fonts[fontId].face
+
+            ctx.strokeStyle='#000000'
+            ctx.lineWidth=5;
     
             const {centerX, centerY} = graphics.centerImage(textJoined, fontId)
+            ctx.strokeText(textJoined, centerX, centerY)
             ctx.fillText(textJoined, centerX, centerY)
             
             ctx.fillStyle = '#ffffff'
@@ -215,6 +277,7 @@ module.exports = {
                     if (button.state != i) highligted[i] = " "
                 }                
             }
+            ctx.strokeText(highligted.join("\n"), centerX, centerY)
             ctx.fillText(highligted.join("\n"), centerX, centerY)
         }
         

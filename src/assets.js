@@ -36,6 +36,13 @@ module.exports = {
 
         await this.loadAsset('deck15-ka-50-rotary', 72);
 
+        await this.loadAsset('deck15-switch-up', 72);
+        await this.loadAsset('deck15-switch-middle', 72);
+        await this.loadAsset('deck15-switch-down', 72);
+        await this.loadAsset('deck15-switch-1', 72);
+        await this.loadAsset('deck15-switch-3', 72);
+        await this.loadAsset('deck15-switch-selector', 72);
+        
         console.log('Loaded assets: ', assetsLoaded)        
     }
 }
