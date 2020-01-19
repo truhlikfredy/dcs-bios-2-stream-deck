@@ -57,12 +57,13 @@ module.exports = {
             goToPage: 'wall-lights',
         },  
     
+
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
             dependsOnButtonIdState: 5,
-            text: ['OFF', 'PUMP-LEFT'],
+            text: ['OFF', 'VLV L'],
             apiSend: 'FUEL_L_ENG_VLV',
         },   
         {   
@@ -70,7 +71,7 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
             dependsOnButtonIdState: 6,
-            text: ['OFF', 'PUMP-RIGHT'],
+            text: ['OFF', 'VLV R'],
             apiSend: 'FUEL_R_ENG_VLV',
         },   
         {   
@@ -78,7 +79,7 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
             dependsOnButtonIdState: 7,
-            text: ['OFF', 'PUMP-APU'],
+            text: ['OFF', 'VLV APU'],
             apiSend: 'FUEL_APU_VLV',
         },   
         {   
