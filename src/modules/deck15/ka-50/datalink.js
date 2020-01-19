@@ -40,8 +40,8 @@ module.exports = {
             sendState: false,
             text: 'Ingress',
             maxStatus: 0,
-            apiSend: 'DLNK_TARGET_POINT_LED',
-            apiGet: 'DLNK_TARGET_POINT_BTN',
+            apiSend: 'DLNK_TARGET_POINT_BTN',
+            apiGet: 'DLNK_TARGET_POINT_LED',
         },    
 
 
@@ -98,7 +98,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.yellowStripeButton,
             sendState: false,
-            text: 'Erase',
+            text: 'Clear',
             maxStatus: 0,
             apiSend: 'DLNK_ERASE_BTN',
             apiGet: 'DLNK_ERASE_LED'
@@ -107,7 +107,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.yellowStripeButton,
             sendState: false,
-            text: 'Ingress\nTo',
+            text: 'DL\nIngress',
             maxStatus: 0,
             apiSend: 'DLNK_ESCAPE_BTN',
             apiGet: 'DLNK_ESCAPE_LED'
@@ -116,7 +116,7 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.yellowStripeButton,
             sendState: false,
-            text: 'Send\nMemory',
+            text: 'Send\nMemor',
             maxStatus: 0,
             apiSend: 'DLNK_SEND_BTN',
             apiGet: 'DLNK_SEND_LED'
