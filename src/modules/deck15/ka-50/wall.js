@@ -10,10 +10,16 @@ module.exports = {
             goToPage: 'wall-fire',
         },
         {},     
-        {},     
-        {},     
-        
+        {   
+            text: 'AUX\ntop',
+            goToPage: 'aux-top',
+        },
+        {   
+            text: 'LWS\nCounter\nEkran',
+            goToPage: 'aux-bottom',
+        },        
 
+        
         {   
             text: 'Elect',
             goToPage: 'wall-electrical',
@@ -34,6 +40,8 @@ module.exports = {
             text: 'Govern',
             goToPage: 'wall-governors',
         },
+
+
         {   
             text: 'Radio',
             goToPage: 'wall-radio',
@@ -42,15 +50,8 @@ module.exports = {
             text: 'Eject',
             goToPage: 'wall-eject',
         },  
-    
-        {   
-            text: 'AUX\ntop',
-            goToPage: 'aux-top',
-        },
-        {   
-            text: 'LWS\nCounter\nEkran',
-            goToPage: 'aux-bottom',
-        },
+        {},
+        {},
         {   
             text: 'Lights',
             goToPage: 'wall-lights',
