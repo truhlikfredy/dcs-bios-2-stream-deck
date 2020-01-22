@@ -248,10 +248,8 @@ function buttonDown(keyIndex) {
         button.state = (button.state + button.increment) % (button.maxStatus + 1)
     }
     else {
-        console.log(button.state, button.increment, button.maxStatus)
         button.state = button.state + button.increment
         if (button.state > button.maxStatus) button.state = button.maxStatus
-        console.log(button.state, button.increment, button.maxStatus)
     }
     if (button.state < 0) button.state = 0
    
