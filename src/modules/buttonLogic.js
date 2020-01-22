@@ -42,7 +42,8 @@ module.exports = {
             ctx.fillStyle = '#000000'
             ctx.fillRect(0, 0, globals.deck.ICON_SIZE, globals.deck.ICON_SIZE)
 
-            ctx.drawImage(globals.assets.canvases['deck15-ka-50-rotary'], 0, 0)
+            console.log(button.state)
+            ctx.drawImage(globals.assets.canvases['deck15-ka-50-rotary-' + button.state % 4], 0, 0)
             
             ctx.fillStyle = '#ffffff'
             ctx.font = fonts[fontId].face

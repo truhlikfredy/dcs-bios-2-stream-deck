@@ -43,7 +43,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.rotary,
-            increment: -4095,
+            increment: -4091,
             overflow: false,
             maxStatus: 65535,
             text: '-\nVolume',
@@ -53,7 +53,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.rotary,
-            increment: +4095,
+            increment: +4091,
             overflow: false,
             maxStatus: 65535,
             text: '+\nVolume',
