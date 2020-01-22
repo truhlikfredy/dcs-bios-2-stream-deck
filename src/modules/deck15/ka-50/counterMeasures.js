@@ -70,7 +70,7 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            text: [ 'Prog', 'Count'],
+            text: [ 'Count', 'Prog'],
             states: [ "4", "6"],
             apiSend: 'UV26_MODE',
         },   
