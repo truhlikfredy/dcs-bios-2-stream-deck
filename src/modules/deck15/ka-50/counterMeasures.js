@@ -49,7 +49,8 @@ module.exports = {
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
-            text: ['<-', 'Both', '->'],
+            text: ['<-', '<- ->', '->'],
+            states: [ "6", "5", "4"],
             apiSend: 'UV26_DISPENSERS_SELECTOR',
         }, 
         {   
@@ -69,20 +70,48 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            inversed: true,
-            text: ['Count', 'Prog'],
+            text: [ 'Prog', 'Count'],
+            states: [ "4", "6"],
             apiSend: 'UV26_MODE',
         },   
         
         
         {   
             type: buttonLogic.types.textToggle,
-            scheme: buttonLogic.colorScheme.redButton,
+            scheme: buttonLogic.colorScheme.blackButton,
             sendState: false,
-            text: 'LWR\nRESET',
-            apiSend: 'LWR_RESET',
-            apiGet: 'LWR_RESET',
-        },    
+            nameId: 'explanation',
+            stateToText: (state) => {
+                if (state.length != 3) return 'n/a'
+                
+                ret = ""
+                switch (state[0]) {
+                    case "0": ret += "inf"; break;
+                    case "5": ret += "12"; break;
+                    case "7": ret += "15"; break;
+                    default:
+                        ret += state[0]
+                        break
+                }
+                ret += " seq\n"
+
+                ret += "* " + state[1] + " brst\n"
+
+                switch (state[2]) {
+                    case "0": ret += '0.125s'; break;
+                    case "7": ret += '0.25s'; break;
+                    case "9": ret += '0.5s'; break;
+                    default:
+                        ret += state[2] + "s"
+                        break
+                }
+                // ret += " delay"
+
+                return ret
+            },
+            apiGet: 'UV26_DISPLAY',
+            dynamicState: true,
+        },   
         {},     
         {   
             type: buttonLogic.types.textToggle,
@@ -98,5 +127,14 @@ module.exports = {
             text: 'Start',
             apiSend: 'UV26_START',
         },    
+        {   
+            type: buttonLogic.types.textToggle,
+            scheme: buttonLogic.colorScheme.redButton,
+            sendState: false,
+            text: 'LWR\nRESET',
+            apiSend: 'LWR_RESET',
+            apiGet: 'LWR_RESET',
+        },    
+        
     ]
 }
