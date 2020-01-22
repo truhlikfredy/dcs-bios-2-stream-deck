@@ -67,6 +67,7 @@ module.exports = {
             switchSelector: false,
             inversed: true,
             text: ['APU', 'Left ENG', 'Right ENG', 'Turbo Gear'],
+            states: ["8", "3", "1", "5"],            
             apiSend: 'ENG_SELECTOR',
         },       
         

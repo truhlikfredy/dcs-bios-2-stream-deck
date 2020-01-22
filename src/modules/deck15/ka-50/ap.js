@@ -104,13 +104,13 @@ module.exports = {
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            text: ['BR', '---', 'RD'],
+            text: ['BR', '', 'RD'],
             apiSend: 'AP_BARO_RALT',
         },
         {   
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.switch,
-            text: ['DH', '---', 'DT'],
+            text: ['DH', '', 'DT'],
             apiSend: 'AP_DH_DT',
         },
         {   

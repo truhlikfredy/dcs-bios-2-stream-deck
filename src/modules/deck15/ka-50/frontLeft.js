@@ -110,7 +110,8 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             inversed: true,
             dependsOnButtonIdState: 13,
-            text: ['LRange', 'LDesig'],
+            text: ['LNorm', 'LStdBy'],
+            states: [ "4", "6"],
             apiSend: 'LASER_MODE',
         },  
     ]

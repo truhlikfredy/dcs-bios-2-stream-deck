@@ -104,7 +104,8 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             switchSelector: false,
             inversed: true,
-            text: ['Frm0%', 'Frm10%', 'Frm30%', 'Frm100%'],
+            text: ['Frm0%', '10%', '30%', '100%'],
+            states: ["2", "9", "7", "5"],
             apiSend: 'LIGHT_FORMATION',
         },   
         {   

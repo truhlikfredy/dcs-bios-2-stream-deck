@@ -219,42 +219,29 @@ module.exports = {
             
             var states = []
 
-            if (textArray.length == 2) {
-                // Two state togle switch
-                states = [ "up", "down"]
-                if (button.inversed) {
-                    states = ["down", "up"]
-                }
-                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
-            } else if (textArray.length == 3) {
-                // Three state togle switch
-                states = [ "up", "middle", "down"]
-                if (button.inversed) {
-                    states = ["down", "middle", "up"]
-                }
-                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
-            } else if (button.switchSelector == true) {                
-                // Rotary selector
-                ctx.drawImage(globals.assets.canvases['deck15-switch-selector'], 0, 0)
-            } else if (textArray.length == 4) {
-                // 4 state switch, but not rotary selector
-                states = [ "up", "3", "1", "middle"]
-                if (button.inversed) {
-                    states = [ "middle", "1", "3", "up"]
-                }
-                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
-            } else if (textArray.length == 5) {
-                // 5 state switch, but not rotary selector
-                states = [ "up", "middle", "down", "1", "3"]
-                if (button.inversed) {
-                    states = [ "3", "1", "down", "middle", "up"]
-                }
-                ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state] ], 0, 0)
+            if (button.states === undefined) {
+                if (textArray.length == 2) {
+                    states = [ "8", "2"]
+                } else if (textArray.length == 3) {
+                    states = [ "8", "5", "2"]
+                } else if (button.switchSelector == true) {                
+                    // Rotary selector
+                    states = [ "selector" ]                        
+                } else if (textArray.length == 4) {
+                    states = [ "2", "6", "4", "5"]
+                } else if (textArray.length == 5) {
+                    states = [ "8", "5", "2", "1", "3"]    
+                } 
             } else {
-                // Fallback for many state non rotary selector switch
-                ctx.drawImage(globals.assets.canvases['deck15-switch-middle' ], 0, 0)
+                states = button.states.slice(0) // Take clone, do not take original as we might reverse it later
             }
-            
+
+            if (button.inversed) {
+                states = states.reverse()
+            }
+   
+            ctx.drawImage(globals.assets.canvases['deck15-switch-' + states[button.state % states.length] ], 0, 0)
+
             ctx.fillStyle = '#888888'
             ctx.font = fonts[fontId].face
 

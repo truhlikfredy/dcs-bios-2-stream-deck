@@ -82,6 +82,7 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             dependsOnButtonIdState: 10,            
             text: ['Auto', 'Manual'],
+            states: [ "4", "6"],            
             apiSend: 'FIREEXT_AUTO_MANUAL',
         },          
         {   

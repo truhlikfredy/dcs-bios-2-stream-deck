@@ -12,7 +12,7 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             switchSelector: false,
             inversed: true,
-            text: ['Wing-0%', 'Wing-10%', 'Wing-30%', 'Wing-100%'],
+            text: ['NavOff', '10%', '30%', '100%'],
             apiSend: 'OP_NAV_LIGHTS',
         },         
         {   
@@ -20,7 +20,8 @@ module.exports = {
             scheme: buttonLogic.colorScheme.switch,
             switchSelector: false,
             inversed: true,
-            text: ['WiperOff', 'Wiper3', 'Wiper2', 'Wiper1'],
+            text: ['Off', 'Wiper3', 'Wiper2', 'Wiper1'],
+            states: [ "6", "4", "2", "5"],
             apiSend: 'OP_WINDSHIELD_WIPER',
         },         
         {   
