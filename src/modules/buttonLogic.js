@@ -46,8 +46,12 @@ module.exports = {
             
             ctx.fillStyle = '#ffffff'
             ctx.font = fonts[fontId].face
-    
+
+            ctx.strokeStyle='#000000'
+            ctx.lineWidth=4;
+            
             const {centerX, centerY} = graphics.centerImage(button.text, fontId)
+            ctx.strokeText(button.text, centerX, centerY)   
             ctx.fillText(button.text, centerX, centerY)        
         },        
 
