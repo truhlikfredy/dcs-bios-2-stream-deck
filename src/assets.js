@@ -48,7 +48,22 @@ module.exports = {
         await this.loadAsset('deck15-switch-7', 72);
         await this.loadAsset('deck15-switch-8', 72);
         await this.loadAsset('deck15-switch-9', 72);
-        await this.loadAsset('deck15-switch-selector', 72);
+
+        await this.loadAsset('deck15-switch-selector-0', 72);
+        await this.loadAsset('deck15-switch-selector-1', 72);
+        await this.loadAsset('deck15-switch-selector-2', 72);
+        await this.loadAsset('deck15-switch-selector-3', 72);
+        await this.loadAsset('deck15-switch-selector-4', 72);
+        await this.loadAsset('deck15-switch-selector-5', 72);
+        await this.loadAsset('deck15-switch-selector-6', 72);
+        await this.loadAsset('deck15-switch-selector-7', 72);
+        await this.loadAsset('deck15-switch-selector-8', 72);
+        await this.loadAsset('deck15-switch-selector-9', 72);
+        await this.loadAsset('deck15-switch-selector-10', 72);
+        await this.loadAsset('deck15-switch-selector-11', 72);
+        await this.loadAsset('deck15-switch-selector-12', 72);
+        await this.loadAsset('deck15-switch-selector-13', 72);
+        await this.loadAsset('deck15-switch-selector-14', 72);
         
         if (config.logStartup) {
             console.log('Loaded assets: ', assetsLoaded)        

@@ -229,8 +229,17 @@ module.exports = {
                 } else if (textArray.length == 3) {
                     states = [ "8", "5", "2"]
                 } else if (button.switchSelector == true) {                
-                    // Rotary selector
-                    states = [ "selector" ]                        
+                    // Rotary selector - generate different states for rotation depending what is the 
+                    // maximum number of possible states
+                    var multiplicator = 1.0
+
+                    if (textArray.length <= 5) {
+                        multiplicator = 2.0
+                    }
+
+                    for (var i = 0;  i < textArray.length ; i++) {
+                        states.push("selector-" + (Math.round(i * multiplicator) + 11) % 15)
+                    }
                 } else if (textArray.length == 4) {
                     states = [ "2", "6", "4", "5"]
                 } else if (textArray.length == 5) {
