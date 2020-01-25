@@ -1,7 +1,7 @@
 module.exports = {
     buttonRepeatDelay:    500,
     buttonRepeatRate:     100,
-    forceImageRecreation: true,
+    forceImageRecreation: false,
     logButtons:           false,
     logStartup:           true,
     dcsBiosLogLevel:      'WARN',  //  NONE, WARN, INFO, DEBUG
