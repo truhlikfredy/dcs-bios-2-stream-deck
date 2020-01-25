@@ -50,7 +50,8 @@ module.exports = {
         await this.loadAsset('deck15-switch-9', 72);
         await this.loadAsset('deck15-switch-selector', 72);
         
-        if (config.logButtons)
-        console.log('Loaded assets: ', assetsLoaded)        
+        if (config.logStartup) {
+            console.log('Loaded assets: ', assetsLoaded)        
+        }
     }
 }

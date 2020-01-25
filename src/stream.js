@@ -1,6 +1,6 @@
 
-const fs         = require("fs");
-const DcsBiosApi = require('dcs-bios-api')
+const fs          = require("fs");
+const DcsBiosApi  = require('dcs-bios-api')
 
 const globals     = require('./globals.js')
 const modules     = require('./modules/allModules.js')
@@ -9,7 +9,13 @@ const config      = require('./config.js')
 const helper      = require('./helper.js')
 const graphics    = require('./graphics.js')
 
-var api = new DcsBiosApi({ logLevel: 'INFO' });
+var api = new DcsBiosApi({ 
+    multicastAddress: config.dcsMulticastAddr, 
+    receivePort:      config.dcsBiosRxPort, 
+    sendPort:         config.dcsBiosTxPort,
+    emitAllUpdates:   config.emitAllUpdates,
+    logLevel:         config.dcsBiosLogLevel 
+});
 api.startListening()
 
 var pageReferenced = []
@@ -223,7 +229,9 @@ function buttonDown(keyIndex) {
     
     var button = globals.currentPage.buttons[keyIndex]
     var buttonText = (Array.isArray(button.text)) ? button.text.join(' ') : button.text.split('\n').join(' ')
-    console.log('Key #%d "%s"  pressed', keyIndex, buttonText)
+    if (config.logButtons) {
+        console.log('Key #%d "%s"  pressed', keyIndex, buttonText)
+    }
 
     if (button.goToPage !== undefined) {
         setPageName(button.goToPage)
@@ -341,7 +349,9 @@ async function startApplication() {
         }
     })
     
-    console.log('Opened all pages and generated %d buttons (excluding the goToPage buttons)', buttonsUpdated)
+    if (config.logStartup) {
+        console.log('Opened all pages of module %s and generated %d buttons (excluding the goToPage buttons)', globals.currentModuleName, buttonsUpdated)
+    }
     
     // But in the end display the default page
     globals.displayOnSteamDeck = true
