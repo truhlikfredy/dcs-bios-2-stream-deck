@@ -77,6 +77,7 @@ module.exports = {
         
         
         {   
+            // Will elaborate even when set to Count instead of Prog
             type: buttonLogic.types.textToggle,
             scheme: buttonLogic.colorScheme.blackButton,
             sendState: false,
