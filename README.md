@@ -64,7 +64,7 @@ Had to follow the Canvas package wiki https://github.com/Automattic/node-canvas/
 
 - Download and install libjpeg-turbo-2.0.3-vc64.exe https://sourceforge.net/projects/libjpeg-turbo/files/2.0.3/libjpeg-turbo-2.0.3-vc64.exe/download
 - Download a GTK2 with cairo library and unzip it directly to the C:\GTK (if a different directory is used then gyp needs extra arguments to find it) http://ftp.gnome.org/pub/GNOME/binaries/win64/gtk+/2.22/gtk+-bundle_2.22.1-20101229_win64.zip 
-- When I had issues lib jpeg-turbo compiling, I downloaded http://www.tortall.net/projects/yasm/releases/yasm-1.3.0-win64.exe assembler, put it somewhere into my PATH and renamed it the binary to yasm.exe
+- When the turbo-jpeg pre-builds can't be downloaded from AWS then I downloaded http://www.tortall.net/projects/yasm/releases/yasm-1.3.0-win64.exe assembler, put it somewhere into my PATH and renamed it the binary to yasm.exe
 
 # Running
 
